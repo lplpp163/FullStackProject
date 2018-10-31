@@ -1,0 +1,271 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.iLoginBox {
+  position: absolute;
+  box-shadow: 5px 5px 5px #0000001e;
+  top: 160px;
+  right: 50%;
+  left: 30%;
+  height: 500px;
+  background-color: #ffffff;
+  padding: 30px 24px;
+  border: 1px solid #e1e7ec;
+  border-radius: 7px;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color: #606975;
+  font-family: "Maven Pro", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: none;
+  line-height: 1.5;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.iLoginText {
+  margin-bottom: 24px !important;
+  font-size: 24px;
+  line-height: 1.25;
+  margin: 0;
+  color: #374250;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  text-transform: none;
+  text-align: left;
+
+  box-sizing: border-box;
+}
+
+.iTextS {
+  margin-bottom: 24px !important;
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0;
+  color: #69727c;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  text-transform: none;
+  text-align: left;
+
+  box-sizing: border-box;
+}
+
+.iFormGroup {
+  display: block;
+  position: relative;
+  margin-bottom: 20px !important;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: none;
+  line-height: 1.5;
+  text-align: left;
+
+  box-sizing: border-box;
+}
+
+.iFormControl {
+  height: 44px;
+  padding: 0 18px 3px;
+  border: 1px solid #dbe2e8;
+  border-radius: 22px;
+  background-color: #ffffff;
+  color: #606975;
+  font-size: 14px;
+  -webkit-appearance: none;
+  display: block;
+   width: 100%;
+  background-clip: padding-box;
+  overflow: visible;
+  box-sizing: border-box;
+}
+.iAddon {
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: none;
+  line-height: 1.5;
+  text-align: left;
+  color: #606975;
+}
+.iFeedback {
+  color: #ff5252;
+  padding-top: 2px;
+  padding-left: 18px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: none;
+  line-height: 1.5;
+  text-align: left;
+}
+.iLink {
+  transition: color .3s;
+    color: #606975;
+    text-decoration: none;
+    background-color: transparent;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: none;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.iTextRight {
+  text-align: right !important;
+  box-sizing: border-box;
+  display: block;
+  color: #606975;
+    font-family: "Maven Pro", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: none;
+    line-height: 1.5;
+
+}
+
+.iButton {
+  cursor: pointer;
+  margin-right: 6px;
+    margin-left: 6px;
+    background-color: #0da9ef;
+    color: #ffffff;
+    display: inline-block;
+    position: relative;
+    height: 44px;
+    margin-top: 8px;
+    padding: 0 22px;
+    transform: translateZ(0);
+    transition: all .4s;
+    border: 1px solid transparent;
+    border-radius: 22px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: .07em;
+    line-height: 42px;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    touch-action: manipulation;
+    margin-bottom: 0 !important;
+    overflow: visible;
+}
+
+
+.Ian_animate {
+  position: absolute;
+}
+
+.Ian_container {
+  position: relative;
+  background-color: red;
+}
+
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body {
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

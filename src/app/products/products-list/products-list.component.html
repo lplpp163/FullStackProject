@@ -1,0 +1,18 @@
+<app-category></app-category>
+<body>
+  <div *ngFor="let product of products" class="product">
+  <img class="product-img" src="{{product.img}}">
+  <div class="product-actions">
+    <div class="product-info">
+      <div class="info-block">
+        <div class="product-title"><a [routerLink]="['/products', product.id]" routerLinkActive="router-link-active">{{ product.name }}</a></div>
+        <div class="product-description">{{ product.description }}</div>
+        <div class="product-sale">${{ product.price }}</div>
+        <div class="button-buy">購買</div>
+        <div class="add">加入購物車</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+

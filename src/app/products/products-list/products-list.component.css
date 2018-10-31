@@ -1,0 +1,130 @@
+body {
+  font-family: 'Lato', sans-serif;
+  background:#f1f1f1;
+  margin-left: 6%;
+}
+
+.product, .product-img {
+  width:260px;
+  height:260px;
+  position:relative;
+  transition:.7s;
+  -webkit-transition:.7s;
+  z-index:2;
+}
+
+.product-actions {
+  width:260px;
+  height:260px;
+  position:relative;
+  overflow: hidden;
+  margin-top:-263px;
+  transition:.7s;
+  -webkit-transition:.7s;
+  z-index:2;
+}
+
+.product {
+  margin: 20px;
+  -webkit-box-shadow: -2px 3px 2px rgba(0,0,0,0.5);
+          box-shadow: -2px 3px 2px rgba(0,0,0,0.5);
+  background:#000;
+  float: left;
+}
+
+.sale, .info-block, .product-title, .product-description, .product-sale, .button-buy, .play, .more, .nav, .add {
+  position:absolute;
+  z-index:3;
+}
+
+
+.sale {
+  font-size:11px;
+  color:#fff;
+  -webkit-transform:rotate(45deg);
+  top:52px;
+  left:2px;
+}
+
+.info-block {
+  height:130px;
+  width:260px;
+  background:rgba(255,255,255,.85);
+  bottom:0px;
+  margin-bottom:-70px;
+  transition:.7s;
+}
+
+.product-title a{
+  color:#222;
+  text-decoration: none;
+  font-size:20px;
+  font-weight:400;
+  top:12px;
+  left:15px;
+}
+
+.product-description {
+  width:228px;
+  top:32px;
+  left:16px;
+  font-family: 'helvetica neue';
+  font-size: 0.8em;
+  font-weight: 400;
+  color: #7d7d7d;
+  border-bottom:1px solid #dadada;
+  padding-bottom:15px;
+}
+
+.product-sale {
+  color: #e74c3c;
+  font-size: 1em;
+  font-weight: 700;
+  font-family: 'helvetica neue';
+  right:15px;
+  top:12px;
+}
+
+.button-buy {
+  background: #e74c3c;
+  text-align: center;
+  line-height: 46px;
+  font-weight: 700;
+  color: #fff;
+  border: 0px solid #c0392b;
+  border-bottom-width: 2px;
+  width:70px;
+  height:44px;
+  bottom:15px;
+  left:15px;
+  cursor:pointer;
+  transition:.4s;
+}
+
+.button-buy:hover {
+  background:#c0392b;
+}
+
+.add {
+  background: #2ecc71;
+  text-align: center;
+  line-height: 46px;
+  font-weight: 700;
+  color: #fff;
+  border: 0px solid #27ae60;
+  border-bottom-width: 2px;
+  width:120px;
+  height:44px;
+  bottom:15px;
+  right:15px;
+  cursor:pointer;
+  transition:.4s;
+}
+
+.add:hover {
+  background:#27ae60;
+}
+
+.product:hover .info-block {
+  margin-bottom:0;
+}

@@ -1,0 +1,72 @@
+
+<div class="col-md-6" style="height: 600px;max-width: 100%;padding: 0% 0% 0% 0%" >
+    <div class="iLoginBox" style="position: absolute;top: 180px;right: 25%;left: 25%;height: 460px; background-color: #f5f5f5">
+      <div style="margin: 0% 0% 0% 57%;" [ngStyle]="{'margin': myMargin}">
+          <h3 class="iLoginText" style="margin: 0% 0% 0% 3%; font-size: 26px;" >No Account?</h3>
+          <h3 class="iTextS" >CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.</h3>
+          <div class="iTextRight">
+            <button class="iButton" (click)="onB2()" style="margin: 0% 8% 0% 0%; background-color: #0da7efab">Register</button>
+          </div>
+      </div>
+    </div>
+    <form class="iLoginBox" (ngSubmit)="onIan()" [ngStyle]="{'left': myLeft, 'right': myRight}" >
+      <h3 class="iLoginText">Login</h3>
+      <div class="iFormGroup">
+        <input class="iFormControl" formControlName="email" type="email" placeholder="Email" required="">
+        <!--<span class="iAddon">
+          <i class="icon-mail"></i>
+        </span>-->
+        <div *ngIf="!safe" class="iFeedback">
+          Be sure to enter a valid, existing Email.
+        </div>
+      </div>
+      <div class="iFormGroup">
+        <input class="iFormControl" formControlName="password" type="password" placeholder="Password" required="">
+        <!--<span class="iAddon">
+          <i class="icon-lock"></i>
+        </span>-->
+        <div *ngIf="!safe" class="iFeedback">
+          The entered password seems to be wrong..
+        </div>
+      </div>
+
+       <div>
+        <a class="iLink" href="account-password-recovery.html">Forgot password?</a>
+      </div>
+
+      <!--
+        <button [disabled]="!loginForm.valid"class="btn btn-primary margin-bottom-none" type="submit">Login</button>
+      -->
+      <div class="iTextRight">
+        <button class="iButton" type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+
+  <span [hidden]="safe" [ngStyle]="{ 'float': right }"><h3>Login</h3></span>
+
+
+
+
+
+
+
+  <!--
+  <div class="login-page">
+    <div class="form">
+      <form class="register-form">
+        <input type="text" placeholder="name"/>
+        <input type="password" placeholder="password"/>
+        <input type="text" placeholder="email address"/>
+        <button>create</button>
+        <p class="message">Already registered? <a href="#">Sign In</a></p>
+      </form>
+      <form class="login-form">
+        <input type="text" placeholder="username"/>
+        <input type="password" placeholder="password"/>
+        <button>login</button>
+        <p class="message">Not registered? <a href="#">Create an account</a></p>
+      </form>
+    </div>
+  </div>
+  -->

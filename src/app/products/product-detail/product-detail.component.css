@@ -1,0 +1,30 @@
+
+.product-name{
+  font-size: 26px;
+}
+
+.whole-page{
+  position: static;
+}
+
+.zone{
+  position: relative;
+  right: 0%;
+  left: 25%;
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+
+.product-gallery {
+  position: relative;
+  display: inline-block;
+  margin: 30px;
+  padding: 15px;
+  border: 3px solid #4faf23;
+  border-radius: 5px;
+}
+
+.product-gallery-image {
+  min-width: 100%;
+}
