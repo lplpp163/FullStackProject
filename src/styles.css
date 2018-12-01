@@ -124,7 +124,7 @@ a:hover { color: #000 }
 
 @font-face {
     font-family: 'manustrialmanustrial';
-    /* src: url('fonts/mns_trial-webfont.eot'); */
+    src: url('assets/fonts/mns_trial-webfont.eot');
     src: url('assets/fonts/mns_trial-webfont.eot?#iefix') format('embedded-opentype'),
          url('assets/fonts/mns_trial-webfont.woff2') format('woff2'),
          url('assets/fonts/mns_trial-webfont.woff') format('woff'),

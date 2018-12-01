@@ -1,6 +1,323 @@
-<ul>
+<!-- <ul>
   <li><a [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a></li>
   <li><a [routerLink]="['/products']" routerLinkActive="router-link-active">Products</a></li>
   <li><a [routerLink]="['/cart']" routerLinkActive="router-link-active" >Cart</a></li>
   <li><a [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a></li>
-</ul>
+</ul> -->
+
+<!--最上方黑色的header-->
+<div class="header_top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="header_top_left">
+          <img src="assets/images/car.png" alt="Header Car Icon" />
+          <p>get free! shipping on order over <span>$100</span></p>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="header_top_right floatright">
+          <p><a href="">login</a> / <a href="">register</a></p>
+          <nav class="currency alignleft">
+            <ul>
+              <li><a href="">USD</a>
+                <ul class="currency-dropdown">
+                  <li><a href="">EUR</a></li>
+                  <li><a href="">GBP</a></li>
+                  <li><a href="">CAD</a></li>
+                  <li><a href="">AUD</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div class="top-flag alignleft">
+            <img src="assets/images/flag.png" alt="Flags" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--中間白色的網站標題-->
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <div class="header_left floatleft">
+          <a class="fa fa-search" href=""></a>
+          <input type="text" placeholder="search"/>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-5 col-xs-12">
+        <div class="header_center">
+          <a href="index.html"><img src="assets/images/logo.png" alt="Site Logo" /></a>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <div class="header_right floatright">
+          <ul class="checkout">
+            <li><a href="checkout.html"><i class="fa fa-heart-o"></i>wishlist</a></li>
+            <li class="mobi_right_li"><a href="checkout.html"><i class="fa fa-shopping-cart"></i>checklist</a></li>
+          </ul>
+          <div class="w_likes">
+            <span>3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--下方的選項清單-->
+<section class="nav_area">
+  <div class="container"  style="font-family:Microsoft JhengHei;">
+    <div class="nav_left floatleft">
+      <a href="category-1.html">筆電倉庫<i class="fa fa-bars"></i></a>
+      <div class="cat_mega_menu">
+          <div class="cat_left">
+            <h5>MSI 微星</h5>
+            <div class="cat_menu_line"></div>
+            <ul class="cat_nav">
+              <!--微星參考網址https://mall.pchome.com.tw/store/QAAH21-->
+              <li><a href="">MSI 微星 特仕版</a></li>
+              <li><a href="">MSI GT 旗艦系列</a></li>
+              <li><a href="">MSI GS 薄型系列</a></li>
+              <li><a href="">MSI GE 極致系列</a></li>
+              <li><a href="">MSI GV 效能系列</a></li>
+            </ul>
+          </div>
+          <div class="cat_middle">
+            <h5>ASUS 阿速死 華碩</h5>
+            <!-- 參考 https://www.asus.com/tw/Laptops/ -->
+            <div class="cat_menu_line"></div>
+            <ul class="cat_nav">
+              <li><a href="">ZenBook</a></li>
+              <li><a href="">ROG Gaming 系列</a></li>
+              <li><a href="">TUF Gaming FX 系列</a></li>
+              <li><a href="">ASUS Gaming 系列</a></li>
+              <li><a href="">ASUS Laptop 系列</a></li>
+            </ul>
+          </div>
+          <div class="cat_middle_right">
+            <h5>Acer 宏碁</h5>
+            <!-- 參考 https://mall.pchome.com.tw/store/QAAH0G -->
+            <div class="cat_menu_line"></div>
+            <ul class="cat_nav">
+              <li><a href="">ES1 平價文書機</a></li>
+              <li><a href="">E系列 效能機</a></li>
+              <li><a href="">V系列 輕薄美型</a></li>
+              <li><a href="">VN7系列 輕薄電競</a></li>
+              <li><a href="">S系列 極輕薄美學</a></li>
+            </ul>
+          </div>
+          <div class="cat_img">
+            <img src="assets/images/menu_cat.png" alt="" />
+          </div>
+      </div>
+    </div>
+    <div class="nav_center">
+      <nav class="mainmenu">
+        <ul id="nav">
+          <li class="current-page-item"><a href="index.html">首頁</a>
+            <ul id="sub-menu4">
+              <li><a href="index-2.html">Home Version Two</a></li>
+            </ul>
+          </li>
+          <li><a href="category-2.html">所有筆電列表</a>
+            <ul id="sub-menu7">
+              <li><a href="product-detail.html">筆電詳細畫面</a></li>
+            </ul>
+          </li>
+          <li><a href="category-1.html">快速找筆電</a>
+            <ul id="sub-menu">
+              <li><a href="">最新</a></li>
+              <li><a href="">高畫質</a></li>
+              <li><a href="">高效能</a></li>
+              <li><a href="">高續航力</a></li>
+              <li><a href="">輕薄易攜</a></li>
+              <li><a href="">文書處理</a></li>
+              <li class="last-child"><a href="">電競筆電</a></li>
+            </ul>
+          </li>
+          <li><a href="#">熱門討論</a>
+            <ul id="sub-menu5">
+              <li><a href="category-1.html">Shop Page With Filter</a></li>
+              <li><a href="category-2.html">Shop Page Without Filter</a></li>
+              <li><a href="checkout.html">Checkout page</a></li>
+              <li><a href="cart.html">Cart page</a></li>
+              <li><a href="single-blog.html">Blog single</a></li>
+              <li><a href="contact.html">Contact page</a></li>
+              <li><a href="404.html">404 page</a></li>
+            </ul>
+          </li>
+          <li><a href="blog.html">產品客服</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav_right floatright">
+      <a href="cart.html"><img src="assets/images/bag.png" alt="Bag" />我的購物車</a>
+      <div class="cart_menu">
+        <div class="cart_items">
+          <div class="c_item_img floatleft">
+            <a href="product-detail.html"><img src="assets/images/c_item1.jpg" alt="" /></a>
+          </div>
+          <div class="c_item_totals floatleft">
+            <div class="c_item_totals_detail floatleft">
+              <a href="product-detail.html"><h5>men’s fashion blue jean coat</h5></a>
+              <span>2 x $ 130.00</span>
+            </div>
+            <div class="close_icon_cart floatleft">
+              <img src="images/close.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="cart_items">
+          <div class="c_item_img floatleft">
+            <a href="product-detail.html"><img src="assets/images/c_item2.jpg" alt="" /></a>
+          </div>
+          <div class="c_item_totals floatleft">
+            <div class="c_item_totals_detail floatleft">
+              <a href="product-detail.html"><h5>men’s fashion blue jean coat</h5></a>
+              <span>2 x $ 130.00</span>
+            </div>
+            <div class="close_icon_cart floatleft">
+              <img src="assets/images/close.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="cart_totals">
+          <div class="c_totals_left floatleft">
+            <p>Free shipping</p>
+          </div>
+          <div class="c_totals_right floatleft">
+            <p>total   $350</p>
+          </div>
+        </div>
+        <div class="cart_view_bottom">
+          <div class="c_totals_left floatleft">
+            <a href="cart.html">View Cart</a>
+          </div>
+          <div class="c_totals_right floatleft">
+            <a href="checkout.html">Check Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- MOBILE ONLY CONTENT -->
+    <div class="only-for-mobile">
+      <ul class="ofm">
+        <li class="m_nav"><i class="fa fa-bars"></i> Navigation</li>
+      </ul>
+
+      <!-- MOBILE MENU -->
+      <div class="mobi-menu">
+        <div id='cssmenu'>
+          <ul>
+            <li class='has-sub'>
+              <a href='index.html'><span>Home</span></a>
+              <ul class="sub-nav">
+                <li><a href="index.html"><span>Home 1</span></a></li>
+                <li><a href="index-2.html"><span>Home 2</span></a></li>
+              </ul>
+            </li>
+
+            <li class='has-sub'>
+              <a href='category-1.html'><span>category</span></a>
+              <ul>
+                <li class='has-sub'>
+                  <a href='#'><span>Shirts</span></a>
+                  <ul>
+                    <li><a href="#"><span>check shirts</span></a></li>
+                    <li><a href="#"><span>denim shirts</span></a></li>
+                    <li><a href="#"><span>long sleeve shirts</span></a></li>
+                    <li><a href="#"><span>denim shirts</span></a></li>
+                    <li class="last"><a href="./#"><span>long sleeve shirts</span></a></li>
+                  </ul>
+                </li>
+                <li class='has-sub'>
+                  <a href='#'><span>T Shirts</span></a>
+                  <ul>
+                    <li><a href="#"><span>plain T-shirt</span></a></li>
+                    <li><a href="#"><span>printed T-shirt</span></a></li>
+                    <li><a href="#"><span>sports T-shirt</span></a></li>
+                    <li><a href="#"><span>striped T-shirt</span></a></li>
+                    <li class='last'><a href="#"><span>V-Neck T-Shirt</span></a></li>
+                  </ul>
+                </li>
+                <li class='has-sub'>
+                  <a href='#'><span>trousers fit</span></a>
+                  <ul>
+                    <li><a href="#"><span>flexible waist</span></a></li>
+                    <li><a href="#"><span>regular fit</span></a></li>
+                    <li><a href="#"><span>slim fit</span></a></li>
+                    <li><a href="#"><span>tailored fit</span></a></li>
+                    <li class='last'><a href="#"><span>tight fit</span></a></li>
+                  </ul>
+                </li>
+                <li class="img-nav">
+                  <div class="container">
+                    <div class="clearfix"></div>
+                    <div class="space20"></div>
+                    <div class="clearfix"></div>
+                    <div class="row in1">
+                      <div class="col-md-6">
+                        <a href="#"><img src="assets/images/menu_cat.png" class="img-responsive" alt=""/></a>
+                      </div>
+                      <div class="col-md-6">
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="space20"></div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="space20"></div>
+                    <div class="clearfix"></div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href='category-2.html'><span>shop</span></a>
+            </li>
+            <li class='has-sub'>
+              <a href='category-1.html'><span>accessories</span></a>
+              <ul class="sub-nav">
+                <li><a href="#"><span>check shirts</span></a></li>
+                <li><a href="#"><span>denim shirts</span></a></li>
+                <li><a href="#"><span>long sleeve shirts</span></a></li>
+                <li><a href="#"><span>plain shirts</span></a></li>
+                <li><a href="#"><span>printed shirts</span></a></li>
+                <li><a href="#"><span>short sleeve shirts</span></a></li>
+                <li><a href="#"><span>shortsleeve denim shirts</span></a></li>
+              </ul>
+            </li>
+            <li class='has-sub'>
+              <a href='#'><span>pages</span></a>
+              <ul id="sub-nav">
+                <li><a href="category-1.html">Category page</a></li>
+                <li><a href="category-2.html">Category page without filter</a></li>
+                <li><a href="checkout.html">Checkout page</a></li>
+                <li><a href="cart.html">Cart page</a></li>
+                <li><a href="product-detail.html">Product detail page</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="single-blog.html">Blog single</a></li>
+                <li><a href="contact.html">Contact page</a></li>
+                <li><a href="404.html">404 page</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href='blog.html'><span>Blog</span></a>
+            </li>
+            <li>
+              <a href='cart.html'><span>cart</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- MOBILE ONLY CONTENT -->
+  </div>
+</section>
