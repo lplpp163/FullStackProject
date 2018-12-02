@@ -1,63 +1,76 @@
+<div >
+  <div ><!-- class="col-md-6" style="height: 600px;max-width: 100%;padding: 0% 0% 0% 0%"  -->
+    <div class="iLoginBox" style="position: absolute;top: 210px;right: 25%;left: 25%;height: 460px; background-color: #f5f0f0">
+      <div *ngIf="Logining" style="margin: 0% 0% 0% 57%;" [ngStyle]="{'margin': myMargin}">
+          <h3 class="iLoginText" style="margin: 0% 0% 0% 3%; font-size: 26px;" >No Account?</h3>
+          <h3 class="iTextS" >CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.</h3>
+          <div class="iTextRight">
+            <button class="iButton" (click)="OnRegister()" style="margin: 0% 8% 0% 0%; background-color: #ff1e3ce0">Register</button>
+          </div>
+      </div>
+      <button *ngIf="ShowRegister" class="iButton" (click)="OnLogin()" style="margin: 0% 0% 0% 50%; background-color: #ff1e3ce1">Have an account?</button>
 
-<div class="col-md-6" style="height: 600px;max-width: 100%;padding: 0% 0% 0% 0%" >
-  <div class="iLoginBox" style="position: absolute;top: 180px;right: 25%;left: 25%;height: 460px; background-color: #f5f5f5">
-    <div *ngIf="Logining" style="margin: 0% 0% 0% 57%;" [ngStyle]="{'margin': myMargin}">
-        <h3 class="iLoginText" style="margin: 0% 0% 0% 3%; font-size: 26px;" >No Account?</h3>
-        <h3 class="iTextS" >CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.</h3>
-        <div class="iTextRight">
-          <button class="iButton" (click)="onB2()" style="margin: 0% 8% 0% 0%; background-color: #0da7efab">Register</button>
-        </div>
+      <div *ngIf="false" style="margin: 0% 0% 0% 0%;" [ngStyle]="{'margin': myMargin}">
+          <h3 class="iLoginText" style="margin: 0% 0% 0% 3%; font-size: 26px;" >Have an Account?</h3>
+          <h3 class="iTextS" >Bla blabla property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.</h3>
+          <div class="iTextRight">
+            <button class="iButton" (click)="OnLogin()" style="margin: 0% 8% 0% 0%; background-color: #ff1e3ce1">\<</button>
+          </div>
+      </div>
     </div>
-    <div *ngIf="!Logining" style="margin: 0% 0% 0% 57%;" [ngStyle]="{'margin': myMargin}">
-        <h3 class="iLoginText" style="margin: 0% 0% 0% 3%; font-size: 26px;" >Have an Account?</h3>
-        <h3 class="iTextS" >Bla blabla property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.</h3>
-        <div class="iTextRight">
-          <button class="iButton" (click)="onB2()" style="margin: 0% 8% 0% 0%; background-color: #0da7efab">Login</button>
+    <form *ngIf="Logining" style="top: 240px; height: 400px;" class="iLoginBox" [ngStyle]="{'right': myRight}">
+      <h3 class="iLoginText">Login</h3>
+      <div class="iFormGroup">
+        <input name="email" class="iFormControl" type="text" placeholder="Email" [(ngModel)]="login_user.email" required="">
+      </div>
+      <div class="iFormGroup">
+        <input name="password" type="password" placeholder="Password" [(ngModel)]="login_user.password" class="iFormControl" required="">
+      </div>
+      <div>
+        <a class="iLink" href="account-password-recovery.html">Forgot password?</a>
+      </div>
+
+      <div class="iTextRight">
+        <button class="iButton" (click)="login()" type="submit">Login</button>
+      </div>
+    </form>
+
+    <form *ngIf="!Logining" style="top: 240px; height: 400px;" class="iLoginBox" [ngStyle]="{'right': myRight}">
+      <h3 class="iLoginText">Register</h3>
+      <div>
+        <div style="float: left;width: 50%;padding-right: 10px;">
+          <div class="iFormGroup">
+            <input name="name" class="iFormControl" type="text" placeholder="Name" [(ngModel)]="register_user.name" required="">
+          </div>
+          <div class="iFormGroup">
+            <input name="email" class="iFormControl" type="text" placeholder="Email" [(ngModel)]="register_user.email" required="">
+          </div>
         </div>
-    </div>
+        <div *ngIf="OnRegister" style="float: right;width: 50%;padding-left: 10px;">
+          <div class="iFormGroup">
+            <input name="password" type="password" placeholder="Password" [(ngModel)]="register_user.password" class="iFormControl" required="">
+          </div>
+          <div class="iFormGroup">
+            <input name="password_confirmation" type="password" [(ngModel)]="register_user.password_confirmation" class="iFormControl" placeholder="Password Again" required="">
+          </div>
+        </div>
+      </div>
+      <label *ngIf="OnRegister" class="iLink" style="cursor: default">
+        <input type="checkbox" unchecked >
+        I don't care about
+        <a class="iLink" href="account-password-recovery.html" style="color:rgb(255, 78, 107)">User Agreement</a>
+          and
+          <a class="iLink" href="account-password-recovery.html" style="color:rgb(255, 78, 107)">Privacy Licence</a>
+          .
+      </label>
+
+      <div class="iTextRight">
+        <button class="iButton" (click)="register()" type="submit">Register</button>
+      </div>
+      <div class="iTextRight" style="margin: 10px">
+        <a (click)="OnLogin()" class="iLink" style="font-size: 15px ;color: rgb(94, 94, 94)">Have an account?</a>
+      </div>
+
+    </form>
   </div>
-  <form *ngIf="Logining" class="iLoginBox" (ngSubmit)="onIan()" [ngStyle]="{'left': myLeft, 'right': myRight}" >
-    <h3 class="iLoginText">Login</h3>
-    <div class="iFormGroup">
-      <input class="iFormControl" formControlName="email" type="email" placeholder="Email" required="">
-    </div>
-    <div class="iFormGroup">
-      <input class="iFormControl" formControlName="password" type="password" placeholder="Password" required="">
-    </div>
-    <div>
-      <a class="iLink" href="account-password-recovery.html">Forgot password?</a>
-    </div>
-    <div class="iTextRight">
-      <button class="iButton" (click)="login()" type="submit">Login</button>
-    </div>
-  </form>
-
-  <form *ngIf="!Logining" class="iLoginBox" (ngSubmit)="onIan()" [ngStyle]="{'left': myLeft, 'right': myRight}">
-    <h3 class="iLoginText">Register</h3>
-    <div class="iFormGroup">
-      <input class="iFormControl" formControlName="email" placeholder="Name" required="">
-    </div>
-    <div class="iFormGroup">
-      <input class="iFormControl" formControlName="email" type="email" placeholder="Email" required="">
-    </div>
-    <div class="iFormGroup">
-      <input class="iFormControl" formControlName="password" type="password" placeholder="Password" required="">
-    </div>
-    <div class="iFormGroup">
-      <input class="iFormControl" formControlName="password" type="password" placeholder="Password Again" required="">
-    </div>
-
-    <label class="iLink" style="cursor: default">
-      <input type="checkbox" unchecked>
-      I don't care about
-      <a class="iLink" href="account-password-recovery.html" style="color:blueviolet">User Agreement</a>
-        and
-        <a class="iLink" href="account-password-recovery.html" style="color:blueviolet">Privacy Licence</a>
-        .
-    </label>
-
-    <div class="iTextRight">
-      <button class="iButton" (click)="register()" type="submit">Register</button>
-    </div>
-  </form>
 </div>

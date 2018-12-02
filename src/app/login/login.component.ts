@@ -10,12 +10,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   right = 'right';
-  safe = true;
-  enable = true;
   Logining = true;
+  ShowRegister = false;
 
+  $speed = 20;
   $count = 0;
-  $inter;
+  $inter; //  thread (?
   vLeft = 30;
   vRight = 50;
   myLeft = '30%';
@@ -26,25 +26,30 @@ export class LoginComponent implements OnInit {
   public registerForm: FormGroup;
   public registerErrors: string;
 
+
   login_user = {
     email: '',
     password: ''
   };
-
   register_user = {
     name: '',
     email: '',
     password: '',
-    password_confirmation: ''
+    password_confirmation: '',
+    level: '2'
   };
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  myStyle = {
-    'left': '10%',
-    'font-size': '70px',
-    'font-weight': 'bold'
-    };
+  //  "No Account"
+  //  hide register (input, star, check)
+  //  isLogin = false
+  //  Expand_right()
+  //  show register (input, star, check)
+
+  //  "Have Account"
+  //  isLogin = true
+  //  Expand_left()
 
   private ToLeft() {
     if (this.vRight < 50) {
@@ -56,7 +61,6 @@ export class LoginComponent implements OnInit {
       clearInterval(this.$inter);
     }
   }
-
   private ToRight() {
     if (this.vLeft < 50) {
       this.vLeft += 1;
@@ -65,54 +69,62 @@ export class LoginComponent implements OnInit {
       this.myRight = this.vRight + '%';
       console.log(this.$count);
     } else {
+      this.ShowRegister = true;
       clearInterval(this.$inter);
     }
   }
 
-  public onIan() {
-    this.right = 'left';
-    if (this.safe === true)    {
-      this.safe = false;
-    } else {
-      this.safe = true;
-    }
-
-    this.$inter = setInterval(() => { this.ToLeft(); }, 20);
+  public OnLogin() {
+    this.ShowRegister = false;
+    this.Logining = true;
+    // this.myMargin = '0% 0% 0% 57%';
+    this.$inter = setInterval(() => { this.ToLeft(); }, this.$speed);
   }
-  public onB2() {
-    if (this.vRight !== 50) {
-      this.Logining = true;
-      this.myMargin = '0% 0% 0% 57%';
-      this.$inter = setInterval(() => { this.ToLeft(); }, 10);
-    } else {
-      this.Logining = false;
-      this.myMargin = '0% 57% 0% 5%';
-      this.$inter = setInterval(() => { this.ToRight(); }, 10);
-    }
+  public OnRegister() {
+    this.ShowRegister = false;
+    this.Logining = false;
+    // this.myMargin = '0% 57% 0% 5%';
+    this.$inter = setInterval(() => { this.ToRight(); }, this.$speed);
   }
 
 
   ngOnInit() {
+    console.log('[oninit]');
+    console.log(this.Logining);
   }
 
   register() {
-    this.authService.register(this.registerForm).subscribe((data: any) => {
+    // console.log(this.register_user);
+    this.authService.register(this.register_user).subscribe((data: any) => {
+      // console.log(data);
       if (data.success) {
-        this.router.navigate(['/login']);
+        alert('Registered!');
+        this.OnLogin();
+        // this.router.navigate(['/login']);
       } else {
         alert('fail');
       }
+    },
+    response => {
+      console.log(response);
+      alert(response.error.message);
     });
   }
 
   login() {
-    this.authService.login(this.loginForm).subscribe((data: any) => {
+    console.log(this.login_user);
+    this.authService.login(this.login_user).subscribe((data: any) => {
+
       if (data.token) {
         localStorage.setItem('token', data.token);
         this.router.navigate(['/']);
       } else {
         alert('fail');
       }
+    },
+    response => {
+      console.log(response);
+      alert(response.error.message);
     });
   }
 
