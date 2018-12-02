@@ -1,0 +1,22 @@
+/* footer section */
+footer {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-top: 1px solid #E0E0E0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 0 5px;
+  padding: 15px 0 15px 20px;
+}
+footer #privacy {
+  color: #9B9B9B;
+  font-size: 12px;
+  line-height: 20px;
+  overflow: hidden;
+  width: 100%;
+}
+footer a{
+  color: #9B9B9B;
+  text-decoration: none;
+}
