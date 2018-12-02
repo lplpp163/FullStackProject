@@ -1,5 +1,38 @@
-<h1>筆電專賣網</h1>
-<h2>廠商批發，品質保證，價格低廉</h2>
-<div>新品</div>
-<div>促銷</div>
-<div>熱銷</div>
+<div id="main"><!-- Defining submain content section -->
+    <section id="content"><!-- Defining the content section #2 -->
+        <div id="left">
+            <h3>Last products</h3>
+            <ul *ngFor="let product of products">
+                <li>
+                    <div class="img"><img alt="" src="{{product.img}}"></div>
+                    <div class="info">
+                        <a class="title" href="#">{{product.name}}</a>
+                        <p>{{product.description}}</p>
+                        <div class="price">
+                            <span class="st">Our price:</span><strong>${{product.price}}</strong>
+                        </div>
+                        <div class="actions">
+                            <a [routerLink]="['/products', product.id]" routerLinkActive="router-link-active" >Details</a>
+                            <a href="#">Add to cart</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="right">
+            <h3>Top sells</h3>
+            <ul *ngFor="let product of products">
+                <li>
+                    <div class="img"><img alt="" src="{{product.img}}"></div>
+                    <div class="info">
+                        <a class="title" [routerLink]="['/products', product.id]">{{product.name}}</a>
+                        <div class="price">
+                            <span class="usual">${{product.price}}</span>
+                            <span class="special">$500.00</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>

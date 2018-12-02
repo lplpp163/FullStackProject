@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-} from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
   right = 'right';
   safe = true;
   enable = true;
+  Logining = true;
+
   $count = 0;
   $inter;
   vLeft = 30;
@@ -24,7 +26,19 @@ export class LoginComponent implements OnInit {
   public registerForm: FormGroup;
   public registerErrors: string;
 
-  constructor() { }
+  login_user = {
+    email: '',
+    password: ''
+  };
+
+  register_user = {
+    name: '',
+    email: '',
+    password: '',
+    password_confirmation: ''
+  };
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   myStyle = {
     'left': '10%',
@@ -67,9 +81,11 @@ export class LoginComponent implements OnInit {
   }
   public onB2() {
     if (this.vRight !== 50) {
+      this.Logining = true;
       this.myMargin = '0% 0% 0% 57%';
       this.$inter = setInterval(() => { this.ToLeft(); }, 10);
     } else {
+      this.Logining = false;
       this.myMargin = '0% 57% 0% 5%';
       this.$inter = setInterval(() => { this.ToRight(); }, 10);
     }
@@ -79,5 +95,25 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  register() {
+    this.authService.register(this.registerForm).subscribe((data: any) => {
+      if (data.success) {
+        this.router.navigate(['/login']);
+      } else {
+        alert('fail');
+      }
+    });
+  }
+
+  login() {
+    this.authService.login(this.loginForm).subscribe((data: any) => {
+      if (data.token) {
+        localStorage.setItem('token', data.token);
+        this.router.navigate(['/']);
+      } else {
+        alert('fail');
+      }
+    });
+  }
 
 }
