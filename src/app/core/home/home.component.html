@@ -4,7 +4,7 @@
             <h3>Last products</h3>
             <ul *ngFor="let product of products">
                 <li>
-                    <div class="img"><img alt="" src="{{product.img}}"></div>
+                    <div class="img"><img alt="" src="{{backend}}/{{product.img}}"></div>
                     <div class="info">
                         <a class="title" href="#">{{product.name}}</a>
                         <p>{{product.description}}</p>
@@ -23,7 +23,7 @@
             <h3>Top sells</h3>
             <ul *ngFor="let product of products">
                 <li>
-                    <div class="img"><img alt="" src="{{product.img}}"></div>
+                    <div class="img"><img alt="" src="{{backend}}/{{product.img}}"></div>
                     <div class="info">
                         <a class="title" [routerLink]="['/products', product.id]">{{product.name}}</a>
                         <div class="price">

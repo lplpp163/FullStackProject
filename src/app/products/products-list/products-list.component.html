@@ -1,7 +1,7 @@
 <app-category></app-category>
 <body>
   <div *ngFor="let product of products" class="product">
-  <img class="product-img" src="{{product.img}}">
+  <img class="product-img" src="{{backend}}/{{product.img}}">
   <div class="product-actions">
     <div class="product-info">
       <div class="info-block">

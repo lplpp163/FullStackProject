@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { ProductsService } from 'src/app/services/products.service';
-import { last } from '@angular/router/src/utils/collection';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -11,16 +11,15 @@ import { last } from '@angular/router/src/utils/collection';
 })
 export class HomeComponent implements OnInit {
 
-  last_pro: Array<Product>;
-  top_pro: Array<Product>;
-
-  get products() {
-    return this.productsService.getProducts();
-  }
+  products: Product[];
+  backend = `${environment.backend}`;
 
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
+    this.productsService.getProducts().subscribe((data: Product[]) => {
+      this.products = data.slice(0, 6);
+    });
   }
 
 }
