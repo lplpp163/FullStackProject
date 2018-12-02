@@ -32,7 +32,7 @@ body {
   float: left;
 }
 
-.sale, .info-block, .product-title, .product-description, .product-sale, .button-buy, .play, .more, .nav, .add {
+.sale, .info-block, .product-title, .product-description, .product-sale, .link_detail, .play, .more, .nav, .add {
   position:absolute;
   z-index:3;
 }
@@ -85,12 +85,12 @@ body {
   top:12px;
 }
 
-.button-buy {
+.link_detail {
   background: #e74c3c;
   text-align: center;
+  color:#fff;
   line-height: 46px;
   font-weight: 700;
-  color: #fff;
   border: 0px solid #c0392b;
   border-bottom-width: 2px;
   width:70px;
@@ -101,7 +101,7 @@ body {
   transition:.4s;
 }
 
-.button-buy:hover {
+.link_detail:hover {
   background:#c0392b;
 }
 
