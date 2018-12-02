@@ -14,10 +14,10 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit() {
   }
-  buttonClick(keyword, index) {
-    this.productsService.search(keyword);
-    for (const i of [0, 1, 2, 3, 4]) {this.isClicked[i] = false; }
-    this.isClicked[index] = true;
-  }
+  // buttonClick(keyword, index) {
+  //   this.productsService.search(keyword);
+  //   for (const i of [0, 1, 2, 3, 4]) {this.isClicked[i] = false; }
+  //   this.isClicked[index] = true;
+  // }
 
 }

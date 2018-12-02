@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/models/product';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,13 +11,20 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor(private productsService: ProductsService, private route: ActivatedRoute) { }
-  get products() {
-    return this.productsService.originalProducts;
-  }
+  productKey: string;
+  product: Product;
+  backend = `${environment.backend}`;
   id = this.route.snapshot.paramMap.get('id');
-  product = this.products[this.id] ;
+
+  constructor(private productsService: ProductsService, private route: ActivatedRoute) { }
+
   ngOnInit() {
+    this.productsService.getProduct(this.id).subscribe((data: Product) => {
+      this.product = data;
+    });
+  }
+
+  add() {
   }
 
 }

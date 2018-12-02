@@ -1,3 +1,9 @@
-<p>
-  cart works!
-</p>
+<div class="cart">
+  <div class="product" *ngFor="let data of cart">
+    <h2>{{data.id}}</h2>
+    <h2>{{data.name}}</h2>
+    <img src="{{data.img}}" />
+    <p>Prix: {{data.price}}€</p>
+    {{data.name}}<button (click)="delCartHandler(data)">Remove From Cart</button>
+  </div>
+</div>
