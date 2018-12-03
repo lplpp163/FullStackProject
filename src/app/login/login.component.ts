@@ -106,8 +106,12 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+<<<<<<< HEAD
     // console.log(this.login_user);
     this.authService.login(this.login_user).subscribe((data: any) => {
+=======
+    this.authService.login(this.loginForm).subscribe((data: any) => {
+>>>>>>> parent of 9662c87... 修改登入頁面、header 修改路徑
       if (data.token) {
         localStorage.setItem('token', data.token);
         console.log('LOGIN!');
