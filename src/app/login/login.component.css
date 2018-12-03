@@ -111,7 +111,7 @@
     box-sizing: border-box;
     cursor: pointer;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: normal;
     text-transform: none;
     line-height: 1.5;
     text-align: left;
@@ -134,7 +134,7 @@
   cursor: pointer;
   margin-right: 6px;
     margin-left: 6px;
-    background-color: #ff3d57;
+    background-color: #0da9ef;
     color: #ffffff;
     display: inline-block;
     position: relative;

@@ -17,7 +17,7 @@ export class CartComponent implements OnInit {
   cart_id: string;
 
   constructor(private cartService: CartService) {
-    // this.data = new Product();
+    this.data = new Product();
     this.service = cartService;
     this.cart = new Array<Product>();
   }
