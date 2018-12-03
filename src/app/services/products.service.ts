@@ -10,17 +10,6 @@ export class ProductsService {
 
   products: Product[];
 
-  // originalProducts = this.products;
-  // search(keyword) {
-  //   if (keyword.trim() === '') {
-  //     this.products = this.originalProducts;
-  //   } else {
-  //     this.products = this.originalProducts.filter(
-  //       product => product.name.indexOf(keyword) !== -1
-  //     );
-  //   }
-  // }
-
   constructor(private httpClient: HttpClient) { }
 
   getProduct(id) {

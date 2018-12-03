@@ -29,4 +29,8 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
+  user_name() {
+    return this.httpClient.get(`${environment.api}/me`);
+  }
+
 }

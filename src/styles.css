@@ -255,19 +255,6 @@ text-transform: uppercase;
   margin: 43px 0;
   position: relative;
 }
-.w_likes {
-  background: url("assets/images/wishlist_bg.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-  height: 22px;
-  left: 56px;
-  position: absolute;
-  top: -23px;
-  width: 26px;
-}
-.w_likes > span {
-  color: #fff;
-  font-size: 12px;
-  padding-left: 9px;
-}
 .header_left a {
   color: #333333;
   font-size: 17px;
@@ -284,30 +271,7 @@ padding-left: 10px;
 padding-top: 3px;
 text-transform: uppercase;
 }
-.header_right ul.checkout {
-  list-style: outside none none;
-  margin: 0;
-  padding: 0;
-}
-.header_right ul.checkout li {
-  float:left;
-}
-.header_right ul.checkout li a {
-  color: #212121;
-display: block;
-font-size: 12px;
-font-weight: 500;
-padding: 0 10px;
-text-transform: uppercase;
-}
-.header_right ul.checkout li a:hover {
-  text-decoration:none;
-  color:#FF6766;
-}
-.header_right i {
-  font-size: 17px;
-  margin-right: 7px;
-}
+
 .nav_area {
   background: none repeat scroll 0 0 #ff6766;
 }
