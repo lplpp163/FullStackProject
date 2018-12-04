@@ -23,8 +23,4 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  user_name() {
-    return this.authService.user_name();
-  }
-
 }
