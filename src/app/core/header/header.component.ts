@@ -19,8 +19,22 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.authService.logout();
-    this.router.navigate(['/']);
+    console.log(localStorage.getItem('token'));
+    this.authService.logout().subscribe((data: any) => {
+
+      if (data.message) {
+        alert(data.message);
+      } else {
+        alert('fail');
+      }
+    },
+    response => {
+      // console.log(response);
+      alert(response.error.message);
+    });
+
+
+    //this.router.navigate(['/']);
   }
 
   user_name() {

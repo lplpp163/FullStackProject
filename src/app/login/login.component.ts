@@ -118,11 +118,13 @@ export class LoginComponent implements OnInit {
     console.log(this.login_user);
     this.authService.login(this.login_user).subscribe((data: any) => {
       console.log('login');
-      console.log(data.level);
-      if (data.tok) {
-        localStorage.setItem('token', data.tok);
-        // this.router.navigate(['/']);
 
+      if (data.token) {
+        console.log(data.token);
+        localStorage.setItem('token', data.token);
+
+        console.log(localStorage.getItem('token'));
+        // this.router.navigate(['/']);
 
       } else {
         alert('fail');
@@ -133,15 +135,19 @@ export class LoginComponent implements OnInit {
       alert(response.error.message);
     });
 
-    if (localStorage.getItem('token')) {
-      this.token.token = localStorage.getItem('token');
-      alert('token success');
-      this.authService.me(this.token).subscribe((data: any) => {
-        console.log(data);
-      });
-    } else {
-      alert('token fail');
-    }
+    this.authService.me().subscribe((data: any) => {
+      console.log('me:');
+      console.log(data);
+    });
+    // if (localStorage.getItem('token')) {
+    //   this.token.token = localStorage.getItem('token');
+    //   alert('token success');
+    //   this.authService.me().subscribe((data: any) => {
+    //     console.log(data);
+    //   });
+    // } else {
+    //   alert('token fail');
+    // }
 
   }
 

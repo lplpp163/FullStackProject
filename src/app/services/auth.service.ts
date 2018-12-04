@@ -17,12 +17,24 @@ export class AuthService {
     return this.httpClient.post(`${environment.api}/login`, user);
   }
 
-  me(token) {
-    return this.httpClient.post(`${environment.api}/me`, token);
+  me() {
+    return this.httpClient.post(`${environment.api}/me`, 'hello', {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    });
+    //return this.httpClient.get(`${environment.api}/me`);
   }
 
   logout() {
+
+    return this.httpClient.post(`${environment.api}/logout`, 'hello', {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    });
     localStorage.removeItem('token');
+
   }
 
   isLogin() {
