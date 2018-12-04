@@ -5,11 +5,13 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { ShopwindowComponent } from './shopwindow/shopwindow.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
   ],
   exports: [
     HeaderComponent,

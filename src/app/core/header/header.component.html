@@ -51,8 +51,8 @@
 
       <div class="col-md-3 col-sm-3 col-xs-12">
         <div class="header_left floatright">
-          <a class="fa fa-search" href=""></a>
-          <input type="text" placeholder="search"/>
+          <a class="fa fa-search" (click)="searchClick()"></a>
+          <input type="text" placeholder="search" [(ngModel)]="keyword"/>
         </div>
       </div>
 
@@ -112,7 +112,7 @@
         <ul id="nav">
           <li class="current-page-item"><a href="/">首頁</a>
           </li>
-          <li><a [routerLink]="['/products']" routerLinkActive="active" >所有筆電列表</a>
+          <li><a [routerLink]="['/products']" routerLinkActive="active" (click)="reload()">所有筆電列表</a>
             <ul id="sub-menu7">
               <li><a href="product-detail.html">筆電詳細畫面</a></li>
             </ul>
