@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  static $inject = ['$timeout'];
+
   right = 'right';
   Logining = true;
+  Switched = false;
   ShowRegister = false;
 
   $speed = 20;
@@ -21,11 +25,15 @@ export class LoginComponent implements OnInit {
   myLeft = '30%';
   myRight = '50%';
   myMargin = '0% 0% 0% 57%';
+  //  heart
+  $check = 0;
+  Loved: boolean[] = [true, true, false, false, false];
+  //  show
+  Opacity = 0.0;
 
   public loginForm: FormGroup;
   public registerForm: FormGroup;
   public registerErrors: string;
-
 
   login_user = {
     email: '',
@@ -36,11 +44,9 @@ export class LoginComponent implements OnInit {
     email: '',
     password: '',
     password_confirmation: '',
-    level: '2'
+    level: ''
   };
-
   constructor(private authService: AuthService, private router: Router) { }
-
   //  "No Account"
   //  hide register (input, star, check)
   //  isLogin = false
@@ -59,6 +65,7 @@ export class LoginComponent implements OnInit {
       this.myRight = this.vRight + '%';
     } else {
       clearInterval(this.$inter);
+      this.Switched = false;
     }
   }
   private ToRight() {
@@ -70,6 +77,16 @@ export class LoginComponent implements OnInit {
       console.log(this.$count);
     } else {
       this.ShowRegister = true;
+      this.Switched = true;
+      clearInterval(this.$inter);
+      // raise Opacity (reveal)
+      this.$inter = setInterval(() => { this.ShowOpa(); }, 10);
+    }
+  }
+  private ShowOpa() {
+    if (this.Opacity < 1.0) {
+      this.Opacity += 0.02;
+    } else {
       clearInterval(this.$inter);
     }
   }
@@ -77,16 +94,56 @@ export class LoginComponent implements OnInit {
   public OnLogin() {
     this.ShowRegister = false;
     this.Logining = true;
+    this.Opacity = 0.0;
     // this.myMargin = '0% 0% 0% 57%';
     this.$inter = setInterval(() => { this.ToLeft(); }, this.$speed);
   }
   public OnRegister() {
     this.ShowRegister = false;
     this.Logining = false;
+    this.Opacity = 0.0;
+    this.Switched = false;
     // this.myMargin = '0% 57% 0% 5%';
     this.$inter = setInterval(() => { this.ToRight(); }, this.$speed);
   }
 
+  Love_1() {
+    this.MakeLove(1);
+  }
+  Love_2() {
+    this.MakeLove(2);
+  }
+  Love_3() {
+    this.MakeLove(3);
+  }
+  Love_4() {
+    this.MakeLove(4);
+  }
+  Love_5() {
+    this.MakeLove(5);
+  }
+
+  MakeLove(love) {
+    this.register_user.level = love;
+    // 閃白
+    // for (let i = 0; i < this.Loved.length; i++) {
+    //   this.Loved[i] = false;
+    // }
+    this.$inter = setInterval(() => { this.CheckLove(); }, 25);
+  }
+  CheckLove() {
+    if (this.$check < 5) {
+      if (this.$check < Number(this.register_user.level)) {
+        this.Loved[this.$check] = true;
+      } else {
+        this.Loved[this.$check] = false;
+      }
+      this.$check += 1;
+    } else {
+      this.$check = 0;
+      clearInterval(this.$inter);
+    }
+  }
 
   ngOnInit() {
     console.log('[oninit]');
