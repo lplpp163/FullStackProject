@@ -11,9 +11,12 @@ export class HeaderComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
 
-   get isLogin() {
-     return localStorage.getItem('token')
-   }
+  keyword = '';
+
+  get isLogin() {
+    return localStorage.getItem('token');
+  }
+
   ngOnInit() {
   }
 
@@ -30,6 +33,17 @@ export class HeaderComponent implements OnInit {
       alert(response.error.message);
     });
     this.router.navigate(['/login']);
+  }
+
+  searchClick() {
+    if (this.keyword.trim()) {
+      this.reload();
+      this.router.navigate(['/products', {id: this.keyword}]);
+    }
+  }
+
+  reload() {
+    location.reload();
   }
 
 }
