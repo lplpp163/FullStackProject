@@ -5,11 +5,14 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { ShopwindowComponent } from './shopwindow/shopwindow.component';
+import { ShopsliderComponent } from './shopslider/shopslider.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
   ],
   exports: [
     HeaderComponent,
@@ -20,7 +23,8 @@ import { ShopwindowComponent } from './shopwindow/shopwindow.component';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    ShopwindowComponent
+    ShopwindowComponent,
+    ShopsliderComponent
   ]
 })
 export class CoreModule { }

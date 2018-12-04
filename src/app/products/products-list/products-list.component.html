@@ -1,4 +1,4 @@
-<app-category></app-category>
+<!--<app-category></app-category>-->
 
 <div *ngFor="let product of products" class="product">
 <img class="product-img" src="{{backend}}/{{product.img}}">
@@ -15,4 +15,490 @@
 </div>
 </div>
 
+<section class="main_category_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <div class="main_category_left">
+
+          <div class="panel-group" id="home-accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#home-accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                CATEGORIES
+                <span class="floatright"><i class="fa fa-minus"></i></span>
+              </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+              <ul id="c_tab1">
+                <li><a href="">Blazers  (12)</a></li>
+                <li><a href="">Pants & Trousers  (54)</a></li>
+                <li><a href="">Shirts  (105)</a></li>
+                <li><a href="">Suits & Tailors  (48)</a></li>
+                <li><a href="">T-shirts  (120)</a></li>
+                <li><a href="">Underwear  (12)</a></li>
+                <li><a href="">Jackets & Coats (12)</a></li>
+              </ul>
+              </div>
+            </div>
+            </div>
+            <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                PRICE FILTER
+                <span class="floatright"><i class="fa fa-plus"></i></span>
+              </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+              <div id="slider-range"></div>
+                <div class="cat_filter_box">
+                  <p>
+                    <label for="amount">Filter</label>
+                    <input type="text" id="amount" readonly style="border:0; color:#000; font-weight:bold;">
+                  </p>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                COLOURS
+                <span class="floatright"><i class="fa fa-plus"></i></span>
+              </a>
+              </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body colors_cat">
+              <ul id="cat_color">
+                <li><a class="col-1" href=""></a></li>
+                <li><a class="col-2" href=""></a></li>
+                <li><a class="col-3" href=""></a></li>
+                <li><a class="col-4" href=""></a></li>
+                <li><a class="col-5" href=""></a></li>
+                <li><a class="col-6" href=""></a></li>
+                <li><a class="col-7" href=""></a></li>
+                <li><a class="col-8" href=""></a></li>
+                <li><a class="col-9" href=""></a></li>
+                <li><a class="col-10" href=""></a></li>
+              </ul>
+              </div>
+            </div>
+            </div>
+            <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFour">
+              <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                size
+                <span class="floatright"><i class="fa fa-plus"></i></span>
+              </a>
+              </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+              <div class="panel-body">
+              <ul id="cat_size">
+                <li><a href="">xs</a></li>
+                <li><a href="">s</a></li>
+                <li><a href="">m</a></li>
+                <li><a href="">l</a></li>
+                <li><a href="">xl</a></li>
+                <li><a href="">xxl</a></li>
+              </ul>
+              </div>
+            </div>
+            </div>
+            <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFive">
+              <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Brands
+                <span class="floatright"><i class="fa fa-plus"></i></span>
+              </a>
+              </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+              <div class="panel-body">
+              <ul id="c_tab2">
+                <li><a href="">Tom tailor  (72)</a></li>
+                <li><a href="">incult  (14)</a></li>
+                <li><a href="">jack & jones  (23)</a></li>
+                <li><a href="">locomotive  (62)</a></li>
+                <li><a href="">river island  (19)</a></li>
+                <li><a href="">Steve madden  (37)</a></li>
+              </ul>
+              </div>
+            </div>
+            </div>
+            <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingSix">
+              <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                Look
+                <span class="floatright"><i class="fa fa-plus"></i></span>
+              </a>
+              </h4>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+              <div class="panel-body">
+
+              </div>
+            </div>
+            </div>
+            <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingSeven">
+              <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+               Style
+                <span class="floatright"><i class="fa fa-plus"></i></span>
+              </a>
+              </h4>
+            </div>
+            <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+              <div class="panel-body">
+
+              </div>
+            </div>
+            </div>
+            <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingEight">
+              <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+               Best Seller
+                <span class="floatright"><i class="fa fa-plus"></i></span>
+              </a>
+              </h4>
+            </div>
+            <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+              <div class="panel-body">
+
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-8 col-xs-12">
+        <div class="main_category_right">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="main_cat_item">
+                <div class="item">
+                  <div class="item-img">
+                    <img src="assets/images/t_item1.jpg" alt="" />
+                    <div class="tr-add-cart">
+                      <ul>
+                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="item-new">
+                    <p>New</p>
+                    <span>-10%</span>
+                  </div>
+                  <div class="item-sub">
+                    <a href="product-detail.html"><h5>casual fashion wool coat</h5></a>
+                    <p>$ 90.00 <span><del>$ 100</del></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="main_cat_item">
+                <div class="item">
+                  <div class="item-img">
+                    <img src="assets/images/t_item2.jpg" alt="" />
+                    <div class="tr-add-cart">
+                      <ul>
+                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="item-new">
+                    <p>New</p>
+                  </div>
+                  <div class="item-sub">
+                    <a href="product-detail.html"><h5>v-neck men blue t-shirt </h5></a>
+                    <p>$ 95.66</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="main_cat_item">
+                <div class="item">
+                  <div class="item-img">
+                    <img src="assets/images/t_item3.jpg" alt="" />
+                    <div class="tr-add-cart">
+                      <ul>
+                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="item-new">
+                    <p>New</p>
+                  </div>
+                  <div class="item-sub">
+                    <a href="product-detail.html"><h5>gray shadow jean shirt</h5></a>
+                    <p>$ 158.78</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="main_cat_item">
+                <div class="item">
+                  <div class="item-img">
+                    <img src="assets/images/t_item5.jpg" alt="" />
+                    <div class="tr-add-cart">
+                      <ul>
+                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="item-new">
+                    <p>New</p>
+                  </div>
+                  <div class="item-sub">
+                    <a href="product-detail.html"><h5>AROS SLIM HEAVY CHINO</h5></a>
+                    <p>$ 181.00<span><del>$ 212.00</del></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="main_cat_item">
+                <div class="item">
+                  <div class="item-img">
+                    <img src="assets/images/t_item6.jpg" alt="" />
+                    <div class="tr-add-cart">
+                      <ul>
+                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="item-new">
+                    <p>New</p>
+                    <span>-10%</span>
+                  </div>
+                  <div class="item-sub">
+                    <a href="product-detail.html"><h5>volv checked casual shirt</h5></a>
+                    <p>$ 95.66</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="main_cat_item">
+                <div class="item">
+                  <div class="item-img">
+                    <img src="assets/images/t_item7.jpg" alt="" />
+                    <div class="tr-add-cart">
+                      <ul>
+                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="item-new">
+                    <p>New</p>
+                  </div>
+                  <div class="item-sub">
+                    <a href="product-detail.html"><h5>yellow Clover Robe Jacket</h5></a>
+                    <p>$ 100.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="main_cat_item">
+                <div class="item">
+                  <div class="item-img">
+                    <img src="assets/images/t_item8.jpg" alt="" />
+                    <div class="tr-add-cart">
+                      <ul>
+                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="item-new">
+                    <p>New</p>
+                  </div>
+                  <div class="item-sub">
+                    <a href="product-detail.html"><h5>super Clover Robe Jacket</h5></a>
+                    <p>$ 124.22<span><del>$ 248.44</del></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="main_cat_item">
+                <div class="item">
+                  <div class="item-img">
+                    <img src="assets/images/t_item9.jpg" alt="" />
+                    <div class="tr-add-cart">
+                      <ul>
+                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="item-new">
+                    <p>New</p>
+                    <span>-50%</span>
+                  </div>
+                  <div class="item-sub">
+                    <a href="product-detail.html"><h5>full hand animal jacket</h5></a>
+                    <p>$ 100.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="main_cat_item">
+                <div class="item">
+                  <div class="item-img">
+                    <img src="assets/images/t_item10.jpg" alt="" />
+                    <div class="tr-add-cart">
+                      <ul>
+                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="item-new">
+                    <p>Sale</p>
+                  </div>
+                  <div class="item-sub">
+                    <a href="product-detail.html"><h5>men’s fashion blue jean coat</h5></a>
+                    <p>$ 130.00<span><del>$ 150.00</del></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="main_cat_item">
+                <div class="item">
+                  <div class="item-img">
+                    <img src="assets/images/t_item4.jpg" alt="" />
+                    <div class="tr-add-cart">
+                      <ul>
+                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="item-new">
+                    <p>Sale</p>
+                  </div>
+                  <div class="item-sub">
+                    <a href="product-detail.html"><h5>black men leather coat</h5></a>
+                    <p>$ 160.00<span><del>$ 200.00</del></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="main_cat_item">
+                <div class="item">
+                  <div class="item-img">
+                    <img src="assets/images/t_item11.jpg" alt="" />
+                    <div class="tr-add-cart">
+                      <ul>
+                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="item-new">
+                    <p>New</p>
+                  </div>
+                  <div class="item-sub">
+                    <a href="product-detail.html"><h5>houndsmooth wool t-shirt</h5></a>
+                    <p>$ 168.00<span><del>$ 212.00</del></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="main_cat_item">
+                <div class="item">
+                  <div class="item-img">
+                    <img src="assets/images/t_item12.jpg" alt="" />
+                    <div class="tr-add-cart">
+                      <ul>
+                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="item-new">
+                    <p>New</p>
+                    <span>-20%</span>
+                  </div>
+                  <div class="item-sub">
+                    <a href="product-detail.html"><h5>structured collarless coat</h5></a>
+                    <p>$ 133.20<span><del>$ 148.00</del></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="pagi_line"></div>
+              <div class="pagi_ul">
+                <ul id="pagination">
+                  <li><a href="">Previous</a></li>
+                  <li><a href="">1</a></li>
+                  <li><a href="">2</a></li>
+                  <li><a href="">3</a></li>
+                  <li><a href="">4</a></li>
+                  <li><a href="">5 ...</a></li>
+                  <li><a href="">Next</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 

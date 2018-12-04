@@ -18,4 +18,8 @@ export class ProductsService {
     return this.httpClient.get(`${environment.api}/products`);
   }
 
+  getProductsByName(name) {
+    return this.httpClient.get(`${environment.api}/products/name/${name}`);
+  }
+
 }
