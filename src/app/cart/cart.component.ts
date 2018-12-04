@@ -12,23 +12,47 @@ import { Router } from '@angular/router';
 
 export class CartComponent implements OnInit {
 
-  items: CartItem[];
   backend = `${environment.backend}`;
+
+  get items() {
+    return this.cartService.items;
+  }
+
+  get total() {
+    return this.cartService.total;
+  }
+
+  get ship() {
+    return this.cartService.ship;
+  }
 
   constructor(private cartService: CartService, private router: Router) {
   }
 
   ngOnInit() {
-    this.cartService.getCartItems().subscribe((data: CartItem[]) => {
-      this.items = data;
+    this.cartService.refresh();
+  }
+
+  add(id) {
+    this.cartService.add(id).subscribe((data: any) => {
+      this.ngOnInit();
     });
   }
 
-  remove(id): void {
-    this.cartService.remove(id);
+  remove(id) {
+    this.cartService.remove(id).subscribe((data: any) => {
+      this.ngOnInit();
+    });
+  }
+
+  update(id, act) {
+    this.cartService.update(id, act).subscribe((data: any) => {
+      this.ngOnInit();
+    });
   }
 
   checkout() {
     return this.router.navigate(['/checkout']);
   }
+
 }

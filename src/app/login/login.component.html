@@ -1,97 +1,97 @@
 <div >
-  <div ><!-- class="col-md-6" style="height: 600px;max-width: 100%;padding: 0% 0% 0% 0%"  -->
-    <div class="iLoginBox" style="position: absolute;top: 210px;right: 25%;left: 25%;height: 460px; background-color: #f5f0f0">
-      <div *ngIf="Logining" style="margin: 0% 0% 0% 57%;" [ngStyle]="{'margin': myMargin}">
-          <h3 class="iLoginText" style="margin: 0% 0% 0% 3%; font-size: 26px;" >New to PCShop?</h3>
-          <h3 class="iTextS" >Sign up now and get</h3>
-          <div class="iTextRight">
-            <button class="iButton" (click)="OnRegister()" style="margin: 0% 8% 0% 0%; background-color: #ff1e3ce0">Register</button>
-          </div>
+    <div ><!-- class="col-md-6" style="height: 600px;max-width: 100%;padding: 0% 0% 0% 0%"  -->
+      <div class="iLoginBox" style="position: absolute;top: 210px;right: 25%;left: 25%;height: 460px; background-color: #f5f0f0">
+        <div *ngIf="Logining" style="margin: 0% 0% 0% 57%;" [ngStyle]="{'margin': myMargin}">
+            <h3 class="iLoginText" style="margin: 0% 0% 0% 3%; font-size: 26px;" >New to PCShop?</h3>
+            <h3 class="iTextS" >Sign up now and get</h3>
+            <div class="iTextRight">
+              <button class="iButton" (click)="OnRegister()" style="margin: 0% 8% 0% 0%; background-color: #ff1e3ce0">Register</button>
+            </div>
+        </div>
+        <button *ngIf="ShowRegister" class="iButton" (click)="OnLogin()" style="margin: 0% 0% 0% 50%; background-color: #ff1e3ce1">Have an account?</button>
       </div>
-      <button *ngIf="ShowRegister" class="iButton" (click)="OnLogin()" style="margin: 0% 0% 0% 50%; background-color: #ff1e3ce1">Have an account?</button>
+      <form *ngIf="Logining" style="top: 240px; height: 400px;" class="iLoginBox" [ngStyle]="{'right': myRight}">
+        <h3 class="iLoginText">Login</h3>
+        <div class="iFormGroup">
+          <input name="email" class="iFormControl" type="text" placeholder="Email" [(ngModel)]="login_user.email" required="">
+        </div>
+        <div class="iFormGroup">
+          <input name="password" type="password" placeholder="Password" [(ngModel)]="login_user.password" class="iFormControl" required="">
+        </div>
+        <div>
+          <a class="iLink" href="account-password-recovery.html">Forgot password?</a>
+        </div>
+
+        <div class="iTextRight">
+          <button class="iButton" (click)="login()" type="submit">Login</button>
+        </div>
+      </form>
+
+      <form *ngIf="!Logining" style="top: 240px; height: 400px; padding-top: 10px" class="iLoginBox" [ngStyle]="{'right': myRight}">
+        <div *ngIf="Switched" [ngStyle]="{'opacity': Opacity}" style="float:right">
+            <div class="iTextRight" style=" display: inline-block;">
+                <label style="font-size: 15px ;color: rgb(153, 153, 153); font-weight: bold;">Have an account? </label>
+                <a (click)="OnLogin()" class="iLink" style="font-size: 20px ;color: #f06160; cursor: pointer"> Sign in</a>
+              </div>
+        </div>
+        <div>
+            <h3 class="iLoginText" style="margin-top: 20px">Register</h3>
+        </div>
+
+        <div>
+          <div style="float: left;width: 50%;padding-right: 10px;">
+            <div class="iFormGroup">
+              <input name="name" class="iFormControl" type="text" placeholder="Name" [(ngModel)]="register_user.name" required="">
+            </div>
+            <div class="iFormGroup">
+              <input name="email" class="iFormControl" type="text" placeholder="Email" [(ngModel)]="register_user.email" required="">
+            </div>
+          </div>
+          <div *ngIf="OnRegister" style="float: right;width: 50%;padding-left: 10px;">
+            <div class="iFormGroup">
+              <input name="password" type="password" placeholder="Password" [(ngModel)]="register_user.password" class="iFormControl" required="">
+            </div>
+            <div class="iFormGroup">
+              <input name="password_confirmation" type="password" [(ngModel)]="register_user.password_confirmation" class="iFormControl" placeholder="Password Again" required="">
+            </div>
+          </div>
+        </div>
+
+
+
+        <div [ngStyle]="{'opacity': Opacity}" style="height: 210px; margin-left: 10px">
+            <div style="float: left;">
+                <label style="text-align:center; font-size: 17px">
+                    How much do you love this website?
+                </label>
+              <br>
+              <!-- <li *ngFor="let item of arr, let i = index">
+                  <label (click)="Love_1()" [ngClass]="{'fa fa-heart': true, 'far fa-heart': false}" style="font-size: 28px;color: rgb(255, 78, 107); margin: 3px; cursor: pointer"> </label>
+                  <span [ngClass]="{'text-danger': i==0}">{{item}}</span>
+              </li> -->
+                <label (click)="Love_1()" [ngClass]="{'fas': (Loved[0]), 'far': (!Loved[0])}" class="fa-heart" style="font-size: 28px;color: rgb(255, 78, 107); margin: 3px; cursor: pointer"> </label>
+                <label (click)="Love_2()" [ngClass]="{'fas': (Loved[1]), 'far': (!Loved[1])}" class="fa-heart" style="font-size: 28px;color: rgb(255, 78, 107); margin: 3px; cursor: pointer"> </label>
+                <label (click)="Love_3()" [ngClass]="{'fas': (Loved[2]), 'far': (!Loved[2])}" class="fa-heart" style="font-size: 28px;color: rgb(255, 78, 107); margin: 3px; cursor: pointer"> </label>
+                <label (click)="Love_4()" [ngClass]="{'fas': (Loved[3]), 'far': (!Loved[3])}" class="fa-heart" style="font-size: 28px;color: rgb(255, 78, 107); margin: 3px; cursor: pointer"> </label>
+                <label (click)="Love_5()" [ngClass]="{'fas': (Loved[4]), 'far': (!Loved[4])}" class="fa-heart" style="font-size: 28px;color: rgb(255, 78, 107); margin: 3px; cursor: pointer"> </label>
+            </div>
+
+              <div class="iTextRight" style="float: right;">
+                  <button class="iButton" (click)="register()" type="submit">Register</button>
+              </div>
+        </div>
+        <label *ngIf="Switched" [ngStyle]="{'opacity': Opacity}" class="iLink" style="cursor: default; margin: 15px; font-weight:normal ;margin-top: 70px; font-size: 120%; float: right;">
+            <input type="checkbox" unchecked >
+            I don't care about
+            <a class="iLink" href="account-password-recovery.html" style="color:rgb(255, 78, 107); font-size: 17px">User Agreement</a>
+              and
+              <a class="iLink" href="account-password-recovery.html" style="color:rgb(255, 78, 107); font-size: 17px">Privacy Licence</a>
+              .
+        </label>
+
+
+
+
+      </form>
     </div>
-    <form *ngIf="Logining" style="top: 240px; height: 400px;" class="iLoginBox" [ngStyle]="{'right': myRight}">
-      <h3 class="iLoginText">Login</h3>
-      <div class="iFormGroup">
-        <input name="email" class="iFormControl" type="text" placeholder="Email" [(ngModel)]="login_user.email" required="">
-      </div>
-      <div class="iFormGroup">
-        <input name="password" type="password" placeholder="Password" [(ngModel)]="login_user.password" class="iFormControl" required="">
-      </div>
-      <div>
-        <a class="iLink" href="account-password-recovery.html">Forgot password?</a>
-      </div>
-
-      <div class="iTextRight">
-        <button class="iButton" (click)="login()" type="submit">Login</button>
-      </div>
-    </form>
-
-    <form *ngIf="!Logining" style="top: 240px; height: 400px; padding-top: 10px" class="iLoginBox" [ngStyle]="{'right': myRight}">
-      <div *ngIf="Switched" [ngStyle]="{'opacity': Opacity}" style="float:right">
-          <div class="iTextRight" style=" display: inline-block;">
-              <label style="font-size: 15px ;color: rgb(153, 153, 153); font-weight: bold;">Have an account? </label>
-              <a (click)="OnLogin()" class="iLink" style="font-size: 20px ;color: #f06160; cursor: pointer"> Sign in</a>
-            </div>
-      </div>
-      <div>
-          <h3 class="iLoginText" style="margin-top: 20px">Register</h3>
-      </div>
-
-      <div>
-        <div style="float: left;width: 50%;padding-right: 10px;">
-          <div class="iFormGroup">
-            <input name="name" class="iFormControl" type="text" placeholder="Name" [(ngModel)]="register_user.name" required="">
-          </div>
-          <div class="iFormGroup">
-            <input name="email" class="iFormControl" type="text" placeholder="Email" [(ngModel)]="register_user.email" required="">
-          </div>
-        </div>
-        <div *ngIf="OnRegister" style="float: right;width: 50%;padding-left: 10px;">
-          <div class="iFormGroup">
-            <input name="password" type="password" placeholder="Password" [(ngModel)]="register_user.password" class="iFormControl" required="">
-          </div>
-          <div class="iFormGroup">
-            <input name="password_confirmation" type="password" [(ngModel)]="register_user.password_confirmation" class="iFormControl" placeholder="Password Again" required="">
-          </div>
-        </div>
-      </div>
-
-
-
-      <div [ngStyle]="{'opacity': Opacity}" style="height: 210px; margin-left: 10px">
-          <div style="float: left;">
-              <label style="text-align:center; font-size: 17px">
-                  How much do you love this website?
-              </label>
-            <br>
-            <!-- <li *ngFor="let item of arr, let i = index">
-                <label (click)="Love_1()" [ngClass]="{'fa fa-heart': true, 'far fa-heart': false}" style="font-size: 28px;color: rgb(255, 78, 107); margin: 3px; cursor: pointer"> </label>
-                <span [ngClass]="{'text-danger': i==0}">{{item}}</span>
-            </li> -->
-              <label (click)="Love_1()" [ngClass]="{'fas': (Loved[0]), 'far': (!Loved[0])}" class="fa-heart" style="font-size: 28px;color: rgb(255, 78, 107); margin: 3px; cursor: pointer"> </label>
-              <label (click)="Love_2()" [ngClass]="{'fas': (Loved[1]), 'far': (!Loved[1])}" class="fa-heart" style="font-size: 28px;color: rgb(255, 78, 107); margin: 3px; cursor: pointer"> </label>
-              <label (click)="Love_3()" [ngClass]="{'fas': (Loved[2]), 'far': (!Loved[2])}" class="fa-heart" style="font-size: 28px;color: rgb(255, 78, 107); margin: 3px; cursor: pointer"> </label>
-              <label (click)="Love_4()" [ngClass]="{'fas': (Loved[3]), 'far': (!Loved[3])}" class="fa-heart" style="font-size: 28px;color: rgb(255, 78, 107); margin: 3px; cursor: pointer"> </label>
-              <label (click)="Love_5()" [ngClass]="{'fas': (Loved[4]), 'far': (!Loved[4])}" class="fa-heart" style="font-size: 28px;color: rgb(255, 78, 107); margin: 3px; cursor: pointer"> </label>
-          </div>
-
-            <div class="iTextRight" style="float: right;">
-                <button class="iButton" (click)="register()" type="submit">Register</button>
-            </div>
-      </div>
-      <label *ngIf="Switched" [ngStyle]="{'opacity': Opacity}" class="iLink" style="cursor: default; margin: 15px; font-weight:normal ;margin-top: 70px; font-size: 120%; float: right;">
-          <input type="checkbox" unchecked >
-          I don't care about
-          <a class="iLink" href="account-password-recovery.html" style="color:rgb(255, 78, 107); font-size: 17px">User Agreement</a>
-            and
-            <a class="iLink" href="account-password-recovery.html" style="color:rgb(255, 78, 107); font-size: 17px">Privacy Licence</a>
-            .
-      </label>
-
-
-
-
-    </form>
   </div>
-</div>

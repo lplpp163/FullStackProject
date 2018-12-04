@@ -49,14 +49,14 @@
             </div>
 
             <!-- item -->
-            <div class="c_single_item">
-              <p>collarless coat x 1</p>
-              <span>$115.00</span>
+            <div *ngFor="let item of items" class="c_single_item">
+              <p>{{item.product.name}} x {{item.quantity}}</p>
+              <span>${{item.product.price * item.quantity}}</span>
             </div>
 
             <div class="c_single_item">
               <p>商品小計</p>
-              <span>$854.00</span>
+              <span>${{total}}</span>
             </div>
             <div class="c_single_item sp_single_item">
               <p>運費</p>
@@ -64,7 +64,7 @@
             </div>
             <div class="c_total_item sp_single_item">
               <p>結帳總金額</p>
-              <span>$854.00</span>
+              <span>${{total + ship}}</span>
             </div>
             <div class="c_payment">
               <p>付款方式</p>

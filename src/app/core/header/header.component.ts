@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +11,22 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  backend = `${environment.backend}`;
+
+  get items() {
+    return this.cartService.items;
+  }
+
+  get total() {
+    return this.cartService.total;
+  }
+
+  get ship() {
+    return this.cartService.ship;
+  }
+
+  constructor(private cartService: CartService, private authService: AuthService, private router: Router) {
+   }
 
   keyword = '';
 
@@ -18,6 +35,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.cartService.refresh();
   }
 
   logout() {
@@ -43,6 +61,12 @@ export class HeaderComponent implements OnInit {
 
   reload() {
     location.reload();
+  }
+
+  remove(id) {
+    this.cartService.remove(id).subscribe((data: any) => {
+      this.ngOnInit();
+    });
   }
 
 }

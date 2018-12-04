@@ -13,7 +13,7 @@
                         </div>
                         <div class="actions">
                             <a [routerLink]="['/products', product.id]" routerLinkActive="router-link-active" >Details</a>
-                            <a href="#">Add to cart</a>
+                            <a (click)="add(product.id)">Add to cart</a>
                         </div>
                     </div>
                 </li>
@@ -38,4 +38,3 @@
 </div>
 
 <app-shopwindow></app-shopwindow>
-<app-shopslider></app-shopslider>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
+import { CartItem } from '../models/cart-item';
+import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-checkout',
@@ -8,13 +10,27 @@ import { CartService } from '../services/cart.service';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(private cartService: CartService) { }
+  get items() {
+    return this.cartService.items;
+  }
+
+  get total() {
+    return this.cartService.total;
+  }
+
+  get ship() {
+    return this.cartService.ship;
+  }
+
+  constructor(private cartService: CartService) {
+  }
 
   ngOnInit() {
+    this.cartService.refresh();
   }
 
   submit() {
-    this.cartService.createOrder([2, 4]).subscribe(data => {
+    this.cartService.createOrder(this.items).subscribe(data => {
       alert('checkout success');
     });
   }

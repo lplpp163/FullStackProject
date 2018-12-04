@@ -35,169 +35,169 @@
 
 <!--中間白色的網站標題-->
 <div class="header">
-  <div class="container">
-    <div class="row">
+    <div class="container">
+      <div class="row">
 
-      <div class="col-md-3 col-sm-3 col-xs-12">
-        <div class="header_left floatleft">
+        <div class="col-md-3 col-sm-3 col-xs-12">
+          <div class="header_left floatleft">
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-6 col-sm-5 col-xs-12">
-        <div class="header_center">
-          <a href="index.html"><img src="assets/images/logo.png" alt="Site Logo" /></a>
+        <div class="col-md-6 col-sm-5 col-xs-12">
+          <div class="header_center">
+            <a href="index.html"><img src="assets/images/logo.png" alt="Site Logo" /></a>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3 col-sm-3 col-xs-12">
-        <div class="header_left floatright">
-          <a class="fa fa-search" (click)="searchClick()"></a>
-          <input type="text" placeholder="search" [(ngModel)]="keyword"/>
+        <div class="col-md-3 col-sm-3 col-xs-12">
+          <div class="header_left floatright">
+            <a class="fa fa-search" (click)="searchClick()"></a>
+            <input type="text" placeholder="search" [(ngModel)]="keyword"/>
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
-</div>
 
-<!--下方的選項清單-->
-<section class="nav_area">
-  <div class="container"  style="font-family:Microsoft JhengHei;">
-    <div class="nav_left floatleft">
-      <a href="category-1.html">筆電倉庫<i class="fa fa-bars"></i></a>
-      <div class="cat_mega_menu">
-          <div class="cat_left">
-            <h5>MSI 微星</h5>
-            <div class="cat_menu_line"></div>
-            <ul class="cat_nav">
-              <!--微星參考網址https://mall.pchome.com.tw/store/QAAH21-->
-              <li><a href="">MSI 微星 特仕版</a></li>
-              <li><a href="">MSI GT 旗艦系列</a></li>
-              <li><a href="">MSI GS 薄型系列</a></li>
-              <li><a href="">MSI GE 極致系列</a></li>
-              <li><a href="">MSI GV 效能系列</a></li>
-            </ul>
-          </div>
-          <div class="cat_middle">
-            <h5>ASUS 阿速死 華碩</h5>
-            <!-- 參考 https://www.asus.com/tw/Laptops/ -->
-            <div class="cat_menu_line"></div>
-            <ul class="cat_nav">
-              <li><a href="">ZenBook</a></li>
-              <li><a href="">ROG Gaming 系列</a></li>
-              <li><a href="">TUF Gaming FX 系列</a></li>
-              <li><a href="">ASUS Gaming 系列</a></li>
-              <li><a href="">ASUS Laptop 系列</a></li>
-            </ul>
-          </div>
-          <div class="cat_middle_right">
-            <h5>Acer 宏碁</h5>
-            <!-- 參考 https://mall.pchome.com.tw/store/QAAH0G -->
-            <div class="cat_menu_line"></div>
-            <ul class="cat_nav">
-              <li><a href="">ES1 平價文書機</a></li>
-              <li><a href="">E系列 效能機</a></li>
-              <li><a href="">V系列 輕薄美型</a></li>
-              <li><a href="">VN7系列 輕薄電競</a></li>
-              <li><a href="">S系列 極輕薄美學</a></li>
-            </ul>
-          </div>
-          <div class="cat_img">
-            <img src="assets/images/menu_cat.png" alt="" />
-          </div>
-      </div>
-    </div>
-    <div class="nav_center">
-      <nav class="mainmenu">
-        <ul id="nav">
-          <li class="current-page-item"><a href="/">首頁</a>
-          </li>
-          <li><a [routerLink]="['/products']" routerLinkActive="active" (click)="reload()">所有筆電列表</a>
-          </li>
-          <li><a href="category-1.html">快速找筆電</a>
-            <ul id="sub-menu">
-              <li><a href="">最新</a></li>
-              <li><a href="">高畫質</a></li>
-              <li><a href="">高效能</a></li>
-              <li><a href="">高續航力</a></li>
-              <li><a href="">輕薄易攜</a></li>
-              <li><a href="">文書處理</a></li>
-              <li class="last-child"><a href="">電競筆電</a></li>
-            </ul>
-          </li>
-          <li><a href="#">熱門討論</a>
-            <ul id="sub-menu5">
-              <li><a href="category-1.html">Shop Page With Filter</a></li>
-              <li><a href="category-2.html">Shop Page Without Filter</a></li>
-              <li><a href="checkout.html">Checkout page</a></li>
-              <li><a href="cart.html">Cart page</a></li>
-              <li><a href="single-blog.html">Blog single</a></li>
-              <li><a href="contact.html">Contact page</a></li>
-              <li><a href="404.html">404 page</a></li>
-            </ul>
-          </li>
-          <li><a href="blog.html">產品客服</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="nav_right floatright">
-      <div *ngIf="!isLogin">
-          <a [routerLink]="['/login']" routerLinkActive="active" ><img src="assets/images/bag.png" alt="Bag" />登入/註冊</a>
-      </div>
-      <div *ngIf="isLogin">
-        <a [routerLink]="['/cart']" routerLinkActive="active" ><img src="assets/images/bag.png" alt="Bag" />我的購物車</a>
-        <!-- cart item -->
-        <div class="cart_menu">
-
-          <div class="cart_items">
-            <div class="c_item_img floatleft">
-              <a href="product-detail.html"><img src="assets/images/c_item2.jpg" alt="" /></a>
+  <!--下方的選項清單-->
+  <section class="nav_area">
+    <div class="container"  style="font-family:Microsoft JhengHei;">
+      <div class="nav_left floatleft">
+        <a href="category-1.html">筆電倉庫<i class="fa fa-bars"></i></a>
+        <div class="cat_mega_menu">
+            <div class="cat_left">
+              <h5>MSI 微星</h5>
+              <div class="cat_menu_line"></div>
+              <ul class="cat_nav">
+                <!--微星參考網址https://mall.pchome.com.tw/store/QAAH21-->
+                <li><a href="">MSI 微星 特仕版</a></li>
+                <li><a href="">MSI GT 旗艦系列</a></li>
+                <li><a href="">MSI GS 薄型系列</a></li>
+                <li><a href="">MSI GE 極致系列</a></li>
+                <li><a href="">MSI GV 效能系列</a></li>
+              </ul>
             </div>
-            <div class="c_item_totals floatleft">
-              <div class="c_item_totals_detail floatleft">
-                <a href="product-detail.html"><h5>商品名稱</h5></a>
-                <span>數量 x $ 價格</span>
+            <div class="cat_middle">
+              <h5>ASUS 阿速死 華碩</h5>
+              <!-- 參考 https://www.asus.com/tw/Laptops/ -->
+              <div class="cat_menu_line"></div>
+              <ul class="cat_nav">
+                <li><a href="">ZenBook</a></li>
+                <li><a href="">ROG Gaming 系列</a></li>
+                <li><a href="">TUF Gaming FX 系列</a></li>
+                <li><a href="">ASUS Gaming 系列</a></li>
+                <li><a href="">ASUS Laptop 系列</a></li>
+              </ul>
+            </div>
+            <div class="cat_middle_right">
+              <h5>Acer 宏碁</h5>
+              <!-- 參考 https://mall.pchome.com.tw/store/QAAH0G -->
+              <div class="cat_menu_line"></div>
+              <ul class="cat_nav">
+                <li><a href="">ES1 平價文書機</a></li>
+                <li><a href="">E系列 效能機</a></li>
+                <li><a href="">V系列 輕薄美型</a></li>
+                <li><a href="">VN7系列 輕薄電競</a></li>
+                <li><a href="">S系列 極輕薄美學</a></li>
+              </ul>
+            </div>
+            <div class="cat_img">
+              <img src="assets/images/menu_cat.png" alt="" />
+            </div>
+        </div>
+      </div>
+      <div class="nav_center">
+        <nav class="mainmenu">
+          <ul id="nav">
+            <li class="current-page-item"><a href="/">首頁</a>
+            </li>
+            <li><a [routerLink]="['/products']" routerLinkActive="active" (click)="reload()">所有筆電列表</a>
+            </li>
+            <li><a href="category-1.html">快速找筆電</a>
+              <ul id="sub-menu">
+                <li><a href="">最新</a></li>
+                <li><a href="">高畫質</a></li>
+                <li><a href="">高效能</a></li>
+                <li><a href="">高續航力</a></li>
+                <li><a href="">輕薄易攜</a></li>
+                <li><a href="">文書處理</a></li>
+                <li class="last-child"><a href="">電競筆電</a></li>
+              </ul>
+            </li>
+            <li><a href="#">熱門討論</a>
+              <ul id="sub-menu5">
+                <li><a href="category-1.html">Shop Page With Filter</a></li>
+                <li><a href="category-2.html">Shop Page Without Filter</a></li>
+                <li><a href="checkout.html">Checkout page</a></li>
+                <li><a href="cart.html">Cart page</a></li>
+                <li><a href="single-blog.html">Blog single</a></li>
+                <li><a href="contact.html">Contact page</a></li>
+                <li><a href="404.html">404 page</a></li>
+              </ul>
+            </li>
+            <li><a href="blog.html">產品客服</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="nav_right floatright">
+        <div *ngIf="!isLogin">
+            <a [routerLink]="['/login']" routerLinkActive="active" ><img src="assets/images/bag.png" alt="Bag" />登入/註冊</a>
+        </div>
+        <div *ngIf="isLogin">
+          <a [routerLink]="['/cart']" routerLinkActive="active" ><img src="assets/images/bag.png" alt="Bag" />我的購物車</a>
+          <!-- cart item -->
+          <div class="cart_menu">
+
+            <div *ngFor="let item of items" class="cart_items">
+              <div class="c_item_img floatleft">
+                <a [routerLink]="['/products', item.product.id]"><img class="c_item_img" src="{{backend}}/{{item.product.img}}" alt="" /></a>
               </div>
-              <div class="close_icon_cart floatleft">
-                <img src="assets/images/close.png" alt="" />
+              <div class="c_item_totals floatleft">
+                <div class="c_item_totals_detail floatleft">
+                  <a [routerLink]="['/products', item.product.id]" routerLinkActive="active"><h5>{{item.product.name}}</h5></a>
+                  <span>$ {{item.product.price}} x {{item.quantity}}</span>
+                </div>
+                <div class="close_icon_cart floatleft">
+                  <a (click)="remove(item.id)"><img src="assets/images/close.png"/></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="cart_totals">
+              <div class="c_totals_left floatleft">
+                <p>Free shipping</p>
+              </div>
+              <div class="c_totals_right floatleft">
+                <p>結帳金額   ${{total + ship}}</p>
+              </div>
+            </div>
+
+            <div class="cart_view_bottom">
+              <div class="c_totals_left floatleft">
+                <a [routerLink]="['/cart']" routerLinkActive="active" >查看所有</a>
+              </div>
+              <div class="c_totals_right floatleft">
+                <a [routerLink]="['/checkout']" routerLinkActive="active" >結帳</a>
               </div>
             </div>
           </div>
 
-          <div class="cart_totals">
-            <div class="c_totals_left floatleft">
-              <p>Free shipping</p>
-            </div>
-            <div class="c_totals_right floatleft">
-              <p>結帳金額   $350</p>
-            </div>
-          </div>
-
-          <div class="cart_view_bottom">
-            <div class="c_totals_left floatleft">
-              <a [routerLink]="['/cart']" routerLinkActive="active" >查看所有</a>
-            </div>
-            <div class="c_totals_right floatleft">
-              <a [routerLink]="['/checkout']" routerLinkActive="active" >結帳</a>
-            </div>
-          </div>
         </div>
+      </div>
 
+
+    </div>
+  <!-- <a [routerLink]="['/login']" routerLinkActive="active"  style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登入/註冊</a> -->
+  <!--Login/Logout需要的功能-->
+    <div *ngIf="isLogin">
+      <div style="position: absolute;top: 128px;left: 89%;">
+        <img src="assets/images/bag.png" alt="Bag" />
+      </div>
+      <div style="position: absolute;top: 128px;left: 90.6%; padding: 3px">
+        <a (click)="logout()" style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登出</a>
       </div>
     </div>
+    <!-- <div class="nav_right floatright"> -->
 
-
-  </div>
-<!-- <a [routerLink]="['/login']" routerLinkActive="active"  style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登入/註冊</a> -->
-<!--Login/Logout需要的功能-->
-  <div *ngIf="isLogin">
-    <div style="position: absolute;top: 128px;left: 89%;">
-      <img src="assets/images/bag.png" alt="Bag" />
-    </div>
-    <div style="position: absolute;top: 128px;left: 90.6%; padding: 3px">
-      <a (click)="logout()" style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登出</a>
-    </div>
-  </div>
-  <!-- <div class="nav_right floatright"> -->
-
-</section>
+  </section>

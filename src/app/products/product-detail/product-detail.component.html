@@ -5,26 +5,26 @@
         <div class="zone">
           <div class="product-gallery">
             <div class="product-gallery-image">
-                <img src="{{backend}}/{{product.img}}" alt="{{product.name}}">
+                <img src="{{backend}}/{{product?.img}}">
             </div>
           </div>
         </div>
         <!-- Product Info-->
         <div class="zone">
-          <h2 class="product-name">{{ product.name }}</h2>
+          <h2 class="product-name">{{ product?.name }}</h2>
           <span class="h2 d-block">
-              {{product.price | currency }}
+              {{product?.price | currency }}
           </span>
-          <p>{{product.description}}</p>
-          <p>螢幕: {{product.size}}</p>
-          <p>CPU: {{product.cpu}}</p>
-          <p>GPU: {{product.gpu}}</p>
-          <p>RAM: {{product.ram}}</p>
-          <p>Storage: {{product.storage}}</p>
+          <p>{{product?.description}}</p>
+          <p>螢幕: {{product?.size}}</p>
+          <p>CPU: {{product?.cpu}}</p>
+          <p>GPU: {{product?.gpu}}</p>
+          <p>RAM: {{product?.ram}}</p>
+          <p>Storage: {{product?.storage}}</p>
           <div class="padding-bottom-1x mb-2">
           </div>
           <hr class="mb-3">
-          <button class="btn btn-primary" (click)="add()">
+          <button class="btn btn-primary" (click)="add(product.id)">
             <i class="icon-bag"></i> Add to Cart
           </button>
         </div>

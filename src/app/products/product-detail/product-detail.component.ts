@@ -3,6 +3,7 @@ import { ProductsService } from 'src/app/services/products.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { environment } from 'src/environments/environment';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -16,7 +17,7 @@ export class ProductDetailComponent implements OnInit {
   backend = `${environment.backend}`;
   id = this.route.snapshot.paramMap.get('id');
 
-  constructor(private productsService: ProductsService, private route: ActivatedRoute) { }
+  constructor(private cartService: CartService, private productsService: ProductsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.productsService.getProduct(this.id).subscribe((data: Product) => {
@@ -24,7 +25,12 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-  add() {
+  add(id) {
+    this.cartService.add(id).subscribe((data: any) => {
+      if (data.success) {
+        location.reload();
+      }
+    });
   }
 
 }

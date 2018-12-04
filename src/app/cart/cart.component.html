@@ -23,18 +23,21 @@
           <!-- cart item -->
           <div *ngFor="let item of items" class="cart_item">
             <div class="cart_item_img">
-              <img src="{{backend}}/{{item.img}}"/>
-              <p><a [routerLink]="['/products/',item.id]" routerLinkActive="active" >{{item.name}}</a></p>
+              <img src="{{backend}}/{{item.product.img}}"/>
+              <p><a [routerLink]="['/products/',item.product.id]" routerLinkActive="active" >{{item.product.name}}</a></p>
             </div>
             <div class="cart_price">
-              <p>${{item.price}}</p>
+              <p> ${{item.product.price}}</p>
             </div>
             <div class="cart_quantity">
               <ul>
-                <li><a ><i class="fa fa-minus"></i></a></li>
-                <li><a>{{item.quantity}}</a></li>
-                <li><a ><i class="fa fa-plus"></i></a></li>
+                <li><a (click)="update(item.id,-1)"><i class="fa fa-minus"></i></a></li>
+                <li>{{item.quantity}}</li>
+                <li><a (click)="update(item.id,1)"><i class="fa fa-plus"></i></a></li>
               </ul>
+            </div>
+            <div class="cart_total">
+              <p> $ {{ item.product.price * item.quantity}}<i (click)="remove(item.id)" class="fa fa-close"></i></p>
             </div>
           </div>
 
@@ -61,7 +64,7 @@
                 <div class="panel-body cart_p_body">
                   <div class="c_single_item">
                     <p>商品小計</p>
-                    <span>$184.00</span>
+                    <span>${{total}}</span>
                   </div>
                   <div class="c_single_item cart_last_total">
                     <p>運費</p>
@@ -69,7 +72,7 @@
                   </div>
                   <div class="c_total_item sp_single_item">
                     <p>總額</p>
-                    <span>$854.00</span>
+                    <span>${{total + ship}}</span>
                   </div>
                 </div>
 

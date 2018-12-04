@@ -19,7 +19,6 @@ export class AuthService {
 
   me() {
      return this.httpClient.post(`${environment.api}/me`, 'hello', {
-    // return this.httpClient.get(`${environment.api}/me`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }

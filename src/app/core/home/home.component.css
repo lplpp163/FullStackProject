@@ -92,7 +92,7 @@
   line-height: 16px;
   text-decoration: none;
   text-transform: uppercase;
-  width: 150px;
+  width: 100%;
 }
 #content ul li .info .title:hover {
   color: #049733;
