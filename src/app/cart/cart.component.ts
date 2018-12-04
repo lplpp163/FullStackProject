@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Product} from '../models/product';
 import { CartService } from '../services/cart.service';
+import { CartItem } from '../models/cart-item';
+import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -10,16 +12,23 @@ import { CartService } from '../services/cart.service';
 
 export class CartComponent implements OnInit {
 
-  private service: CartService;
+  items: CartItem[];
+  backend = `${environment.backend}`;
 
-
-  constructor(private cartService: CartService) {
-  }
-
-  public delCartHandler(p_product: Product): void {
-    this.service.removeFromCart(p_product);
+  constructor(private cartService: CartService, private router: Router) {
   }
 
   ngOnInit() {
+    this.cartService.getCartItems().subscribe((data: CartItem[]) => {
+      this.items = data;
+    });
+  }
+
+  remove(id): void {
+    this.cartService.remove(id);
+  }
+
+  checkout() {
+    return this.router.navigate(['/checkout']);
   }
 }

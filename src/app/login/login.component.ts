@@ -38,9 +38,6 @@ export class LoginComponent implements OnInit {
     password_confirmation: '',
     level: '2'
   };
-  token = {
-    token: '',
-  };
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -109,7 +106,7 @@ export class LoginComponent implements OnInit {
       }
     },
     response => {
-      // console.log(response);
+      console.log(response);
       alert(response.error.message);
     });
   }
@@ -126,6 +123,9 @@ export class LoginComponent implements OnInit {
         console.log(localStorage.getItem('token'));
         // this.router.navigate(['/']);
 
+      if (data.token) {
+        localStorage.setItem('token', data.token);
+        this.router.navigate(['/']);
       } else {
         alert('fail');
       }

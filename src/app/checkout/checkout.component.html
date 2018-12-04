@@ -1,3 +1,89 @@
-<p>
-  checkout works!
-</p>
+<section class="checkout_area">
+  <div class="container">
+    <div class="row">
+
+      <!-- order info. -->
+      <div class="col-md-9 col-sm-8 col-xs-12">
+        <div class="checkout_left">
+          <h2>訂單資訊</h2>
+          <div class="dotted_line"></div>
+
+          <div class="checkout_form">
+            <div class="c_name_box">
+              <div class="c_name_box_left">
+                <p>姓名 <span>*</span></p>
+                <input type="text">
+              </div>
+            </div>
+            <div class="c_mail_box">
+              <div class="c_mail_box_left">
+                <p>Email <span>*</span></p>
+                <input type="text">
+              </div>
+              <div class="c_mail_box_right">
+                <p>手機 <span>*</span></p>
+                <input type="text">
+              </div>
+            </div>
+            <div class="c_address">
+              <p>地址 <span>*</span></p>
+              <input type="text" placeholder="Street Address">
+            </div>
+            <div class="s_order">
+                <p>註記 <span>*</span></p>
+                <textarea name="" cols="30" rows="10"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review -->
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <div class="checkout_right">
+          <h4>明細</h4>
+
+          <div class="product_form_total">
+            <div class="c_main_item">
+              <p>商品</p>
+              <span>價格</span>
+            </div>
+
+            <!-- item -->
+            <div class="c_single_item">
+              <p>collarless coat x 1</p>
+              <span>$115.00</span>
+            </div>
+
+            <div class="c_single_item">
+              <p>商品小計</p>
+              <span>$854.00</span>
+            </div>
+            <div class="c_single_item sp_single_item">
+              <p>運費</p>
+              <span>Free</span>
+            </div>
+            <div class="c_total_item sp_single_item">
+              <p>結帳總金額</p>
+              <span>$854.00</span>
+            </div>
+            <div class="c_payment">
+              <p>付款方式</p>
+              <select class="selectpicker sel_state">
+                <option>ATM轉帳</option>
+                <option>網路轉帳</option>
+                <option>信用卡</option>
+              </select>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> 我已經詳讀且同意 <span>交易條款</span>
+              </label>
+            </div>
+            <input (click)="submit()" type="submit" value="送出訂單"/>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
