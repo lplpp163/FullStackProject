@@ -17,8 +17,8 @@ export class AuthService {
     return this.httpClient.post(`${environment.api}/login`, user);
   }
 
-  me() {
-    return this.httpClient.get(`${environment.api}/me`);
+  me(token) {
+    return this.httpClient.post(`${environment.api}/me`, token);
   }
 
   logout() {
