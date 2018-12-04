@@ -25,12 +25,11 @@ export class HeaderComponent implements OnInit {
       if (data.message) {
         // alert(data.message);
       } else {
-        alert('logout fail');
+        console.log('logout fail');
       }
     },
     response => {
-      // console.log(response);
-      alert(response.error.message);
+      console.log(response.error.message);
     });
     this.router.navigate(['/login']);
   }
