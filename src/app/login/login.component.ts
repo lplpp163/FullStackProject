@@ -98,9 +98,10 @@ export class LoginComponent implements OnInit {
     this.authService.register(this.register_user).subscribe((data: any) => {
       // console.log(data);
       if (data.success) {
-        alert('Registered!');
+        alert('Registration success!');
         this.OnLogin();
-        // this.router.navigate(['/login']);
+        this.router.navigate(['/login']);
+        /// 應嘗試直接自動登入並導向至HOME
       } else {
         alert('fail');
       }
@@ -115,14 +116,6 @@ export class LoginComponent implements OnInit {
     console.log(this.login_user);
     this.authService.login(this.login_user).subscribe((data: any) => {
       console.log('login');
-
-      if (data.token) {
-        console.log(data.token);
-        localStorage.setItem('token', data.token);
-
-        console.log(localStorage.getItem('token'));
-        // this.router.navigate(['/']);
-
       if (data.token) {
         localStorage.setItem('token', data.token);
         this.router.navigate(['/']);

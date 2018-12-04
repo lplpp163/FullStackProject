@@ -9,32 +9,27 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  get isLogin() {
-    return this.authService.isLogin();
-  }
-
   constructor(private authService: AuthService, private router: Router) { }
 
+   get isLogin() {
+     return localStorage.getItem('token')
+   }
   ngOnInit() {
   }
 
   logout() {
-    console.log(localStorage.getItem('token'));
     this.authService.logout().subscribe((data: any) => {
-
       if (data.message) {
-        alert(data.message);
+        // alert(data.message);
       } else {
-        alert('fail');
+        alert('logout fail');
       }
     },
     response => {
       // console.log(response);
       alert(response.error.message);
     });
-
-
-    //this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 
 }

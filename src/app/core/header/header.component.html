@@ -143,41 +143,46 @@
         </ul>
       </nav>
     </div>
-    <div *ngIf="isLogin" class="nav_right floatright">
-      <a [routerLink]="['/cart']" routerLinkActive="active" ><img src="assets/images/bag.png" alt="Bag" />我的購物車</a>
-      <!-- cart item -->
-      <div class="cart_menu">
+    <div class="nav_right floatright">
+      <div *ngIf="!isLogin">
+          <a [routerLink]="['/login']" routerLinkActive="active" ><img src="assets/images/bag.png" alt="Bag" />登入/註冊</a>
+      </div>
+      <div *ngIf="isLogin">
+        <a [routerLink]="['/cart']" routerLinkActive="active" ><img src="assets/images/bag.png" alt="Bag" />我的購物車</a>
+        <!-- cart item -->
+        <div class="cart_menu">
 
-        <div class="cart_items">
-          <div class="c_item_img floatleft">
-            <a href="product-detail.html"><img src="assets/images/c_item2.jpg" alt="" /></a>
-          </div>
-          <div class="c_item_totals floatleft">
-            <div class="c_item_totals_detail floatleft">
-              <a href="product-detail.html"><h5>商品名稱</h5></a>
-              <span>數量 x $ 價格</span>
+          <div class="cart_items">
+            <div class="c_item_img floatleft">
+              <a href="product-detail.html"><img src="assets/images/c_item2.jpg" alt="" /></a>
             </div>
-            <div class="close_icon_cart floatleft">
-              <img src="assets/images/close.png" alt="" />
+            <div class="c_item_totals floatleft">
+              <div class="c_item_totals_detail floatleft">
+                <a href="product-detail.html"><h5>商品名稱</h5></a>
+                <span>數量 x $ 價格</span>
+              </div>
+              <div class="close_icon_cart floatleft">
+                <img src="assets/images/close.png" alt="" />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="cart_totals">
-          <div class="c_totals_left floatleft">
-            <p>Free shipping</p>
+          <div class="cart_totals">
+            <div class="c_totals_left floatleft">
+              <p>Free shipping</p>
+            </div>
+            <div class="c_totals_right floatleft">
+              <p>結帳金額   $350</p>
+            </div>
           </div>
-          <div class="c_totals_right floatleft">
-            <p>結帳金額   $350</p>
-          </div>
-        </div>
 
-        <div class="cart_view_bottom">
-          <div class="c_totals_left floatleft">
-            <a [routerLink]="['/cart']" routerLinkActive="active" >查看所有</a>
-          </div>
-          <div class="c_totals_right floatleft">
-            <a [routerLink]="['/checkout']" routerLinkActive="active" >結帳</a>
+          <div class="cart_view_bottom">
+            <div class="c_totals_left floatleft">
+              <a [routerLink]="['/cart']" routerLinkActive="active" >查看所有</a>
+            </div>
+            <div class="c_totals_right floatleft">
+              <a [routerLink]="['/checkout']" routerLinkActive="active" >結帳</a>
+            </div>
           </div>
         </div>
 
@@ -185,141 +190,17 @@
     </div>
 
 
-    <!-- 手機頁面 -->
-    <div class="only-for-mobile">
-      <ul class="ofm">
-        <li class="m_nav"><i class="fa fa-bars"></i> Navigation</li>
-      </ul>
-
-      <!-- MOBILE MENU -->
-      <div class="mobi-menu">
-        <div id='cssmenu'>
-          <ul>
-            <li class='has-sub'>
-              <a href='index.html'><span>Home</span></a>
-              <ul class="sub-nav">
-                <li><a href="index.html"><span>Home 1</span></a></li>
-                <li><a href="index-2.html"><span>Home 2</span></a></li>
-              </ul>
-            </li>
-
-            <li class='has-sub'>
-              <a href='category-1.html'><span>category</span></a>
-              <ul>
-                <li class='has-sub'>
-                  <a href='#'><span>Shirts</span></a>
-                  <ul>
-                    <li><a href="#"><span>check shirts</span></a></li>
-                    <li><a href="#"><span>denim shirts</span></a></li>
-                    <li><a href="#"><span>long sleeve shirts</span></a></li>
-                    <li><a href="#"><span>denim shirts</span></a></li>
-                    <li class="last"><a href="./#"><span>long sleeve shirts</span></a></li>
-                  </ul>
-                </li>
-                <li class='has-sub'>
-                  <a href='#'><span>T Shirts</span></a>
-                  <ul>
-                    <li><a href="#"><span>plain T-shirt</span></a></li>
-                    <li><a href="#"><span>printed T-shirt</span></a></li>
-                    <li><a href="#"><span>sports T-shirt</span></a></li>
-                    <li><a href="#"><span>striped T-shirt</span></a></li>
-                    <li class='last'><a href="#"><span>V-Neck T-Shirt</span></a></li>
-                  </ul>
-                </li>
-                <li class='has-sub'>
-                  <a href='#'><span>trousers fit</span></a>
-                  <ul>
-                    <li><a href="#"><span>flexible waist</span></a></li>
-                    <li><a href="#"><span>regular fit</span></a></li>
-                    <li><a href="#"><span>slim fit</span></a></li>
-                    <li><a href="#"><span>tailored fit</span></a></li>
-                    <li class='last'><a href="#"><span>tight fit</span></a></li>
-                  </ul>
-                </li>
-                <li class="img-nav">
-                  <div class="container">
-                    <div class="clearfix"></div>
-                    <div class="space20"></div>
-                    <div class="clearfix"></div>
-                    <div class="row in1">
-                      <div class="col-md-6">
-                        <a href="#"><img src="assets/images/menu_cat.png" class="img-responsive" alt=""/></a>
-                      </div>
-                      <div class="col-md-6">
-                      </div>
-                      <div class="clearfix"></div>
-                      <div class="space20"></div>
-                      <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="space20"></div>
-                    <div class="clearfix"></div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href='category-2.html'><span>shop</span></a>
-            </li>
-            <li class='has-sub'>
-              <a href='category-1.html'><span>accessories</span></a>
-              <ul class="sub-nav">
-                <li><a href="#"><span>check shirts</span></a></li>
-                <li><a href="#"><span>denim shirts</span></a></li>
-                <li><a href="#"><span>long sleeve shirts</span></a></li>
-                <li><a href="#"><span>plain shirts</span></a></li>
-                <li><a href="#"><span>printed shirts</span></a></li>
-                <li><a href="#"><span>short sleeve shirts</span></a></li>
-                <li><a href="#"><span>shortsleeve denim shirts</span></a></li>
-              </ul>
-            </li>
-            <li class='has-sub'>
-              <a href='#'><span>pages</span></a>
-              <ul id="sub-nav">
-                <li><a href="category-1.html">Category page</a></li>
-                <li><a href="category-2.html">Category page without filter</a></li>
-                <li><a href="checkout.html">Checkout page</a></li>
-                <li><a href="cart.html">Cart page</a></li>
-                <li><a href="product-detail.html">Product detail page</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="single-blog.html">Blog single</a></li>
-                <li><a href="contact.html">Contact page</a></li>
-                <li><a href="404.html">404 page</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href='blog.html'><span>Blog</span></a>
-            </li>
-            <li>
-              <a href='cart.html'><span>cart</span></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- MOBILE ONLY CONTENT -->
   </div>
-
+<!-- <a [routerLink]="['/login']" routerLinkActive="active"  style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登入/註冊</a> -->
 <!--Login/Logout需要的功能-->
+  <div *ngIf="isLogin">
+    <div style="position: absolute;top: 128px;left: 89%;">
+      <img src="assets/images/bag.png" alt="Bag" />
+    </div>
+    <div style="position: absolute;top: 128px;left: 90.6%; padding: 3px">
+      <a href (click)="logout()" style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登出</a>
+    </div>
+  </div>
+  <!-- <div class="nav_right floatright"> -->
 
-<!-- <div *ngIf="true">
-  <div style="position: absolute;top: 128px;left: 89%;">
-    <a (click)="logout()" style="padding: 0px; color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;"><img src="assets/images/bag.png" alt="Bag" /></a>
-  </div>
-  <div style="position: absolute;top: 128px;left: 90.6%; padding: 3px">
-    <a (click)="logout()" style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登出</a>
-  </div> -->
-
-  <div style="position: absolute;top: 128px;left: 89%;">
-    <img src="assets/images/bag.png" alt="Bag" />
-  </div>
-  <div *ngIf="!isLogin" style="position: absolute;top: 128px;left: 90.6%; padding: 3px">
-    <a [routerLink]="['/login']" routerLinkActive="active"  style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登入/註冊</a>
-  </div>
-  <div *ngIf="isLogin" style="position: absolute;top: 128px;left: 90.6%; padding: 3px">
-    <a href (click)="logout()" style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登出</a>
-  </div>
-
-  <!-- <div class="nav_right floatright">
-  </div> -->
 </section>
