@@ -827,7 +827,7 @@ z-index: 4;
 left: 40px;
 position: absolute;
 top: 38px;
-z-index: 3;
+z-index: 0;
 }
 .hover_images {
 left: 0;
@@ -846,6 +846,7 @@ transition: all 0.75s ease 0s;
 z-index: 1;
 }
 .promo_text > h5, .promo_text_bottom > h5 {
+  font-family: 'Microsoft JhengHei';
   color: #232323;
   font-size: 22px;
   font-weight: 400;
@@ -857,6 +858,7 @@ z-index: 1;
 .promo_text > a, .promo_text_bottom > a {
   color: #666666;
   font-size: 13px;
+  font-family: 'Microsoft JhengHei';
 }
 .promotion_bottom {
 overflow: hidden;

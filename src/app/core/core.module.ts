@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
+import { ShopwindowComponent } from './shopwindow/shopwindow.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    ShopwindowComponent
   ]
 })
 export class CoreModule { }
