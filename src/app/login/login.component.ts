@@ -38,9 +38,6 @@ export class LoginComponent implements OnInit {
     password_confirmation: '',
     level: '2'
   };
-  token = {
-    token: '',
-  };
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -109,7 +106,7 @@ export class LoginComponent implements OnInit {
       }
     },
     response => {
-      // console.log(response);
+      console.log(response);
       alert(response.error.message);
     });
   }
@@ -117,13 +114,10 @@ export class LoginComponent implements OnInit {
   login() {
     console.log(this.login_user);
     this.authService.login(this.login_user).subscribe((data: any) => {
-      console.log('login');
-      console.log(data.level);
-      if (data.tok) {
-        localStorage.setItem('token', data.tok);
-        // this.router.navigate(['/']);
 
-
+      if (data.token) {
+        localStorage.setItem('token', data.token);
+        this.router.navigate(['/']);
       } else {
         alert('fail');
       }
@@ -132,17 +126,6 @@ export class LoginComponent implements OnInit {
       console.log(response);
       alert(response.error.message);
     });
-
-    if (localStorage.getItem('token')) {
-      this.token.token = localStorage.getItem('token');
-      alert('token success');
-      this.authService.me(this.token).subscribe((data: any) => {
-        console.log(data);
-      });
-    } else {
-      alert('token fail');
-    }
-
   }
 
 }

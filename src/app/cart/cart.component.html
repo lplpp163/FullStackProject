@@ -7,45 +7,41 @@
           <div class="cart_heading">
 
             <div class="h_item1">
-              <p>product</p>
+              <p>商品</p>
             </div>
             <div class="h_item2">
-              <p>Price</p>
+              <p>價格</p>
             </div>
             <div class="h_item3">
-              <p>Quantity</p>
+              <p>數量</p>
             </div>
             <div class="h_item4">
-              <p>total</p>
+              <p>小計</p>
             </div>
           </div>
 
           <!-- cart item -->
-          <div class="cart_item">
+          <div *ngFor="let item of items" class="cart_item">
             <div class="cart_item_img">
-              <img src="images/cart_img1.jpg" alt="" />
-              <p>blue denim casual <br>shirt</p>
+              <img src="{{backend}}/{{item.img}}"/>
+              <p><a [routerLink]="['/products/',item.id]" routerLinkActive="active" >{{item.name}}</a></p>
             </div>
             <div class="cart_price">
-              <p>$90</p>
+              <p>${{item.price}}</p>
             </div>
             <div class="cart_quantity">
               <ul>
-                <li><a href=""><i class="fa fa-minus"></i></a></li>
-                <li><a href="">2</a></li>
-                <li><a href=""><i class="fa fa-plus"></i></a></li>
+                <li><a ><i class="fa fa-minus"></i></a></li>
+                <li><a>{{item.quantity}}</a></li>
+                <li><a ><i class="fa fa-plus"></i></a></li>
               </ul>
-            </div>
-            <div class="cart_total">
-              <p>$180.00</p>
-              <span><i class="fa fa-close"></i></span>
             </div>
           </div>
 
           <!-- 優惠券 -->
           <div class="coupon_box">
-            <input type="text" placeholder="coupon code"/>
-            <input type="submit" value="apply coupon">
+            <input type="text" placeholder="優惠券代碼"/>
+            <input type="submit" value="套用">
           </div>
 
         </div>
@@ -57,72 +53,33 @@
             <div class="panel-group" id="home-accordion" role="tablist" aria-multiselectable="true">
 
               <div class="panel panel-default">
+
                 <div class="panel-heading" role="tab" id="headingOne">
-                    <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#home-accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    CALCULATE SHIPPING
-                    <span class="floatright"><i class="fa fa-minus"></i></span>
-                    </a>
-                    </h4>
+                  <h4 class="panel-title">Cart totals</h4>
                 </div>
 
-                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="panel-body">
-                    <select class="selectpicker">
-                      <option>Melbourne</option>
-                      <option>Dhaka</option>
-                      <option>New York</option>
-                    </select>
-
-                    <select class="selectpicker sel_state">
-                      <option>Sate/Country</option>
-                      <option>Bangladesh</option>
-                      <option>USA</option>
-                      <option>UK</option>
-                      <option>Canda</option>
-                      <option>Australia</option>
-                    </select>
-
-                    <input type="text" placeholder="Postcode/zip"/>
-                    <input type="submit" value="Update Totals">
-                  </div>
-                </div>
-              </div>
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <h4 class="panel-title">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Cart totals
-                    <span class="floatright"><i class="fa fa-plus"></i></span>
-                  </a>
-                  </h4>
-                </div>
-
-                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="panel-body cart_p_body">
                   <div class="c_single_item">
-                    <p>SubTotal</p>
+                    <p>商品小計</p>
                     <span>$184.00</span>
                   </div>
                   <div class="c_single_item cart_last_total">
-                    <p>Shipping Charge</p>
+                    <p>運費</p>
                     <span>Free</span>
                   </div>
                   <div class="c_total_item sp_single_item">
-                    <p>Total</p>
+                    <p>總額</p>
                     <span>$854.00</span>
                   </div>
                 </div>
-                </div>
+
               </div>
             </div>
-
-            <a href="" class="cart_update">Update Cart</a>
-            <input type="submit" value="結帳">
+            <input (click)="checkout()" type="submit" value="結帳">
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>

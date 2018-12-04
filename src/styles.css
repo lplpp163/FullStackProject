@@ -1793,13 +1793,7 @@ padding-bottom: 8px;
   padding-top: 30px;
   width: 100%;
 }
-.country_select input[type="text"] {
-  background: none repeat scroll 0 0 #f7f8f9;
-border: 1px solid #e8e8e8;
-padding: 9px;
-width: 96.56%;
-}
-.company_name input[type="text"], .c_address input[type="text"], .s_town input[type="text"], .c_name_box input[type="text"], .c_state_box input[type="text"], .c_mail_box input[type="text"], .s_order textarea {
+.c_address input[type="text"], .c_name_box input[type="text"], .c_mail_box input[type="text"], .s_order textarea {
   background: none repeat scroll 0 0 #f7f8f9;
   border: 1px solid #E8E8E8;
   padding: 9px;
@@ -1813,7 +1807,7 @@ width: 96.56%;
   margin-top: -3px;
   padding: 10px;
 }
-.c_name_box, .company_name, .c_address, .c_state_box, .c_mail_box, .checkbox {
+.c_name_box, .c_address, .c_mail_box, .checkbox {
   overflow: hidden;
 padding-bottom: 15px;
 }
@@ -1823,12 +1817,12 @@ padding-bottom: 15px;
   font-weight: 500;
   text-transform: uppercase;
 }
-.c_name_box_left, .c_state_box_left, .c_mail_box_left {
+.c_name_box_left, .c_mail_box_left {
   float: left;
   margin-right: 4%;
   width: 48%;
 }
-.c_name_box_right, .c_state_box_right, .c_mail_box_right {
+.c_name_box_right, .c_mail_box_right {
   float: left;
   width: 48%;
 }
@@ -1839,24 +1833,6 @@ border-top: 2px dotted #C6C7C7;
 }
 .checkout_form .checkbox {
   margin-bottom: 41px;
-}
-.country_select {
-  margin-bottom: 20px;
-}
-.country_select .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
-  width: 100%;
-}
-.country_select .btn-default {
-  background: none repeat scroll 0 0 transparent;
-  border-color: #e8e8e8;
-  border-radius: 0;
-  color: #999;
-  font-size: 12px;
-  padding: 12px 20px;
-  text-transform: uppercase;
-}
-.country_select2 {
-  margin-top: 62px;
 }
 .s_order textarea {
   height: 104px;
@@ -2903,6 +2879,8 @@ width: 24%;
 width: 17%;
 }
 .cart_item_img > img {
+  width: 92px;
+  height: 82px;
   float: left;
   margin-right: 20px;
 }

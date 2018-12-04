@@ -8,8 +8,6 @@ import { Product } from '../models/product';
 })
 export class ProductsService {
 
-  products: Product[];
-
   constructor(private httpClient: HttpClient) { }
 
   getProduct(id) {
