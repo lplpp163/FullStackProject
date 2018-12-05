@@ -14,25 +14,27 @@ import { HeaderComponent } from 'src/app/core/header/header.component';
 export class ProductsListComponent implements OnInit {
 
   searchKey: string;
-  products: Product[];
   backend = `${environment.backend}`;
+  filterCollapes = [
+    true,
+    false,
+    false,
+    false,
+    false
+  ];
 
   constructor(private productsService: ProductsService,
     private router: Router,
     private activatedrouter: ActivatedRoute,
     private cartService: CartService) { }
 
+  get products() {
+    return this.productsService.products;
+  }
+
   ngOnInit() {
     this.searchKey = this.activatedrouter.snapshot.paramMap.get('id');
-    if (this.searchKey === null || this.searchKey === '') {
-      this.productsService.getProducts().subscribe((data: Product[]) => {
-        this.products = data;
-      });
-    } else {
-      this.productsService.getProductsByName(this.searchKey).subscribe((data: Product[]) => {
-        this.products = data;
-      });
-    }
+    this.productsService.refresh(this.searchKey);
   }
 
   add(id) {
@@ -45,5 +47,12 @@ export class ProductsListComponent implements OnInit {
 
   detail(id) {
     this.router.navigate([`/products/${id}`]);
+  }
+
+  isSearch() {
+    if (this.searchKey !== null) {
+      return true;
+    }
+    return false;
   }
 }

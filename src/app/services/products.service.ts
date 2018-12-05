@@ -8,6 +8,8 @@ import { Product } from '../models/product';
 })
 export class ProductsService {
 
+  products: Product[];
+
   constructor(private httpClient: HttpClient) { }
 
   getProduct(id) {
@@ -20,6 +22,18 @@ export class ProductsService {
 
   getProductsByName(name) {
     return this.httpClient.get(`${environment.api}/products/name/${name}`);
+  }
+
+  refresh (searchKey) {
+    if (searchKey) {
+      this.getProductsByName(searchKey).subscribe((data: Product[]) => {
+        this.products = data;
+      });
+    } else {
+      this.getProducts().subscribe((data: Product[]) => {
+        this.products = data;
+      });
+    }
   }
 
 }

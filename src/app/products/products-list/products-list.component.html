@@ -1,4 +1,5 @@
 <!--<app-category></app-category>-->
+<h3 *ngIf="isSearch()">搜尋結果:</h3>
 
 <div *ngFor="let product of products" class="product">
 <img class="product-img" src="{{backend}}/{{product.img}}">
@@ -22,94 +23,129 @@
       <div class="col-md-3 col-sm-4 col-xs-12">
         <div class="main_category_left">
           <div class="panel-group" id="home-accordion" role="tablist" aria-multiselectable="true">
+            <!-- 依分類篩 -->
             <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
-              <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#home-accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                依類別篩選
-                <span class="floatright"><i class="fa fa-minus"></i></span>
-              </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-              <div class="panel-body">
-              <ul id="c_tab1">
-                <li><a href="">最新推出</a></li>
-                <li><a href="">特價中</a></li>
-                <li><a href="">高效能</a></li>
-                <li><a href="">高畫質</a></li>
-                <li><a href="">高記憶體</a></li>
-                <li><a href="">輕薄易攜</a></li>
-                <li><a href="">電競筆電</a></li>
-                <li><a href="">文書筆電</a></li>
-              </ul>
+              <!-- 標籤 -->
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                <a (click)="[filterCollapes[0]=!filterCollapes[0]]" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="true" aria-controls="collapseOne">
+                  依類別篩選
+                  <span class="floatright"><i [ngClass]="filterCollapes[0]?'fa fa-minus':'fa fa-plus'"></i></span>
+                </a>
+                </h4>
               </div>
-            </div>
-            </div>
-            <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingTwo">
-              <h4 class="panel-title">
-              <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                依價錢篩選
-                <span class="floatright"><i class="fa fa-plus"></i></span>
-              </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-              <div class="panel-body">
-              <div id="slider-range"></div>
-                <div class="cat_filter_box">
-                  <p>
-                    <label for="amount">Filter</label>
-                    <input type="text" id="amount" readonly style="border:0; color:#000; font-weight:bold;">
-                  </p>
+              <!-- 內容 -->
+              <div id="collapseOne" [ngClass]="filterCollapes[0] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                <ul id="c_tab1">
+                  <li><a href="">最新推出</a></li>
+                  <li><a href="">特價中</a></li>
+                  <li><a href="">高效能</a></li>
+                  <li><a href="">高畫質</a></li>
+                  <li><a href="">高記憶體</a></li>
+                  <li><a href="">輕薄易攜</a></li>
+                  <li><a href="">電競筆電</a></li>
+                  <li><a href="">文書筆電</a></li>
+                </ul>
                 </div>
               </div>
             </div>
-            </div>
+            <!-- 依價錢篩 -->
             <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingFour">
-              <h4 class="panel-title">
-              <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                依尺寸篩選
-                <span class="floatright"><i class="fa fa-plus"></i></span>
-              </a>
-              </h4>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-              <div class="panel-body">
-              <ul id="cat_size">
-                <li><a href="">13吋以下(含)</a></li>
-                <li><a href="">14吋</a></li>
-                <li><a href="">15吋</a></li>
-                <li><a href="">l7吋以上(含)</a></li>
-              </ul>
+              <!-- 標籤 -->
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                <a (click)="[filterCollapes[1]=!filterCollapes[1]]" class="collapsed" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="false" aria-controls="collapseTwo">
+                  依價錢篩選
+                  <span class="floatright"><i [ngClass]="filterCollapes[1]?'fa fa-minus':'fa fa-plus'"></i></span>
+                </a>
+                </h4>
+              </div>
+              <!-- 內容 -->
+              <div id="collapseTwo" [ngClass]="filterCollapes[1] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                <div id="slider-range"></div>
+                  <div class="cat_filter_box">
+                    <p>
+                      <label for="amount">Filter</label>
+                      <input type="text" id="amount" readonly style="border:0; color:#000; font-weight:bold;">
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            </div>
+            <!-- 依尺寸篩 -->
             <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingFive">
-              <h4 class="panel-title">
-              <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                依品牌篩選
-                <span class="floatright"><i class="fa fa-plus"></i></span>
-              </a>
-              </h4>
-            </div>
-            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-              <div class="panel-body">
-              <ul id="c_tab2">
-                <li><a href="">Apple Mac</a></li>
-                <li><a href="">MSI 微星</a></li>
-                <li><a href="">ASUS 華碩</a></li>
-                <li><a href="">Acer 宏碁</a></li>
-                <li><a href="">Lenovo 聯想</a></li>
-                <li><a href="">Hp 惠普</a></li>
-              </ul>
+              <!-- 標籤 -->
+              <div class="panel-heading" role="tab" id="headingFour">
+                <h4 class="panel-title">
+                <a (click)="[filterCollapes[2]=!filterCollapes[2]]" class="collapsed" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="false" aria-controls="collapseFour">
+                  依尺寸篩選
+                  <span class="floatright"><i [ngClass]="filterCollapes[2]?'fa fa-minus':'fa fa-plus'"></i></span>
+                </a>
+                </h4>
+              </div>
+              <!-- 內容 -->
+              <div id="collapseFour" [ngClass]="filterCollapes[2] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingFour">
+                <div class="panel-body">
+                <ul id="cat_size">
+                  <li><a href="">小</a></li>
+                  <li><a href="">13吋</a></li>
+                  <li><a href="">14吋</a></li>
+                  <li><a href="">15吋</a></li>
+                  <li><a href="">17吋</a></li>
+                  <li><a href="">大</a></li>
+                </ul>
+                </div>
               </div>
             </div>
+            <!-- 依品牌篩 -->
+            <div class="panel panel-default">
+              <!-- 標籤 -->
+              <div class="panel-heading" role="tab" id="headingFive">
+                <h4 class="panel-title">
+                <a (click)="[filterCollapes[3]=!filterCollapes[3]]" class="collapsed" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="false" aria-controls="collapseFive">
+                  依品牌篩選
+                  <span class="floatright"><i [ngClass]="filterCollapes[3]?'fa fa-minus':'fa fa-plus'"></i></span>
+                </a>
+                </h4>
+              </div>
+              <!-- 內容 -->
+              <div id="collapseFive" [ngClass]="filterCollapes[3] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingFive">
+                <div class="panel-body">
+                <ul id="c_tab2">
+                  <li><a href="">Apple Mac</a></li>
+                  <li><a href="">MSI 微星</a></li>
+                  <li><a href="">ASUS 華碩</a></li>
+                  <li><a href="">Acer 宏碁</a></li>
+                  <li><a href="">Lenovo 聯想</a></li>
+                  <li><a href="">Hp 惠普</a></li>
+                </ul>
+                </div>
+              </div>
             </div>
-
+            <!-- 依作業系統篩 -->
+            <div class="panel panel-default">
+              <!-- 標籤 -->
+              <div class="panel-heading" role="tab" id="headingFive">
+                <h4 class="panel-title">
+                <a (click)="[filterCollapes[4]=!filterCollapes[4]]" class="collapsed" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="false" aria-controls="collapseFive">
+                  依作業系統篩選
+                  <span class="floatright"><i [ngClass]="filterCollapes[4]?'fa fa-minus':'fa fa-plus'"></i></span>
+                </a>
+                </h4>
+              </div>
+              <!-- 內容 -->
+              <div id="collapseFive" [ngClass]="filterCollapes[4] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingFive">
+                <div class="panel-body">
+                <ul id="c_tab2">
+                  <li><a href="">Windows</a></li>
+                  <li><a href="">MacOS</a></li>
+                  <li><a href="">Linux</a></li>
+                </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
