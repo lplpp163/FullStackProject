@@ -205,3 +205,7 @@
     <!-- <div class="nav_right floatright"> -->
 
   </section>
+  <div *ngIf="showAD" style="z-index: 10; position: fixed; bottom: 5%; background-color:white; margin-left: auto; margin-right: auto; left: 0; right: 0; width: 600px; height: 110px;">
+    <img src="{{backend}}/storage/images/ADV.jpg" alt="" />
+    <i (click)="showAD=false" class="far fa-window-close" style="position: absolute; font-size: 25px; color: black; top: 2px ;right: 2px; cursor: pointer;"></i>
+  </div>

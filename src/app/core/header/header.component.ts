@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 export class HeaderComponent implements OnInit {
   hearts = [true, true, true, true, true];
   heart_bool = true;
+  showAD = false;
   forIndex = 0;
   keyword = '';
   backend = `${environment.backend}`;
@@ -53,9 +54,10 @@ export class HeaderComponent implements OnInit {
   }
 
   constructor(private cartService: CartService, private authService: AuthService, private router: Router) {
+    if ( Number(localStorage.getItem('user_level')) === 1) {
+      this.showAD = true;
+    }
    }
-
-
 
   get isLogin() {
     return localStorage.getItem('token');
@@ -63,23 +65,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.cartService.refresh();
-
-    // if (localStorage.getItem('token')) {
-
-    //   this.authService.me().subscribe((me: any) => {
-    //     localStorage.setItem('user_name', me.name);
-    //     localStorage.setItem('user_email', me.email);
-    //     localStorage.setItem('user_level', me.level);
-    //     console.log(me);
-    //   },
-    //   response => {
-    //     console.log(response);
-    //     // alert(response.error.message);
-    //     alert('GGG email or password');
-    //   });
-    // } else {
-    //   // alert('WTF???????');
-    // }
   }
 
   logout() {
@@ -120,6 +105,10 @@ export class HeaderComponent implements OnInit {
 
   setCurrentPage(index) {
     localStorage.setItem('cpi', index);
+  }
+
+  ADClicked() {
+
   }
 
 }
