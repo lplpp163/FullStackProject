@@ -1,4 +1,5 @@
 <!--<app-category></app-category>-->
+<h3 *ngIf="isSearch()">搜尋結果:</h3>
 
 <div *ngFor="let product of products" class="product">
 <img class="product-img" src="{{backend}}/{{product.img}}">
