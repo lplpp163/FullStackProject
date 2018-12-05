@@ -39,7 +39,16 @@
       <div class="row">
 
         <div class="col-md-3 col-sm-3 col-xs-12">
-          <div class="header_left floatleft">
+          <div class="header_left floatleft" style="margin: 28px; margin-bottom:12px">
+            <div *ngIf="userToken" style="font-size: 18px">
+                Welcome,
+                <label style="font-weight: bold;">{{userName}}</label>
+                <br>
+                <div [ngClass]='userPrintLevel()' *ngFor="let heart of hearts; let i = index" style="display: inline; ">
+                  <label [ngClass]="{'fas': (heart_bool), 'far': (!heart_bool)}" class="fa-heart" style="font-size: 18px;color: rgb(255, 78, 107); margin: 3px;"> </label>
+
+                </div>
+            </div>
           </div>
         </div>
 
@@ -131,10 +140,10 @@
           </ul>
         </nav>
       </div>
-      <!-- 購物車/登入 -->
-      <div class="nav_right floatright">
+      <div class="nav_right floatright" style="position: relative">
         <div *ngIf="!isLogin">
-            <a [routerLink]="['/login']" routerLinkActive="active" ><img src="assets/images/bag.png" alt="Bag" />登入/註冊</a>
+            <!-- <img src="assets/images/bag.png" alt="Bag" /> -->
+            <a [routerLink]="['/login']" routerLinkActive="active" ><i class="fas fa-sign-in-alt" style="font-size: 18px"></i>&nbsp;&nbsp;登入/註冊</a>
         </div>
         <div *ngIf="isLogin">
           <a [routerLink]="['/cart']" routerLinkActive="active" ><img src="assets/images/bag.png" alt="Bag" />我的購物車</a>
@@ -176,14 +185,19 @@
           </div>
 
         </div>
+        <!-- margin-left: auto; margin-right: auto; left: 0; right: 0; -->
+        <div (click)="logout()" *ngIf="isLogin" style="position: absolute;left: 200px; width: 150px; margin-top: auto; margin-bottom: auto; top:33%; bottom:0%; cursor: pointer;">
+            <a (click)="logout()" style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei; padding-left: 25px;"><i (click)="logout()" class="fas fa-sign-out-alt" style="font-size: 18px"></i>&nbsp;&nbsp;登出</a>
+        </div>
       </div>
     </div>
   <!-- <a [routerLink]="['/login']" routerLinkActive="active"  style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登入/註冊</a> -->
   <!--Login/Logout需要的功能-->
-    <div *ngIf="isLogin">
+    <div *ngIf="false">
       <div style="position: absolute;top: 128px;left: 89%;">
-        <img src="assets/images/bag.png" alt="Bag" />
+          <i class="fas fa-sign-in-alt" style="font-size: 18px"></i>&nbsp;&nbsp;
       </div>
+      <!-- <a [routerLink]="['/login']" routerLinkActive="active" ><i class="fas fa-sign-in-alt" style="font-size: 18px"></i>&nbsp;&nbsp;登入/註冊</a> -->
       <div style="position: absolute;top: 128px;left: 90.6%; padding: 3px">
         <a (click)="logout()" style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登出</a>
       </div>

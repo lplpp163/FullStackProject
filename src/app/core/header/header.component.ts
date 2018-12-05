@@ -10,6 +10,9 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  hearts = [true, true, true, true, true];
+  heart_bool = true;
+  forIndex = 0;
 
   backend = `${environment.backend}`;
 
@@ -27,6 +30,28 @@ export class HeaderComponent implements OnInit {
     return this.cartService.ship;
   }
 
+  // user info
+  get userToken() {
+    return localStorage.getItem('token');
+  }
+  get userName() {
+    return localStorage.getItem('user_name');
+  }
+  get userLevel() {
+    return Number(localStorage.getItem('user_level'));
+  }
+  userPrintLevel() {
+    if (this.forIndex < Number(localStorage.getItem('user_level'))) {
+      this.heart_bool = true;
+    } else {
+      this.heart_bool = false;
+    }
+    this.forIndex ++;
+    if (this.forIndex >= 5) {
+      this.forIndex = 0;
+    }
+  }
+
   constructor(private cartService: CartService, private authService: AuthService, private router: Router) {
    }
 
@@ -38,6 +63,23 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.cartService.refresh();
+
+    // if (localStorage.getItem('token')) {
+
+    //   this.authService.me().subscribe((me: any) => {
+    //     localStorage.setItem('user_name', me.name);
+    //     localStorage.setItem('user_email', me.email);
+    //     localStorage.setItem('user_level', me.level);
+    //     console.log(me);
+    //   },
+    //   response => {
+    //     console.log(response);
+    //     // alert(response.error.message);
+    //     alert('GGG email or password');
+    //   });
+    // } else {
+    //   // alert('WTF???????');
+    // }
   }
 
   logout() {
@@ -51,6 +93,11 @@ export class HeaderComponent implements OnInit {
     response => {
       console.log(response.error.message);
     });
+    localStorage.removeItem('token');
+    localStorage.removeItem('user_name');
+    localStorage.removeItem('user_email');
+    localStorage.removeItem('user_level');
+
     this.router.navigate(['/login']);
   }
 

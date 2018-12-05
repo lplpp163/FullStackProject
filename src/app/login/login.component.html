@@ -1,16 +1,16 @@
-<div >
+<div style="position: relative">
+    <div style="height: 522px"></div>
     <div ><!-- class="col-md-6" style="height: 600px;max-width: 100%;padding: 0% 0% 0% 0%"  -->
-      <div class="iLoginBox" style="position: absolute;top: 210px;right: 25%;left: 25%;height: 460px; background-color: #f5f0f0">
+      <div class="iLoginBox" style="position: absolute;top: 40px;right: 25%;left: 25%;height: 460px; background-color: #f5f0f0">
         <div *ngIf="Logining" style="margin: 0% 0% 0% 57%;" [ngStyle]="{'margin': myMargin}">
-            <h3 class="iLoginText" style="margin: 0% 0% 0% 3%; font-size: 26px;" >New to PCShop?</h3>
-            <h3 class="iTextS" >Sign up now and get</h3>
+            <h3 class="iLoginText" style="margin: 5% 0% 0% 3%; font-size: 26px;" >New to PCShop?</h3>
+            <h3 class="iTextS" >Sign up now! <br>Take a minute to fill in your information and you can get the best online shopping experience on PCShop, FOREVER!!! <br>It is fast, simple and free!</h3>
             <div class="iTextRight">
               <button class="iButton" (click)="OnRegister()" style="margin: 0% 8% 0% 0%; background-color: #ff1e3ce0">Register</button>
             </div>
         </div>
-        <button *ngIf="ShowRegister" class="iButton" (click)="OnLogin()" style="margin: 0% 0% 0% 50%; background-color: #ff1e3ce1">Have an account?</button>
       </div>
-      <form *ngIf="Logining" style="top: 240px; height: 400px;" class="iLoginBox" [ngStyle]="{'right': myRight}">
+      <form *ngIf="Logining" style="top: 70px; height: 400px;" class="iLoginBox" [ngStyle]="{'right': myRight}">
         <h3 class="iLoginText">Login</h3>
         <div class="iFormGroup">
           <input name="email" class="iFormControl" type="text" placeholder="Email" [(ngModel)]="login_user.email" required="">
@@ -27,7 +27,7 @@
         </div>
       </form>
 
-      <form *ngIf="!Logining" style="top: 240px; height: 400px; padding-top: 10px" class="iLoginBox" [ngStyle]="{'right': myRight}">
+      <form *ngIf="!Logining" style="top: 70px; height: 400px; padding-top: 10px" class="iLoginBox" [ngStyle]="{'right': myRight}">
         <div *ngIf="Switched" [ngStyle]="{'opacity': Opacity}" style="float:right">
             <div class="iTextRight" style=" display: inline-block;">
                 <label style="font-size: 15px ;color: rgb(153, 153, 153); font-weight: bold;">Have an account? </label>
@@ -76,21 +76,18 @@
                 <label (click)="Love_5()" [ngClass]="{'fas': (Loved[4]), 'far': (!Loved[4])}" class="fa-heart" style="font-size: 28px;color: rgb(255, 78, 107); margin: 3px; cursor: pointer"> </label>
             </div>
 
-              <div class="iTextRight" style="float: right;">
-                  <button class="iButton" (click)="register()" type="submit">Register</button>
-              </div>
+            <div class="iTextRight" style="float: right;">
+                <button class="iButton" (click)="register()" type="submit">Register</button>
+            </div>
         </div>
-        <label *ngIf="Switched" [ngStyle]="{'opacity': Opacity}" class="iLink" style="cursor: default; margin: 15px; font-weight:normal ;margin-top: 70px; font-size: 120%; float: right;">
-            <input type="checkbox" unchecked >
+        <label *ngIf="Switched" [ngStyle]="{'opacity': Opacity}" class="iLink" style="cursor: pointer; margin: 15px; font-weight:normal ;margin-top: 70px; font-size: 120%; float: right;">
+            <input type="checkbox" [checked]="Agree" (change)="Agree = !Agree" >
             I don't care about
-            <a class="iLink" href="account-password-recovery.html" style="color:rgb(255, 78, 107); font-size: 17px">User Agreement</a>
+            <a class="iLink ishowhim" style="position: relative; color:rgb(255, 78, 107); font-size: 17px;">User Agreement <div class="ishowme" style="position: absolute; bottom: 20px; background-color: darkslategrey; color:white; margin-left: auto; margin-right: auto; left: 0; right: 0;"><label style="margin: 10px">no such thing</label></div></a>
               and
-              <a class="iLink" href="account-password-recovery.html" style="color:rgb(255, 78, 107); font-size: 17px">Privacy Licence</a>
+            <a class="iLink ishowhim" style="position: relative; color:rgb(255, 78, 107); font-size: 17px;">Privacy Licence <div class="ishowme" style="position: absolute; bottom: 20px; background-color: darkslategrey; color:white; margin-left: auto; margin-right: auto; left: 0; right: 0;"><label style="margin: 10px">what licence?</label></div></a>
               .
         </label>
-
-
-
 
       </form>
     </div>

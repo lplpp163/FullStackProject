@@ -26,7 +26,8 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem('token');
+    //localStorage.removeItem('token');
+
     return this.httpClient.post(`${environment.api}/logout`, 'hello', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
