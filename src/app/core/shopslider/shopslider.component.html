@@ -10,112 +10,115 @@
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="fresh_blog_text">
-                  <h2>筆電名稱</h2>
-                  <div class="months">
-                    <div class="month_right">
-                      <p>推出日期 2018/12/04</p>
-                      <span><i class="fa fa-comment-o"></i>n 則留言</span>
-                    </div>
-                    <div class="fresh_blog_bottom_text">
-                      <h4>底下文字(簡短)</h4>
-                      <div class="view_post">
-                        <a class="" href="">讓我看看
-                        <i class="fa fa-long-arrow-right"></i>
-                        </a>
+            <!-- 第一頁 -->
+            <div [ngClass]="freshslide == 0 ? 'item active':'item'">
+              <div class="row">
+                <!-- 商品01 -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div class="fresh_blog_text">
+                    <h2>筆電名稱01</h2>
+                    <div class="months">
+                      <div class="month_right">
+                        <p>推出日期 2018/12/04</p>
+                        <span><i class="far fa-comment-dots"></i>n 則留言</span>
+                      </div>
+                      <div class="fresh_blog_bottom_text">
+                        <h4>底下文字(簡短)</h4>
+                        <div class="view_post">
+                          <a class="" href="">讓我看看
+                          <i class="fas fa-angle-double-right"></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="fresh_blog_img">
-                  <img src="assets/images/blog1.jpg" alt="" />
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="fresh_blog_text">
-                  <h2><span>_</span> 12</h2>
-                  <div class="months">
-                    <div class="month_right">
-                      <p>April 2015 </p>
-                      <span><i class="fa fa-comment-o"></i>9</span>
-                    </div>
-                    <div class="fresh_blog_bottom_text">
-                      <h4>trendy cloth designs made from<br> our team</h4>
-                      <p>Trendy Collection</p>
-                      <div class="view_post">
-                        <a class="" href="">view post
-                        <i class="fa fa-long-arrow-right"></i>
-                        </a>
-                      </div>
-                    </div>
+                  <div class="fresh_blog_img">
+                    <img src="assets/images/blog1.jpg" alt="" />
                   </div>
                 </div>
-                <div class="fresh_blog_img">
-                  <img src="images/blog2.jpg" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="fresh_blog_text">
-                  <h2><span>_</span> 11</h2>
-                  <div class="months">
-                    <div class="month_right">
-                      <p>April 2015 </p>
-                      <span><i class="fa fa-comment-o"></i>12</span>
-                    </div>
-                    <div class="fresh_blog_bottom_text">
-                      <h4>trendy cloth designs made from<br> our team</h4>
-                      <p>Trendy Collection</p>
-                      <div class="view_post">
-                        <a class="" href="">view post
-                        <i class="fa fa-long-arrow-right"></i>
-                        </a>
+                <!-- 商品02 -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="fresh_blog_text">
+                      <h2>筆電名稱02</h2>
+                      <div class="months">
+                        <div class="month_right">
+                          <p>推出日期 2018/12/04</p>
+                          <span><i class="far fa-comment-dots"></i>n 則留言</span>
+                        </div>
+                        <div class="fresh_blog_bottom_text">
+                          <h4>底下文字(簡短)</h4>
+                          <div class="view_post">
+                            <a class="" href="">讓我看看
+                            <i class="fas fa-angle-double-right"></i>
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="fresh_blog_img">
-                  <img src="images/blog1.jpg" alt="" />
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="fresh_blog_text">
-                  <h2><span>_</span> 10</h2>
-                  <div class="months">
-                    <div class="month_right">
-                      <p>April 2015 </p>
-                      <span><i class="fa fa-comment-o"></i>9</span>
+                    <div class="fresh_blog_img">
+                      <img src="assets/images/blog1.jpg" alt="" />
                     </div>
-                    <div class="fresh_blog_bottom_text">
-                      <h4>trendy cloth designs made from<br> our team</h4>
-                      <p>Trendy Collection</p>
-                      <div class="view_post">
-                        <a class="" href="">view post
-                        <i class="fa fa-long-arrow-right"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="fresh_blog_img">
-                  <img src="images/blog2.jpg" alt="" />
                 </div>
               </div>
             </div>
-          </div>
+            <!-- 第二頁 -->
+            <div [ngClass]="freshslide == 1 ? 'item active':'item'">
+                <div class="row">
+                    <!-- 商品01 -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="fresh_blog_text">
+                        <h2>筆電名稱03</h2>
+                        <div class="months">
+                          <div class="month_right">
+                            <p>推出日期 2018/12/04</p>
+                            <span><i class="far fa-comment-dots"></i>n 則留言</span>
+                          </div>
+                          <div class="fresh_blog_bottom_text">
+                            <h4>底下文字(簡短)</h4>
+                            <div class="view_post">
+                              <a class="" href="">讓我看看
+                              <i class="fas fa-angle-double-right"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fresh_blog_img">
+                        <img src="assets/images/blog1.jpg" alt="" />
+                      </div>
+                    </div>
+                    <!-- 商品02 -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="fresh_blog_text">
+                          <h2>筆電名稱04</h2>
+                          <div class="months">
+                            <div class="month_right">
+                              <p>推出日期 2018/12/04</p>
+                              <span><i class="far fa-comment-dots"></i>n 則留言</span>
+                            </div>
+                            <div class="fresh_blog_bottom_text">
+                              <h4>底下文字(簡短)</h4>
+                              <div class="view_post">
+                                <a class="" href="">讓我看看
+                                <i class="fas fa-angle-double-right"></i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="fresh_blog_img">
+                          <img src="assets/images/blog1.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
           </div>
 
           <!-- Controls -->
-          <a class="left carousel-control" href="#blog-caro" role="button" data-slide="prev">
+          <a (click)='goLeft()' class="left carousel-control" role="button" data-slide="prev">
           <i class='fa fa-angle-left'></i>
           </a>
-          <a class="right carousel-control" href="#blog-caro" role="button" data-slide="next">
+          <a (click)='goRight()' class="right carousel-control" role="button" data-slide="next">
           <i class='fa fa-angle-right'></i>
           </a>
         </div>

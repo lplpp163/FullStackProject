@@ -829,7 +829,7 @@ z-index: 4;
 left: 40px;
 position: absolute;
 top: 38px;
-z-index: 0;
+z-index: 3;
 }
 .hover_images {
 left: 0;
@@ -1439,13 +1439,13 @@ padding-bottom: 20px;
 }
 .view_post {
   border: 2px solid #fd8585;
-margin-top: 60px;
-padding: 10px 20px;
-width: 121px;
+  margin-top: 60px;
+  padding: 10px 20px;
+  width: 121px;
 }
 .view_post > a {
   color: #232323;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
 }
