@@ -12,7 +12,8 @@ import { HeaderComponent } from 'src/app/core/header/header.component';
   styleUrls: ['./products-list.component.css']
 })
 export class ProductsListComponent implements OnInit {
-
+  pdts: Product[];
+  pdtLength = 0;
   searchKey: string;
   backend = `${environment.backend}`;
   filterCollapes = [
@@ -26,10 +27,30 @@ export class ProductsListComponent implements OnInit {
   constructor(private productsService: ProductsService,
     private router: Router,
     private activatedrouter: ActivatedRoute,
-    private cartService: CartService) { }
+    private cartService: CartService) {
+      localStorage.setItem('currentPage', '1');
+    }
 
   get products() {
+    this.pdts = this.productsService.products;
+    this.pdtLength = this.pdts.length;
     return this.productsService.products;
+  }
+
+  //  0~5
+  get userLevel() {
+    return (Number(localStorage.getItem('user_level')));
+  }
+  //  page helper funcs
+  get currentPage() {
+    return (Number(localStorage.getItem('currentPage')));
+  }
+  turnPage(num) {
+    localStorage.setItem('currentPage', (Number(localStorage.getItem('currentPage')) + num).toString() );
+    window.scroll(0, 0);
+  }
+  showPage(num) {
+    return (this.pdtLength >= ((this.currentPage + num) * 12));
   }
 
   ngOnInit() {

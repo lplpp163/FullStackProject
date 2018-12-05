@@ -1,21 +1,6 @@
 <!--<app-category></app-category>-->
+
 <h3 *ngIf="isSearch()">搜尋結果:</h3>
-
-<div *ngFor="let product of products" class="product">
-<img class="product-img" src="{{backend}}/{{product.img}}">
-<div class="product-actions">
-  <div class="product-info">
-    <div class="info-block">
-      <div class="product-title">{{ product.name }}</div>
-      <div class="product-description">{{ product.description }}</div>
-      <div class="product-sale">${{ product.price }}</div>
-      <div ><button class="link_detail" (click)="detail(product.id)">詳細</button></div>
-      <div ><button class="add" (click)="add(product.id)">加入購物車</button></div>
-    </div>
-  </div>
-</div>
-</div>
-
 <section class="main_category_area">
   <div class="container">
     <div class="row">
@@ -155,11 +140,12 @@
           <!-- 商品們 -->
           <div class="row">
             <!-- 單個商品窗 -->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-              <div class="main_cat_item">
+
+            <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let product of products; let i = index">
+              <div *ngIf="((i<(currentPage*12)) && (i>=((currentPage*12)-12)))" class="main_cat_item">
                 <div class="item">
                   <div class="item-img">
-                    <img src="assets/images/t_item1.jpg" alt="" />
+                    <img src="{{backend}}/{{product.img}}" alt="" />
                     <div class="tr-add-cart">
                       <ul>
                         <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -170,30 +156,31 @@
                     </div>
                   </div>
                   <div class="item-new">
-                    <p>New</p>
-                    <span>-10%</span>
+                    <p>Wow</p>
+                    <span>{{-(1-(9-userLevel)/8)*100}}%</span>
                   </div>
                   <div class="item-sub">
-                    <a href="product-detail.html"><h5>casual fashion wool coat</h5></a>
-                    <p>$ 90.00 <span><del>$ 100</del></span></p>
+                    <a href="product-detail.html"><h5>{{ product.name }}</h5></a>
+                    <p>$ {{ product.price*(9-userLevel)/8 }} <span><del>$ {{ product.price }}</del></span></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
           <!-- 底下頁數列 -->
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="pagi_line"></div>
               <div class="pagi_ul">
                 <ul id="pagination">
-                  <li><a href="">Previous</a></li>
-                  <li><a href="">1</a></li>
-                  <li><a href="">2</a></li>
-                  <li><a href="">3</a></li>
-                  <li><a href="">4</a></li>
-                  <li><a href="">5 ...</a></li>
-                  <li><a href="">Next</a></li>
+                  <li><a *ngIf="currentPage>1" (click)="turnPage(-1)" style="cursor: pointer">Previous</a></li>
+                  <li><a >{{currentPage}}</a></li>
+                  <li><a *ngIf="showPage(0)" (click)="turnPage(1)" style="cursor: pointer">{{currentPage+1}}</a></li>
+                  <li><a *ngIf="showPage(1)" (click)="turnPage(2)" style="cursor: pointer">{{currentPage+2}}</a></li>
+                  <li><a *ngIf="showPage(2)" (click)="turnPage(3)" style="cursor: pointer">{{currentPage+3}}</a></li>
+                  <li><a *ngIf="showPage(3)" (click)="turnPage(4)" style="cursor: pointer">{{currentPage+4}} ...</a></li>
+                  <li><a *ngIf="showPage(0)" (click)="turnPage(1)" style="cursor: pointer">Next</a></li>
                 </ul>
               </div>
             </div>
