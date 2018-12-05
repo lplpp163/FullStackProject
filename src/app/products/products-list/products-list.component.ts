@@ -12,9 +12,13 @@ import { HeaderComponent } from 'src/app/core/header/header.component';
   styleUrls: ['./products-list.component.css']
 })
 export class ProductsListComponent implements OnInit {
+
   pdts: Product[];
   pdtLength = 0;
+
   searchKey: string;
+  priceSort: string;
+  branch: string;
   backend = `${environment.backend}`;
   filterCollapes = [
     true,
@@ -55,7 +59,9 @@ export class ProductsListComponent implements OnInit {
 
   ngOnInit() {
     this.searchKey = this.activatedrouter.snapshot.paramMap.get('id');
-    this.productsService.refresh(this.searchKey);
+    this.priceSort = this.activatedrouter.snapshot.paramMap.get('price');
+    this.branch = this.activatedrouter.snapshot.paramMap.get('branch');
+    this.productsService.refresh(this.searchKey, this.priceSort, this.branch);
   }
 
   add(id) {
@@ -75,5 +81,9 @@ export class ProductsListComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  reload() {
+    location.reload();
   }
 }
