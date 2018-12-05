@@ -13,10 +13,10 @@ export class HeaderComponent implements OnInit {
   hearts = [true, true, true, true, true];
   heart_bool = true;
   forIndex = 0;
-
+  keyword = '';
   backend = `${environment.backend}`;
 
-  currentPage = 0;
+  currentPage = (localStorage.getItem('cpi') != null) ? localStorage.getItem('cpi') : 0  ;
 
   get items() {
     return this.cartService.items;
@@ -55,7 +55,7 @@ export class HeaderComponent implements OnInit {
   constructor(private cartService: CartService, private authService: AuthService, private router: Router) {
    }
 
-  keyword = '';
+
 
   get isLogin() {
     return localStorage.getItem('token');
@@ -116,6 +116,10 @@ export class HeaderComponent implements OnInit {
     this.cartService.remove(id).subscribe((data: any) => {
       this.ngOnInit();
     });
+  }
+
+  setCurrentPage(index) {
+    localStorage.setItem('cpi', index);
   }
 
 }
