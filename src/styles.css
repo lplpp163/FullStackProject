@@ -2551,20 +2551,22 @@ margin-bottom: -5px;
 }
 #home-accordion .panel-default .panel-heading {
   background-color: #fff;
-border-color: #fff;
-color: #212121;
-margin-bottom: 0;
-padding: 26px 20px;
+  border-color: #fff;
+  color: #212121;
+  margin-bottom: 0;
+  padding: 26px 20px;
 }
 #home-accordion .panel-default > .panel-heading + .panel-collapse > .panel-body {
+  font-family: 'Microsoft JhengHei';
   border-top-color: #fff;
 }
 #home-accordion .panel-title {
   color: #232323;
-font-size: 14px;
-margin-bottom: 0;
-margin-top: 0;
-text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-transform: uppercase;
+  font-family: 'Microsoft JhengHei';
 }
 #home-accordion i {
 background: none repeat scroll 0 0 #ff6766;
@@ -2581,14 +2583,16 @@ padding: 2px 5px 1px;
   text-decoration:none;
 }
 .panel-body > ul#c_tab1, .panel-body > ul#c_tab2 {
+  font-family: 'Microsoft JhengHei';
   list-style: outside none none;
-margin: -28px 0 0 26px;
-padding: 0;
+  margin: -28px 0 0 26px;
+  padding: 0;
 }
 .panel-body > ul#c_tab1 li, .panel-body > ul#c_tab2 li {
   list-style-image: url("assets/images/blog_li.png");
 }
 .panel-body > ul#c_tab1 li a, .panel-body > ul#c_tab2 li a {
+  font-family: 'Microsoft JhengHei';
   color: #777777;
   display: block;
   font-size: 12px;
@@ -3038,15 +3042,20 @@ width: 100%;
 /* ============================================
 11. product detail page CSS
 ===============================================*/
-.gray_tshirt_area {background: none repeat scroll 0 0 #f7f8f9;
-padding-top: 80px;
+.gray_tshirt_area {
+  font-family: 'Microsoft JhengHei';
+  background: none repeat scroll 0 0 #f7f8f9;
+  padding-top: 80px;
 }
-.gray_tshirt{border-bottom: 1px solid #eeeeef;
-overflow: hidden;
-padding-bottom: 60px;}
+.gray_tshirt{
+  font-family: 'Microsoft JhengHei';
+  border-bottom: 1px solid #eeeeef;
+  overflow: hidden;
+  padding-bottom: 60px;
+}
 .single_p_image {
-overflow: hidden;
-position: relative;
+  overflow: hidden;
+  position: relative;
 }
 .single_product_image_tab .nav.nav-tabs.product_detail_zoom_tab {
   border-bottom: 0 solid #ddd;
@@ -3077,7 +3086,7 @@ position: relative;
 }
 .detail_heading_left h3 {
   color: #232323;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   margin-bottom: 5px;
 }
@@ -3209,7 +3218,7 @@ padding-top: 60px;
 }
 .panel-title.product_accordion_head{
   color: #333333;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -3278,6 +3287,11 @@ width: 38px;
   overflow: hidden;
   width: 30%;
 }
+
+.color_heading > h5{
+  font-size: 24px;
+}
+
 .single_color {
   margin-bottom: 30px;
 overflow: hidden;
@@ -3291,7 +3305,7 @@ overflow: hidden;
 }
 .size_cart > a {
   color: #232323;
-  font-size: 11px;
+  font-size: 13px;
   text-transform: uppercase;
 }
 .size_cart > a:hover {
@@ -3342,6 +3356,7 @@ padding-right: 5px;
 }
 #home-accordion-single.panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group {
   border-top: 0 solid #ddd;
+  font-family: 'Microsoft JhengHei';
 }
 .product_page_caro .multi_line {
   margin: -7px auto 45px 0;
