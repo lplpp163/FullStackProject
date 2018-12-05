@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { ShopwindowComponent } from './shopwindow/shopwindow.component';
 import { FormsModule } from '@angular/forms';
+import { ShopsliderComponent } from './shopslider/shopslider.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    ShopwindowComponent
+    ShopwindowComponent,
+    ShopsliderComponent
   ]
 })
 export class CoreModule { }
