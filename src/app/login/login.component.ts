@@ -157,9 +157,7 @@ export class LoginComponent implements OnInit {
       alert('Please uncheck the box.');
       return;
     }
-    // console.log(this.register_user);
     this.authService.register(this.register_user).subscribe((data: any) => {
-      // console.log(data);
       if (data.success) {
         alert('Registration success!');
         this.OnLogin();
@@ -178,14 +176,6 @@ export class LoginComponent implements OnInit {
   login() {
     console.log(this.login_user);
     this.authService.login(this.login_user).subscribe((data: any) => {
-      // console.log('login');
-      // if (data.user) {
-      //   console.log(data.user);
-      //   // console.log(data.success);
-      // } else {
-      //   console.log('no token response');
-      //   alert('wrong email or password');
-      // }
 
       if (data.token) {
         localStorage.setItem('token', data.token);
@@ -201,7 +191,6 @@ export class LoginComponent implements OnInit {
     },
     response => {
       console.log(response);
-      // alert(response.error.message);
       alert('wrong email or password');
     });
   }
