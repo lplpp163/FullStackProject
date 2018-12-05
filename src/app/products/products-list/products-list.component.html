@@ -145,10 +145,7 @@
                     <img src="{{backend}}/{{product.img}}" alt="" />
                     <div class="tr-add-cart">
                       <ul>
-                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
-                        <li><a class="tr_text" href="#">加入至購物車</a></li>
-                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
-                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                        <li><a class="tr_text" (click)="add(product.id)">加入至購物車<i class='fa fa-shopping-cart tr_cart'></i></a></li>
                       </ul>
                     </div>
                   </div>

@@ -1091,6 +1091,7 @@ padding: 0;
   display: inline-block;
 }
 .tr-add-cart > ul li a {
+cursor: pointer;
 color: #232323;
 display: block;
 font-size: 15px;
@@ -1098,6 +1099,14 @@ padding: 12px 6px;
 border-top:2px solid #fff;
 border-bottom:2px solid #fff;
 }
+.tr-add-cart > ul li button {
+  color: #232323;
+  display: block;
+  font-size: 15px;
+  padding: 12px 6px;
+  border-top:2px solid #fff;
+  border-bottom:2px solid #fff;
+  }
 .tr-add-cart > ul li a:hover {
 text-decoration:none;
 border-top:2px solid #232323;
