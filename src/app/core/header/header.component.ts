@@ -13,6 +13,8 @@ export class HeaderComponent implements OnInit {
 
   backend = `${environment.backend}`;
 
+  currentPage = 0;
+
   get items() {
     return this.cartService.items;
   }

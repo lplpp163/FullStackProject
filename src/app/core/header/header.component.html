@@ -63,6 +63,7 @@
   <!--下方的選項清單-->
   <section class="nav_area">
     <div class="container"  style="font-family:Microsoft JhengHei;">
+      <!-- 筆電倉庫 -->
       <div class="nav_left floatleft">
         <a href="category-1.html">筆電倉庫<i class="fa fa-bars"></i></a>
         <div class="cat_mega_menu">
@@ -107,14 +108,15 @@
             </div>
         </div>
       </div>
+      <!-- 全部頁面 -->
       <div class="nav_center">
         <nav class="mainmenu">
           <ul id="nav">
-            <li class="current-page-item"><a href="/">首頁</a>
+            <li [ngClass]="{'current-page-item': currentPage == 0}"><a [routerLink]="['/home']" (click)="[currentPage = 0]">首頁</a>
             </li>
-            <li><a [routerLink]="['/products']" routerLinkActive="active" (click)="reload()">所有筆電列表</a>
+            <li [ngClass]="{'current-page-item': currentPage == 1}"><a [routerLink]="['/products']" routerLinkActive="active" (click)="[currentPage = 1]">所有筆電列表</a>
             </li>
-            <li><a href="category-1.html">快速找筆電</a>
+            <li [ngClass]="{'current-page-item': currentPage == 2}"><a (click)="[currentPage = 2]">快速找筆電</a>
               <ul id="sub-menu">
                 <li><a href="">最新</a></li>
                 <li><a href="">高畫質</a></li>
@@ -125,21 +127,11 @@
                 <li class="last-child"><a href="">電競筆電</a></li>
               </ul>
             </li>
-            <li><a href="#">熱門討論</a>
-              <ul id="sub-menu5">
-                <li><a href="category-1.html">Shop Page With Filter</a></li>
-                <li><a href="category-2.html">Shop Page Without Filter</a></li>
-                <li><a href="checkout.html">Checkout page</a></li>
-                <li><a href="cart.html">Cart page</a></li>
-                <li><a href="single-blog.html">Blog single</a></li>
-                <li><a href="contact.html">Contact page</a></li>
-                <li><a href="404.html">404 page</a></li>
-              </ul>
-            </li>
-            <li><a href="blog.html">產品客服</a></li>
+            <li [ngClass]="{'current-page-item': currentPage == 3}"><a href="blog.html" (click)="[currentPage = 3]">產品客服</a></li>
           </ul>
         </nav>
       </div>
+      <!-- 購物車/登入 -->
       <div class="nav_right floatright">
         <div *ngIf="!isLogin">
             <a [routerLink]="['/login']" routerLinkActive="active" ><img src="assets/images/bag.png" alt="Bag" />登入/註冊</a>
@@ -185,8 +177,6 @@
 
         </div>
       </div>
-
-
     </div>
   <!-- <a [routerLink]="['/login']" routerLinkActive="active"  style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登入/註冊</a> -->
   <!--Login/Logout需要的功能-->
