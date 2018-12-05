@@ -61,7 +61,7 @@
         <div class="col-md-3 col-sm-3 col-xs-12">
           <div class="header_left floatright">
             <a class="fa fa-search" (click)="searchClick()"></a>
-            <input type="text" placeholder="search" [(ngModel)]="keyword"/>
+            <input type="text" placeholder="search" [(ngModel)]="keyword" (keyup.enter)="searchClick()">
           </div>
         </div>
 
@@ -123,7 +123,7 @@
           <ul id="nav">
             <li [ngClass]="{'current-page-item': currentPage == 0}"><a [routerLink]="['/home']" (click)="[currentPage = 0]">首頁</a>
             </li>
-            <li [ngClass]="{'current-page-item': currentPage == 1}"><a [routerLink]="['/products']" routerLinkActive="active" (click)="[currentPage = 1]">所有筆電列表</a>
+            <li [ngClass]="{'current-page-item': currentPage == 1}"><a [routerLink]="['/products']" routerLinkActive="active" (click)="[currentPage = 1]; reload()">所有筆電列表</a>
             </li>
             <li [ngClass]="{'current-page-item': currentPage == 2}"><a (click)="[currentPage = 2]">快速找筆電</a>
               <ul id="sub-menu">
