@@ -2557,6 +2557,7 @@ margin-bottom: 0;
 padding: 26px 20px;
 }
 #home-accordion .panel-default > .panel-heading + .panel-collapse > .panel-body {
+  font-family: 'Microsoft JhengHei';
   border-top-color: #fff;
 }
 #home-accordion .panel-title {
@@ -2565,6 +2566,7 @@ font-size: 14px;
 margin-bottom: 0;
 margin-top: 0;
 text-transform: uppercase;
+font-family: 'Microsoft JhengHei';
 }
 #home-accordion i {
 background: none repeat scroll 0 0 #ff6766;
@@ -2581,14 +2583,16 @@ padding: 2px 5px 1px;
   text-decoration:none;
 }
 .panel-body > ul#c_tab1, .panel-body > ul#c_tab2 {
+  font-family: 'Microsoft JhengHei';
   list-style: outside none none;
-margin: -28px 0 0 26px;
-padding: 0;
+  margin: -28px 0 0 26px;
+  padding: 0;
 }
 .panel-body > ul#c_tab1 li, .panel-body > ul#c_tab2 li {
   list-style-image: url("assets/images/blog_li.png");
 }
 .panel-body > ul#c_tab1 li a, .panel-body > ul#c_tab2 li a {
+  font-family: 'Microsoft JhengHei';
   color: #777777;
   display: block;
   font-size: 12px;
@@ -3342,6 +3346,7 @@ padding-right: 5px;
 }
 #home-accordion-single.panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group {
   border-top: 0 solid #ddd;
+  font-family: 'Microsoft JhengHei';
 }
 .product_page_caro .multi_line {
   margin: -7px auto 45px 0;
