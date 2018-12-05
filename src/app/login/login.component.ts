@@ -178,18 +178,21 @@ export class LoginComponent implements OnInit {
   login() {
     console.log(this.login_user);
     this.authService.login(this.login_user).subscribe((data: any) => {
-      console.log('login');
+      // console.log('login');
+      // if (data.user) {
+      //   console.log(data.user);
+      //   // console.log(data.success);
+      // } else {
+      //   console.log('no token response');
+      //   alert('wrong email or password');
+      // }
+
       if (data.token) {
-        // this.authService.me().subscribe((me: any) => {
-        //   console.log('me:');
-        //   console.log(me);
+        localStorage.setItem('token', data.token);
         localStorage.setItem('user_name', data.user.name);
         localStorage.setItem('user_email', data.user.email);
         localStorage.setItem('user_level', data.user.level);
-        //   // alert(response.error.message);
-        // });
         console.log(data.user);
-        localStorage.setItem('token', data.token);
         this.router.navigate(['/']);
       } else {
         console.log('no token response');

@@ -26,7 +26,7 @@ export class AuthService {
   }
 
   logout() {
-    //localStorage.removeItem('token');
+    // localStorage.removeItem('token');
 
     return this.httpClient.post(`${environment.api}/logout`, 'hello', {
       headers: {
@@ -37,6 +37,11 @@ export class AuthService {
 
   isLogin() {
     return localStorage.getItem('token');
+  }
+
+  TEST_update(email) {
+    // localStorage.removeItem('token');
+    return this.httpClient.post(`${environment.api}/Update`, email);
   }
 
 }
