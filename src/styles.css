@@ -953,6 +953,7 @@ padding: 25px 0;
 text-align: center;
 }
 .item-sub a h5 {
+  font-family: 'Microsoft JhengHei';
   color: #333333;
   font-size: 12px;
   margin-bottom: 0;
@@ -1050,6 +1051,7 @@ text-transform: uppercase;
   transition:.25s;
 }
 .tr_text {
+  font-family: 'Microsoft JhengHei';
   bottom: -89px;
   position: relative;
   transition:.25s;

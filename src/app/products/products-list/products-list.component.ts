@@ -16,6 +16,13 @@ export class ProductsListComponent implements OnInit {
   searchKey: string;
   products: Product[];
   backend = `${environment.backend}`;
+  filterCollapes = [
+    true,
+    false,
+    false,
+    false,
+    false
+  ];
 
   constructor(private productsService: ProductsService,
     private router: Router,
