@@ -27,9 +27,11 @@ export class LoginComponent implements OnInit {
   myMargin = '0% 0% 0% 57%';
   //  heart
   $check = 0;
-  Loved: boolean[] = [true, true, false, false, false];
+  Loved: boolean[] = [true, true, true, false, false];
   //  show
   Opacity = 0.0;
+  //  checkbox bool
+  Agree;
 
   public loginForm: FormGroup;
   public registerForm: FormGroup;
@@ -151,6 +153,10 @@ export class LoginComponent implements OnInit {
   }
 
   register() {
+    if (this.Agree) {
+      alert('Please uncheck the box.');
+      return;
+    }
     // console.log(this.register_user);
     this.authService.register(this.register_user).subscribe((data: any) => {
       // console.log(data);
@@ -174,31 +180,26 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.login_user).subscribe((data: any) => {
       console.log('login');
       if (data.token) {
+        // this.authService.me().subscribe((me: any) => {
+        //   console.log('me:');
+        //   console.log(me);
+        localStorage.setItem('user_name', data.user.name);
+        localStorage.setItem('user_email', data.user.email);
+        localStorage.setItem('user_level', data.user.level);
+        //   // alert(response.error.message);
+        // });
+        console.log(data.user);
         localStorage.setItem('token', data.token);
         this.router.navigate(['/']);
       } else {
-        alert('fail');
+        console.log('no token response');
+        alert('wrong email or password');
       }
     },
     response => {
       console.log(response);
-      alert(response.error.message);
+      // alert(response.error.message);
+      alert('wrong email or password');
     });
-
-    this.authService.me().subscribe((data: any) => {
-      console.log('me:');
-      console.log(data);
-    });
-    // if (localStorage.getItem('token')) {
-    //   this.token.token = localStorage.getItem('token');
-    //   alert('token success');
-    //   this.authService.me().subscribe((data: any) => {
-    //     console.log(data);
-    //   });
-    // } else {
-    //   alert('token fail');
-    // }
-
   }
-
 }

@@ -1,5 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+.ishowme {
+  display: none;
+}
+
+.ishowhim:hover .ishowme {
+  display: block;
+}
+
+
 .iLoginBox {
   position: absolute;
   box-shadow: 5px 5px 5px #0000001e;
