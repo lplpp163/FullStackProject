@@ -1,156 +1,155 @@
 <!-- 產品的圖片及詳細資訊 -->
 <section class="gray_tshirt_area">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="gray_tshirt">
-            <div class="row">
-              <!-- 左邊圖片 -->
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="single_product_image_tab">
-                  <div role="tabpanel">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="gray_tshirt">
+          <div class="row">
+            <!-- 左邊圖片 -->
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="single_product_image_tab">
+                <div role="tabpanel">
 
-                    <!-- Nav tabs -->
-                    <!-- <ul class="nav nav-tabs product_detail_zoom_tab" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">
-                      <div class="small_img">
-                        <img src="assets/images/small_img1.jpg" alt="" />
-                      </div>
-                    </a></li>
-                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
-                      <div class="small_img">
-                        <img src="assets/images/p_thumb.png" alt="" />
-                      </div>
-                    </a></li>
-                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
-                      <div class="small_img">
-                        <img src="assets/images/p_thumb2.png" alt="" />
-                      </div>
-                    </a></li>
-                    </ul> -->
-
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="home">
-                      <div class="single_p_image">
-                        <a href="{{backend}}/{{product?.img}}" data-lightbox="image-1" data-title="My caption"><img src="assets/images/product-plus.png" alt="" /></a>
-                        <img id="zoom_02" src="{{backend}}/{{product?.img}}" alt=""/>
-                      </div>
+                  <!-- Nav tabs -->
+                  <!-- <ul class="nav nav-tabs product_detail_zoom_tab" role="tablist">
+                  <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                    <div class="small_img">
+                      <img src="assets/images/small_img1.jpg" alt="" />
                     </div>
-                    <!-- <div role="tabpanel" class="tab-pane" id="profile">
-                      <div class="single_p_image">
-                        <a href="assets/images/single-large1.png" data-lightbox="image-1" data-title="My caption"><img src="assets/images/product-plus.png" alt="" /></a>
-                        <img id="zoom_03" src="assets/images/product_detail_05.png" data-zoom-image="assets/images/single-large1.png" alt=""/>
-                      </div>
-                    </div> -->
-                    <!-- <div role="tabpanel" class="tab-pane" id="messages">
-                      <div class="single_p_image">
-                        <a href="assets/images/single-large2.png" data-lightbox="image-1" data-title="My caption"><img src="assets/images/product-plus.png" alt="" /></a>
-                        <img id="zoom_04" src="assets/images/product_detail_06.png" data-zoom-image="assets/images/single-large2.png" alt=""/>
-                      </div>
-                    </div> -->
+                  </a></li>
+                  <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+                    <div class="small_img">
+                      <img src="assets/images/p_thumb.png" alt="" />
                     </div>
+                  </a></li>
+                  <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
+                    <div class="small_img">
+                      <img src="assets/images/p_thumb2.png" alt="" />
+                    </div>
+                  </a></li>
+                  </ul> -->
 
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="single_p_image">
+                      <a href="{{backend}}/{{product?.img}}" data-lightbox="image-1" data-title="My caption"><img src="assets/images/product-plus.png" alt="" /></a>
+                      <img id="zoom_02" src="{{backend}}/{{product?.img}}" alt=""/>
+                    </div>
                   </div>
+                  <!-- <div role="tabpanel" class="tab-pane" id="profile">
+                    <div class="single_p_image">
+                      <a href="assets/images/single-large1.png" data-lightbox="image-1" data-title="My caption"><img src="assets/images/product-plus.png" alt="" /></a>
+                      <img id="zoom_03" src="assets/images/product_detail_05.png" data-zoom-image="assets/images/single-large1.png" alt=""/>
+                    </div>
+                  </div> -->
+                  <!-- <div role="tabpanel" class="tab-pane" id="messages">
+                    <div class="single_p_image">
+                      <a href="assets/images/single-large2.png" data-lightbox="image-1" data-title="My caption"><img src="assets/images/product-plus.png" alt="" /></a>
+                      <img id="zoom_04" src="assets/images/product_detail_06.png" data-zoom-image="assets/images/single-large2.png" alt=""/>
+                    </div>
+                  </div> -->
+                  </div>
+
                 </div>
               </div>
-              <!-- 右邊資訊 -->
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <!-- 標題 -->
-                <div class="product_detail_heading">
-                  <div class="detail_heading_left">
-                    <h3>{{product.name}}</h3>
-                    <div class="old_price_gray"><p> {{product.price | currency}} </p></div>
-                    <div class="new_price_gray"><del> {{product.price | currency}} </del></div>
-                  </div>
-                  <div class="detail_heading_right">
+            </div>
+            <!-- 右邊資訊 -->
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <!-- 標題 -->
+              <div class="product_detail_heading">
+                <div class="detail_heading_left">
+                  <h3>{{product?.name}}</h3>
+                  <div class="new_price_gray"><p> {{ product?.price * (1-(9-userLevel)/8) | currency}} </p></div>
+                  <div class="old_price_gray"><del> {{product?.price | currency}} </del></div>
+                </div>
+                <div class="detail_heading_right">
 
-                    <!-- <ul id="detail_star">
+                  <!-- <ul id="detail_star">
                       <li><a class="fa fa-star red" href=""></a></li>
                       <li><a class="fa fa-star red" href=""></a></li>
                       <li><a class="fa fa-star red" href=""></a></li>
                       <li><a class="fa fa-star" href=""></a></li>
                       <li><a class="fa fa-star" href=""></a></li>
                     </ul> -->
-                  </div>
                 </div>
-                <!-- 資訊 -->
-                <div class="panel-group product_accordion" id="home-accordion-single" role="tablist" aria-multiselectable="true">
-                  <!-- 摺疊頁01-敘述 -->
-                  <div class="panel panel-default product_default">
-                    <!-- 標籤 -->
-                    <div class="panel-heading product_accordion_heading" role="tab" id="headingOneP">
-                      <h4 class="panel-title product_accordion_head">
-                      <a data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseOneP" aria-expanded="true" aria-controls="collapseOneP">
-                        產品敘述
-                      </a>
-                      </h4>
-                    </div>
-                    <!-- 內容 -->
-                    <div id="collapseOneP" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneP">
-                      <div class="panel-body product_ac_body">
-                        <p>{{product.description}}</p>
-                        <!-- 可選用的條列 -->
+              </div>
+              <!-- 資訊 -->
+              <div class="panel-group product_accordion" id="home-accordion-single" role="tablist" aria-multiselectable="true">
+                <!-- 摺疊頁01-敘述 -->
+                <div class="panel panel-default product_default">
+                  <!-- 標籤 -->
+                  <div class="panel-heading product_accordion_heading" role="tab" id="headingOneP">
+                    <h4 class="panel-title product_accordion_head">
+                    <a data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseOneP" aria-expanded="true" aria-controls="collapseOneP">
+                      {{product?.description}}
+                    </a>
+                    </h4>
+                  </div>
+                  <!-- 內容 -->
+                  <div id="collapseOneP" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneP">
+                    <div class="panel-body product_ac_body">
+                      <p>(特色敘述)</p>
+                      <!-- 可選用的條列 -->
                         <!-- <ul id="product_accord_nav">
                           <li><a href="">Tristique senectus et netus aspernatur aut.</a></li>
                           <li><a href="">Labore doloam aliquam quaerat voluptatem.</a></li>
                           <li><a href="">Nisi ut aliquid ex ea commodi consequatue.</a></li>
                         </ul> -->
+                    </div>
+                  </div>
+                </div>
+                <!-- 摺疊頁02-敘述 -->
+                <div class="panel panel-default product_default">
+                  <!-- 標籤 -->
+                  <div class="panel-heading product_accordion_heading" role="tab" id="headingTwoP">
+                    <h4 class="panel-title product_accordion_head">
+                      <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseTwoP" aria-expanded="false" aria-controls="collapseTwoP">
+                        筆電配置
+                      </a>
+                    </h4>
+                  </div>
+                  <!-- 內容 -->
+                  <div id="collapseTwoP" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwoP">
+                    <div class="panel-body product_ac_body">
+                        <p>(筆電名稱)</p>
+                        <!-- 配置條列 -->
+                        <ul id="product_accord_nav">
+                            <li><a>CPU: {{product?.cpu}}</a></li>
+                            <li><a>GPU: {{product?.gpu}}</a></li>
+                            <li><a>RAM: {{product?.ram}}</a></li>
+                            <li><a>儲存空間: {{product?.storage}}</a></li>
+                            <li><a>作業系統: {{product?.os}}</a></li>
+                            <li><a>尺寸: {{product?.size}}</a></li>
+                            <li><a>推出日期: {{product?.created_at}}</a></li>
+                            <li><a>公司品牌: {{product?.brand}}</a></li>
+                        </ul>
                       </div>
-                    </div>
                   </div>
-                  <!-- 摺疊頁02-敘述 -->
-                  <div class="panel panel-default product_default">
-                    <!-- 標籤 -->
-                    <div class="panel-heading product_accordion_heading" role="tab" id="headingTwoP">
-                      <h4 class="panel-title product_accordion_head">
-                        <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseTwoP" aria-expanded="false" aria-controls="collapseTwoP">
-                          筆電配置
-                        </a>
-                      </h4>
-                    </div>
-                    <!-- 內容 -->
-                    <div id="collapseTwoP" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwoP">
-                      <div class="panel-body product_ac_body">
-                          <p>{{product.name}}</p>
-                          <!-- 配置條列 -->
-                          <ul id="product_accord_nav">
-                              <li><a>CPU: {{product.cpu}}</a></li>
-                              <li><a>GPU: {{product.gpu}}</a></li>
-                              <li><a>RAM: {{product.ram}}</a></li>
-                              <li><a>儲存空間: {{product.storage}}</a></li>
-                              <li><a>作業系統: {{osNames[product.os_id]}}</a></li>
-                              <li><a>尺寸: {{product.size}}</a></li>
-                              <li><a>推出日期: {{product.created_at}}</a></li>
-                              <li><a>公司品牌: {{brands[product.category_id]}}</a></li>
-                          </ul>
-                        </div>
-                    </div>
-                  </div>
-                  <!-- 摺疊頁03-敘述 -->
-                  <div class="panel panel-default product_default">
-                    <div class="single-color">
-                        <div class="color_heading"><h5>現在就購入! </h5></div>
-                        <div class="color_detail">
-                            <div class="size_cart">
-                              <a (click)='add(product.id)'>加入購物車</a>
-                            </div>
-                            <!-- <div class="size_heart">
+                </div>
+                <!-- 摺疊頁03-敘述 -->
+                <div class="panel panel-default product_default">
+                  <div class="single-color">
+                      <div class="color_detail">
+                          <div class="size_cart">
+                            <a (click)="add(product?.id)">加入購物車</a>
+                          </div>
+                          <!-- <div class="size_heart">
                               <a href=""><img src="assets/images/Product-Details-heart.png" alt="" /></a>
                             </div>
                             <div class="size_heart">
                               <a href=""><img src="assets/images/Product-Details-arrow.png" alt="" /></a>
                             </div> -->
-                        </div>
-                    </div>
+                      </div>
                   </div>
-
                 </div>
 
               </div>
+
             </div>
           </div>
-				</div>
-			</div>
-		</div>
-	</section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

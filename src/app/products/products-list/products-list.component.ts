@@ -17,9 +17,6 @@ export class ProductsListComponent implements OnInit {
   pdtLength = 0;
 
   searchKey: string;
-  priceSort: string;
-  branch: string;
-  os: string;
   backend = `${environment.backend}`;
   filterCollapes = [
     true,
@@ -38,7 +35,7 @@ export class ProductsListComponent implements OnInit {
 
   get products() {
     this.pdts = this.productsService.products;
-    this.pdtLength = this.pdts.length;
+    this.pdtLength = this.pdts ? this.pdts.length : 0;
     return this.productsService.products;
   }
 
@@ -60,26 +57,25 @@ export class ProductsListComponent implements OnInit {
 
   ngOnInit() {
     this.searchKey = this.activatedrouter.snapshot.paramMap.get('id');
-    this.priceSort = this.activatedrouter.snapshot.paramMap.get('price');
-    this.branch = this.activatedrouter.snapshot.paramMap.get('branch');
-    this.os = this.activatedrouter.snapshot.paramMap.get('os');
-    this.productsService.refresh(this.searchKey, this.priceSort, this.branch, this.os);
+    this.productsService.refresh(this.activatedrouter.snapshot.paramMap.get('id'),
+     this.activatedrouter.snapshot.paramMap.get('price'),
+     this.activatedrouter.snapshot.paramMap.get('brand'),
+     this.activatedrouter.snapshot.paramMap.get('os'),
+     this.activatedrouter.snapshot.paramMap.get('tag')
+     );
   }
 
   add(id) {
     this.cartService.add(id).subscribe((data: any) => {
       if (data.success) {
-        location.reload();
+        this.cartService.refresh();
+        alert('成功加入');
       }
     });
   }
 
-  detail(id) {
-    this.router.navigate([`/products/${id}`]);
-  }
-
   isSearch() {
-    if (this.searchKey !== null) {
+    if (this.searchKey !== null && this.searchKey !== '') {
       return true;
     }
     return false;
@@ -89,25 +85,22 @@ export class ProductsListComponent implements OnInit {
     this.ngOnInit();
   }
 
-  reloadBranch(branchnum) {
-    this.branch = branchnum;
-    this.searchKey = '';
-    this.priceSort = '';
-    this.router.navigate(['/products', {branch: branchnum}]);
-    this.productsService.refresh(this.searchKey, this.priceSort, this.branch, this.os);
+  reloadTag(tag) {
+    this.router.navigate(['/products', {tag: tag}]);
+    this.productsService.refresh(null, null, null, null, tag);
+  }
+
+  reloadBrand(brandnum) {
+    this.router.navigate(['/products', {brand: brandnum}]);
+    this.productsService.refresh(null, null, brandnum, null, null);
   }
 
   reloadPrice(sortMethod) {
-    this.priceSort = sortMethod;
-    this.searchKey = '';
-    this.productsService.refresh(this.searchKey, this.priceSort, this.branch, this.os);
+    this.router.navigate(['/products', {price: sortMethod}]);
+    this.productsService.refresh(null, sortMethod, null, null, null);
   }
 
   reloadOS(osnum) {
-    this.os = osnum;
-    this.searchKey = '';
-    this.priceSort = '';
-    this.branch = '';
-    this.productsService.refresh(this.searchKey, this.priceSort, this.branch, this.os);
+    this.productsService.refresh(null, null, null, osnum, null);
   }
 }

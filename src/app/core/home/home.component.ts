@@ -15,9 +15,7 @@ export class HomeComponent implements OnInit {
   products: Product[];
   backend = `${environment.backend}`;
 
-  constructor(private productsService: ProductsService, private cartService: CartService) {
-    localStorage.setItem('cpi', '0');
-   }
+  constructor(private productsService: ProductsService, private cartService: CartService) { }
 
   ngOnInit() {
     localStorage.setItem('cpi', '0');

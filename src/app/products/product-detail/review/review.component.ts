@@ -32,6 +32,7 @@ export class ReviewComponent implements OnInit {
   }
 
   createReview() {
+    if (!this.reviewFrom.title || !this.reviewFrom.description) { return; }
     this.reviewFrom.user_name = localStorage.getItem('user_name');
     this.reviewFrom.product_id = this.id;
     this.reviewService.create(this.reviewFrom).subscribe((data: any) => {

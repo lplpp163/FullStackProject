@@ -13,13 +13,13 @@
                   <div class="multi_line"></div>
                 </div>
                 <div class="review_heading_right">
-                  <!-- <ul id="review_heading_star">
+                  <ul id="review_heading_star">
                     <li><a href="" class="fa fa-star"></a></li>
                     <li><a href="" class="fa fa-star"></a></li>
                     <li><a href="" class="fa fa-star"></a></li>
                     <li><a href="" class="fa fa-star"></a></li>
                     <li><a href="" class="fa fa-star"></a></li>
-                  </ul> -->
+                  </ul>
                 </div>
               </div>
 
@@ -48,7 +48,7 @@
               </div>
               <div class="review_comment_input">
                 <input type="text" placeholder="簡短敘述評論概要" required [(ngModel)]="reviewFrom.title"/><br>
-                <textarea name="" id="" cols="30" rows="10" placeholder="詳細敘述您對產品的評論" [(ngModel)]="reviewFrom.description"></textarea><br>
+                <textarea name="" id="" cols="30" rows="10" required placeholder="詳細敘述您對產品的評論" [(ngModel)]="reviewFrom.description"></textarea><br>
                 <input type="submit" (click)="createReview()" value="送出"/>
               </div>
             </div>

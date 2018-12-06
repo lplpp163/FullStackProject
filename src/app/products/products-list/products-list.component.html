@@ -23,14 +23,13 @@
               <div id="collapseOne" [ngClass]="filterCollapes[0] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
                 <ul id="c_tab1">
-                  <li><a href="">最新推出</a></li>
-                  <li><a href="">特價中</a></li>
-                  <li><a href="">高效能</a></li>
-                  <li><a href="">高畫質</a></li>
-                  <li><a href="">高記憶體</a></li>
-                  <li><a href="">輕薄易攜</a></li>
-                  <li><a href="">電競筆電</a></li>
-                  <li><a href="">文書筆電</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('最新推出')">最新推出</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('高效能')">高效能</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('高畫質')">高畫質</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('高記憶體')">高記憶體</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('輕薄易攜')">輕薄易攜</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('電競筆電')">電競筆電</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('文書筆電')">文書筆電</a></li>
                 </ul>
                 </div>
               </div>
@@ -96,12 +95,12 @@
               <div id="collapseFive" [ngClass]="filterCollapes[3] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingFive">
                 <div class="panel-body">
                 <ul id="c_tab2">
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBranch(1)">Apple Mac</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBranch(2)">MSI 微星</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBranch(3)">ASUS 華碩</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBranch(4)">Acer 宏碁</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBranch(5)">Lenovo 聯想</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBranch(6)">Hp 惠普</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBrand(1)">Apple Mac</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBrand(2)">MSI 微星</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBrand(3)">ASUS 華碩</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBrand(4)">Acer 宏碁</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBrand(5)">Lenovo 聯想</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBrand(6)">Hp 惠普</a></li>
                 </ul>
                 </div>
               </div>
@@ -141,10 +140,10 @@
               <div *ngIf="((i<(currentPage*12)) && (i>=((currentPage*12)-12)))" class="main_cat_item">
                 <div class="item">
                   <div class="item-img">
-                    <img src="{{backend}}/{{product.img}}" alt="" />
+                    <img src="{{backend}}/{{product?.img}}" alt="" />
                     <div class="tr-add-cart">
                       <ul>
-                        <li><a class="tr_text" (click)="add(product.id)">加入至購物車<i class='fa fa-shopping-cart tr_cart'></i></a></li>
+                        <li><a class="tr_text" (click)="add(product?.id)">加入至購物車<i class='fa fa-shopping-cart tr_cart'></i></a></li>
                       </ul>
                     </div>
                   </div>
@@ -153,8 +152,8 @@
                     <span>{{-(1-(9-userLevel)/8)*100}}%</span>
                   </div>
                   <div class="item-sub">
-                    <a [routerLink]="[product.id]"><h5>{{ product.name }}</h5></a>
-                    <p>$ {{ product.price*(9-userLevel)/8 }} <span><del>$ {{ product.price }}</del></span></p>
+                    <a [routerLink]="[product?.id]"><h5>{{ product?.name }}</h5></a>
+                    <p>$ {{ product?.price * (1-(9-userLevel)/8) }} <span><del>$ {{ product?.price }}</del></span></p>
                   </div>
                 </div>
               </div>

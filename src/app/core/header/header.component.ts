@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { environment } from 'src/environments/environment';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-header',
@@ -53,7 +54,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  constructor(private cartService: CartService, private authService: AuthService, private router: Router) {
+  constructor(private productService: ProductsService, private cartService: CartService,
+    private authService: AuthService, private router: Router) {
     if ( Number(localStorage.getItem('user_level')) === 1) {
       this.showAD = true;
     }
@@ -70,7 +72,6 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.showAD = false;
     this.authService.logout().subscribe((data: any) => {
       if (data.message) {
         // alert(data.message);
@@ -86,18 +87,19 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('user_email');
     localStorage.removeItem('user_level');
     localStorage.removeItem('discount');
+
     this.router.navigate(['/login']);
   }
 
   searchClick() {
     if (this.keyword.trim()) {
-      this.reload();
+      this.productService.refresh(this.keyword, null, null, null, null);
       this.router.navigate(['/products', {id: this.keyword}]);
     }
   }
 
   reload() {
-    location.reload();
+    this.productService.refresh(null, null, null, null, null);
   }
 
   remove(id) {

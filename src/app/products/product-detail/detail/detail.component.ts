@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/product';
-import { ProductsService } from 'src/app/services/products.service';
-import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { CartService } from 'src/app/services/cart.service';
+import { ProductsService } from 'src/app/services/products.service';
+import { ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-detail',
@@ -13,11 +13,10 @@ import { CartService } from 'src/app/services/cart.service';
 export class DetailComponent implements OnInit {
 
   product: Product;
-  osNames = ['Windows', 'MacOS', 'Linux'];
-  brands = ['Apple', 'MSI', 'ASUS', 'Acer', 'Lenovo', 'Hp'];
   backend = `${environment.backend}`;
   id = this.route.snapshot.paramMap.get('id');
-  constructor(private productsService: ProductsService, private route: ActivatedRoute, private cartService: CartService) { }
+
+  constructor(private cartService: CartService, private productsService: ProductsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.productsService.getProduct(this.id).subscribe((data: Product) => {
@@ -25,11 +24,16 @@ export class DetailComponent implements OnInit {
     });
   }
 
+  get userLevel() {
+    return (Number(localStorage.getItem('user_level')));
+  }
+
   add(id) {
     this.cartService.add(id).subscribe((data: any) => {
       if (data.success) {
-        location.reload();
+        this.cartService.refresh();
       }
     });
   }
+
 }
