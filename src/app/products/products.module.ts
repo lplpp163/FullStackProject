@@ -5,11 +5,14 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { RouterModule } from '@angular/router';
 import { DetailComponent } from './detail/detail.component';
 import { RelatedwindowComponent } from './relatedwindow/relatedwindow.component';
+import { ReviewComponent } from './product-detail/review/review.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
   ],
   exports: [
     ProductsListComponent,
@@ -20,6 +23,7 @@ import { RelatedwindowComponent } from './relatedwindow/relatedwindow.component'
     ProductDetailComponent,
     DetailComponent,
     RelatedwindowComponent,
+    ReviewComponent,
   ]
 })
 export class ProductsModule { }
