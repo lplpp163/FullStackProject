@@ -50,8 +50,8 @@
               <div id="collapseTwo" [ngClass]="filterCollapes[1] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="panel-body">
                   <ul id="c_tab1">
-                    <li><a [routerLink]="['/products', {price: 'asc'}]" routerLinkActive="router-link-active" (click)="reload()">由低至高排序</a></li>
-                    <li><a [routerLink]="['/products', {price: 'desc'}]" routerLinkActive="router-link-active" (click)="reload()">由高至低排序</a></li>
+                    <li><a [routerLink]="['/products', {price: 'asc'}]" routerLinkActive="router-link-active" (click)="reloadPrice('asc')">由低至高排序</a></li>
+                    <li><a [routerLink]="['/products', {price: 'desc'}]" routerLinkActive="router-link-active" (click)="reloadPrice('desc')">由高至低排序</a></li>
                   </ul>
                 </div>
               </div>
@@ -96,12 +96,12 @@
               <div id="collapseFive" [ngClass]="filterCollapes[3] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingFive">
                 <div class="panel-body">
                 <ul id="c_tab2">
-                  <li><a [routerLink]="['/products', {branch: 1}]" routerLinkActive="router-link-active" (click)="reload()">Apple Mac</a></li>
-                  <li><a [routerLink]="['/products', {branch: 2}]" routerLinkActive="router-link-active" (click)="reload()">MSI 微星</a></li>
-                  <li><a [routerLink]="['/products', {branch: 3}]" routerLinkActive="router-link-active" (click)="reload()">ASUS 華碩</a></li>
-                  <li><a [routerLink]="['/products', {branch: 4}]" routerLinkActive="router-link-active" (click)="reload()">Acer 宏碁</a></li>
-                  <li><a [routerLink]="['/products', {branch: 5}]" routerLinkActive="router-link-active" (click)="reload()">Lenovo 聯想</a></li>
-                  <li><a [routerLink]="['/products', {branch: 6}]" routerLinkActive="router-link-active" (click)="reload()">Hp 惠普</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBranch(1)">Apple Mac</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBranch(2)">MSI 微星</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBranch(3)">ASUS 華碩</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBranch(4)">Acer 宏碁</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBranch(5)">Lenovo 聯想</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBranch(6)">Hp 惠普</a></li>
                 </ul>
                 </div>
               </div>
@@ -121,9 +121,9 @@
               <div id="collapseFive" [ngClass]="filterCollapes[4] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingFive">
                 <div class="panel-body">
                 <ul id="c_tab2">
-                  <li><a href="">Windows</a></li>
-                  <li><a href="">MacOS</a></li>
-                  <li><a href="">Linux</a></li>
+                  <li><a [routerLink]="['/products', {os: 1}]" routerLinkActive="router-link-active" (click)="reloadOS(1)">Windows</a></li>
+                  <li><a [routerLink]="['/products', {os: 2}]" routerLinkActive="router-link-active" (click)="reloadOS(2)">MacOS</a></li>
+                  <li><a [routerLink]="['/products', {os: 3}]" routerLinkActive="router-link-active" (click)="reloadOS(3)">Linux</a></li>
                 </ul>
                 </div>
               </div>
@@ -144,10 +144,7 @@
                     <img src="{{backend}}/{{product.img}}" alt="" />
                     <div class="tr-add-cart">
                       <ul>
-                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
-                        <li><a class="tr_text" href="#">加入至購物車</a></li>
-                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
-                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                        <li><a class="tr_text" (click)="add(product.id)">加入至購物車<i class='fa fa-shopping-cart tr_cart'></i></a></li>
                       </ul>
                     </div>
                   </div>
@@ -156,7 +153,7 @@
                     <span>{{-(1-(9-userLevel)/8)*100}}%</span>
                   </div>
                   <div class="item-sub">
-                    <a href="product-detail.html"><h5>{{ product.name }}</h5></a>
+                    <a [routerLink]="['/products/{product.id}']"><h5>{{ product.name }}</h5></a>
                     <p>$ {{ product.price*(9-userLevel)/8 }} <span><del>$ {{ product.price }}</del></span></p>
                   </div>
                 </div>
@@ -164,13 +161,13 @@
             </div>
           </div>
           <!-- 底下頁數列 -->
-          <div class="row">
+          <div *ngIf="pdtLength > 0; else nocontent" class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="pagi_line"></div>
               <div class="pagi_ul">
                 <ul id="pagination">
                   <li><a *ngIf="currentPage>1" (click)="turnPage(-1)" style="cursor: pointer">Previous</a></li>
-                  <li><a >{{currentPage}}</a></li>
+                  <li>{{currentPage}}</li>
                   <li><a *ngIf="showPage(0)" (click)="turnPage(1)" style="cursor: pointer">{{currentPage+1}}</a></li>
                   <li><a *ngIf="showPage(1)" (click)="turnPage(2)" style="cursor: pointer">{{currentPage+2}}</a></li>
                   <li><a *ngIf="showPage(2)" (click)="turnPage(3)" style="cursor: pointer">{{currentPage+3}}</a></li>
@@ -180,6 +177,12 @@
               </div>
             </div>
           </div>
+          <ng-template #nocontent>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <h2>Oh No! We Don't Have This Kind of Laptop Now!</h2>
+              <h4>Please Wait Forever.</h4>
+            </div>
+          </ng-template>
         </div>
       </div>
     </div>

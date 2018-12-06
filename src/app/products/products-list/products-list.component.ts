@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { Product } from 'src/app/models/product';
 import {environment} from 'src/environments/environment';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { HeaderComponent } from 'src/app/core/header/header.component';
 
@@ -19,6 +19,7 @@ export class ProductsListComponent implements OnInit {
   searchKey: string;
   priceSort: string;
   branch: string;
+  os: string;
   backend = `${environment.backend}`;
   filterCollapes = [
     true,
@@ -61,7 +62,8 @@ export class ProductsListComponent implements OnInit {
     this.searchKey = this.activatedrouter.snapshot.paramMap.get('id');
     this.priceSort = this.activatedrouter.snapshot.paramMap.get('price');
     this.branch = this.activatedrouter.snapshot.paramMap.get('branch');
-    this.productsService.refresh(this.searchKey, this.priceSort, this.branch);
+    this.os = this.activatedrouter.snapshot.paramMap.get('os');
+    this.productsService.refresh(this.searchKey, this.priceSort, this.branch, this.os);
   }
 
   add(id) {
@@ -84,6 +86,28 @@ export class ProductsListComponent implements OnInit {
   }
 
   reload() {
-    location.reload();
+    this.ngOnInit();
+  }
+
+  reloadBranch(branchnum) {
+    this.branch = branchnum;
+    this.searchKey = '';
+    this.priceSort = '';
+    this.router.navigate(['/products', {branch: branchnum}]);
+    this.productsService.refresh(this.searchKey, this.priceSort, this.branch, this.os);
+  }
+
+  reloadPrice(sortMethod) {
+    this.priceSort = sortMethod;
+    this.searchKey = '';
+    this.productsService.refresh(this.searchKey, this.priceSort, this.branch, this.os);
+  }
+
+  reloadOS(osnum) {
+    this.os = osnum;
+    this.searchKey = '';
+    this.priceSort = '';
+    this.branch = '';
+    this.productsService.refresh(this.searchKey, this.priceSort, this.branch, this.os);
   }
 }
