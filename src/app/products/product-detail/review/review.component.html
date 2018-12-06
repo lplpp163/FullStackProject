@@ -1,0 +1,61 @@
+<section class="product_page_tab_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="product_page_tab">
+
+          <div role="tabpanel" class="tab-pane tab-p-details" id="messages2">
+            <div class="review_comments">
+
+              <div class="review_heading">
+                <div class="review_heading_left">
+                  <h2> 商品評論 </h2>
+                  <div class="multi_line"></div>
+                </div>
+                <div class="review_heading_right">
+                  <ul id="review_heading_star">
+                    <li><a href="" class="fa fa-star"></a></li>
+                    <li><a href="" class="fa fa-star"></a></li>
+                    <li><a href="" class="fa fa-star"></a></li>
+                    <li><a href="" class="fa fa-star"></a></li>
+                    <li><a href="" class="fa fa-star"></a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div *ngFor="let review of reviews" class="single_review_comment">
+                <div class="single_review_text">
+                  <h4>{{review.title}}</h4>
+                  <ul id="single_review_star">
+                    <li><a href="" class="fa fa-star"></a></li>
+                    <li><a href="" class="fa fa-star"></a></li>
+                    <li><a href="" class="fa fa-star"></a></li>
+                    <li><a href="" class="fa fa-star"></a></li>
+                    <li><a href="" class="fa fa-star"></a></li>
+                  </ul>
+                  <p>{{review.description}}</p>
+                  <div class="review_italic">
+                    <p><span>{{review.user_name}},</span> {{review.created_at}}</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div *ngIf="isLogin" class="Review_input">
+              <div class="review_input_heading">
+                <h3>新增評論</h3>
+                <div class="multi_line"></div>
+              </div>
+              <div class="review_comment_input">
+                <input type="text" placeholder="簡短敘述評論概要" required [(ngModel)]="reviewFrom.title"/><br>
+                <textarea name="" id="" cols="30" rows="10" placeholder="詳細敘述您對產品的評論" [(ngModel)]="reviewFrom.description"></textarea><br>
+                <input type="submit" (click)="createReview()" value="送出"/>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
