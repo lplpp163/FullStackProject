@@ -57,6 +57,7 @@ export class HeaderComponent implements OnInit {
     if ( Number(localStorage.getItem('user_level')) === 1) {
       this.showAD = true;
     }
+    this.currentPage = (localStorage.getItem('cpi') != null) ? localStorage.getItem('cpi') : 0  ;
    }
 
   get isLogin() {
@@ -65,6 +66,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.cartService.refresh();
+    this.currentPage = (localStorage.getItem('cpi') != null) ? localStorage.getItem('cpi') : 0  ;
   }
 
   logout() {

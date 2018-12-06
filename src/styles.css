@@ -338,6 +338,7 @@ nav.mainmenu::after {
   width: 100%;
 }
 .mainmenu ul#nav {
+  cursor: pointer;
   list-style: outside none none;
   margin: 0;
   padding: 0;
