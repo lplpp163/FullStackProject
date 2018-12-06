@@ -3098,7 +3098,7 @@ width: 100%;
   z-index: 2;
 }
 .single_p_image > img {
-  margin-left: 70px;
+  margin-left: 0px;
 }
 .detail_heading_left h3 {
   color: #232323;
