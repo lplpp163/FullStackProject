@@ -112,18 +112,17 @@
                     <!-- 內容 -->
                     <div id="collapseTwoP" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwoP">
                       <div class="panel-body product_ac_body">
-                          <p>(筆電名稱)</p>
+                          <p>{{product.name}}</p>
                           <!-- 配置條列 -->
                           <ul id="product_accord_nav">
-                              <li><a href="">CPU</a></li>
-                              <li><a href="">GPU</a></li>
-                              <li><a href="">RAM</a></li>
-                              <li><a href="">儲存空間</a></li>
-                              <li><a href="">作業系統</a></li>
-                              <li><a href="">尺寸</a></li>
-                              <li><a href="">重量</a></li>
-                              <li><a href="">推出日期</a></li>
-                              <li><a href="">公司品牌</a></li>
+                              <li><a>CPU: {{product.cpu}}</a></li>
+                              <li><a>GPU: {{product.gpu}}</a></li>
+                              <li><a>RAM: {{product.ram}}</a></li>
+                              <li><a>儲存空間: {{product.storage}}</a></li>
+                              <li><a>作業系統: {{osNames[product.os_id]}}</a></li>
+                              <li><a>尺寸: {{product.size}}</a></li>
+                              <li><a>推出日期: {{product.created_at}}</a></li>
+                              <li><a>公司品牌: {{brands[product.category_id]}}</a></li>
                           </ul>
                         </div>
                     </div>

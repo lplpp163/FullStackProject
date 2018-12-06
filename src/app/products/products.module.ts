@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { RouterModule } from '@angular/router';
-import { DetailComponent } from './detail/detail.component';
+import { DetailComponent } from './product-detail/detail/detail.component';
 import { RelatedwindowComponent } from './relatedwindow/relatedwindow.component';
 import { ReviewComponent } from './product-detail/review/review.component';
 import { FormsModule } from '@angular/forms';
