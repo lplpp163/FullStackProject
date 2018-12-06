@@ -121,11 +121,11 @@
       <div class="nav_center">
         <nav class="mainmenu">
           <ul id="nav">
-            <li [ngClass]="{'current-page-item': currentPage == 0}"><a [routerLink]="['/home']" (click)="[currentPage = 0];setCurrentPage(1);">首頁</a>
+            <li><a [routerLink]="['/home']" (click)="[currentPage = 0];setCurrentPage(1);">首頁</a>
             </li>
-            <li [ngClass]="{'current-page-item': currentPage == 1}"><a [routerLink]="['/products']" routerLinkActive="active" (click)="[currentPage = 1]; reload(); setCurrentPage(1);">所有筆電列表</a>
+            <li><a [routerLink]="['/products']" routerLinkActive="active" (click)="[currentPage = 1]; reload(); setCurrentPage(1);">所有筆電列表</a>
             </li>
-            <li [ngClass]="{'current-page-item': currentPage == 2}"><a (click)="[currentPage = 2];setCurrentPage(2);">快速找筆電</a>
+            <li><a (click)="[currentPage = 2];setCurrentPage(2);">快速找筆電</a>
               <ul id="sub-menu">
                 <li><a href="">最新</a></li>
                 <li><a href="">高畫質</a></li>
@@ -136,7 +136,7 @@
                 <li class="last-child"><a href="">電競筆電</a></li>
               </ul>
             </li>
-            <li [ngClass]="{'current-page-item': currentPage == 3}"><a (click)="[currentPage = 3];setCurrentPage(3);">產品客服</a></li>
+            <li><a (click)="[currentPage = 3];setCurrentPage(3);">產品客服</a></li>
           </ul>
         </nav>
       </div>

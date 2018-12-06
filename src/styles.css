@@ -338,6 +338,7 @@ nav.mainmenu::after {
   width: 100%;
 }
 .mainmenu ul#nav {
+  cursor: pointer;
   list-style: outside none none;
   margin: 0;
   padding: 0;
@@ -3320,6 +3321,7 @@ overflow: hidden;
   width: 23%;
 }
 .size_cart > a {
+  cursor: pointer;
   color: #fff;
   font-size: 13px;
   text-transform: uppercase;
