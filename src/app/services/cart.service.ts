@@ -40,7 +40,7 @@ export class CartService {
       this.items = data;
       this.total = 0;
       for (const item of data) {
-        this.total = this.total + (item.product.price * item.quantity) * ((9 - Number( localStorage.getItem('user_level'))) / 8);
+        this.total = this.total + (item.product.price * item.quantity) * Number(localStorage.getItem('discount'));
       }
     });
   }
