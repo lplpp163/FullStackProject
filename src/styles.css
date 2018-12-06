@@ -3108,14 +3108,14 @@ width: 100%;
 }
 .old_price_gray p {
   color: #ff6766;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
 }
 .old_price_gray {
   float: left;
   margin-right: 17px;
   overflow: hidden;
-  width: 60px;
+  width: 80px;
 }
 .new_price_gray {
 float: left;
