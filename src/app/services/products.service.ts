@@ -45,12 +45,12 @@ export class ProductsService {
     return this.httpClient.get(`${environment.api}/products/category_id/${branch_id}`);
   }
 
-  // 依作業系統篩
+  // 依作業系統篩 -->OK
   getProductsByOS(OS) {
-    return this.httpClient.get(`${environment}/products/OS/${OS}`);
+    return this.httpClient.get(`${environment.api}/products/OS/${OS}`);
   }
 
-  refresh (searchKey, priceSort, branch) {
+  refresh (searchKey, priceSort, branch, os) {
     if (searchKey) {
       this.getProductsByName(searchKey).subscribe((data: Product[]) => {
         this.products = data;
@@ -62,7 +62,10 @@ export class ProductsService {
     } else if (branch) {
       this.getProductsByBranch(branch).subscribe((data: Product []) => {
         this.products = data;
-        console.log(data);
+      });
+    } else if (os) {
+      this.getProductsByOS(os).subscribe((data: Product []) => {
+        this.products = data;
       });
     } else {
       this.getProducts().subscribe((data: Product[]) => {

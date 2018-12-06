@@ -19,6 +19,7 @@ export class ProductsListComponent implements OnInit {
   searchKey: string;
   priceSort: string;
   branch: string;
+  os: string;
   backend = `${environment.backend}`;
   filterCollapes = [
     true,
@@ -61,7 +62,8 @@ export class ProductsListComponent implements OnInit {
     this.searchKey = this.activatedrouter.snapshot.paramMap.get('id');
     this.priceSort = this.activatedrouter.snapshot.paramMap.get('price');
     this.branch = this.activatedrouter.snapshot.paramMap.get('branch');
-    this.productsService.refresh(this.searchKey, this.priceSort, this.branch);
+    this.os = this.activatedrouter.snapshot.page.get('os');
+    this.productsService.refresh(this.searchKey, this.priceSort, this.branch, this.os);
   }
 
   add(id) {
@@ -84,6 +86,6 @@ export class ProductsListComponent implements OnInit {
   }
 
   reload() {
-    location.reload();
+    this.ngOnInit();
   }
 }

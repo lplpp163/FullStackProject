@@ -121,9 +121,9 @@
               <div id="collapseFive" [ngClass]="filterCollapes[4] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingFive">
                 <div class="panel-body">
                 <ul id="c_tab2">
-                  <li><a href="">Windows</a></li>
-                  <li><a href="">MacOS</a></li>
-                  <li><a href="">Linux</a></li>
+                  <li><a [routerLink]="['/products', {os: 1}]" routerLinkActive="router-link-active" (click)="reload()">Windows</a></li>
+                  <li><a [routerLink]="['/products', {os: 2}]" routerLinkActive="router-link-active" (click)="reload()">MacOS</a></li>
+                  <li><a [routerLink]="['/products', {os: 3}]" routerLinkActive="router-link-active" (click)="reload()">Linux</a></li>
                 </ul>
                 </div>
               </div>
