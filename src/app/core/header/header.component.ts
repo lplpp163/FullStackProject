@@ -94,12 +94,27 @@ export class HeaderComponent implements OnInit {
   searchClick() {
     if (this.keyword.trim()) {
       this.productService.refresh(this.keyword, null, null, null, null);
-      this.router.navigate(['/products', {id: this.keyword}]);
+      this.router.navigate(['/products', {search: this.keyword}]);
     }
   }
 
   reload() {
     this.productService.refresh(null, null, null, null, null);
+  }
+
+  reloadBrand(brand) {
+    this.productService.refresh(null, null, brand, null, null);
+    this.router.navigate(['/products', {brand: brand}]);
+  }
+
+  reloadOS(os) {
+    this.productService.refresh(null, null, null, os, null);
+    this.router.navigate(['/products', {os: os}]);
+  }
+
+  reloadTag(tag) {
+    this.productService.refresh(null, null, null, null, tag);
+    this.router.navigate(['/products', {tag: tag}]);
   }
 
   remove(id) {

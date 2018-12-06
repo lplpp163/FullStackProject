@@ -764,7 +764,7 @@ margin: 12px 0 0;
 padding: 0;
 }
  ul.cat_nav li {
-
+  cursor: pointer;
 }
  ul.cat_nav li a {
   color: #212121;

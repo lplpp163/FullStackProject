@@ -80,21 +80,21 @@
               <h5>各大品牌</h5>
               <div class="cat_menu_line"></div>
               <ul class="cat_nav">
-                <li><a href="">Apple Mac</a></li>
-                <li><a href="">MSI 微星</a></li>
-                <li><a href="">ASUS 華碩</a></li>
-                <li><a href="">Acer 宏碁</a></li>
-                <li><a href="">Lenovo 聯想</a></li>
-                <li><a href="">Hp 惠普</a></li>
+                <li><a (click)="reloadBrand(1)">Apple Mac</a></li>
+                <li><a (click)="reloadBrand(2)">MSI 微星</a></li>
+                <li><a (click)="reloadBrand(3)">ASUS 華碩</a></li>
+                <li><a (click)="reloadBrand(4)">Acer 宏碁</a></li>
+                <li><a (click)="reloadBrand(5)">Lenovo 聯想</a></li>
+                <li><a (click)="reloadBrand(6)">Hp 惠普</a></li>
               </ul>
             </div>
             <div class="cat_middle">
               <h5>各類作業系統</h5>
               <div class="cat_menu_line"></div>
               <ul class="cat_nav">
-                <li><a href="">Windows</a></li>
-                <li><a href="">Mac OS</a></li>
-                <li><a href="">Linux</a></li>
+                <li><a (click)="reloadOS(1)">Windows</a></li>
+                <li><a (click)="reloadOS(2)">Mac OS</a></li>
+                <li><a (click)="reloadOS(3)">Linux</a></li>
               </ul>
             </div>
             <div class="cat_middle_right">
@@ -124,15 +124,16 @@
             </li>
             <li><a (click)="[currentPage = 2];setCurrentPage(2);">快速找筆電</a>
               <ul id="sub-menu">
-                <li><a href="">高畫質</a></li>
-                <li><a href="">高效能</a></li>
-                <li><a href="">高續航力</a></li>
-                <li><a href="">輕薄易攜</a></li>
-                <li><a href="">文書處理</a></li>
-                <li class="last-child"><a href="">電競筆電</a></li>
+                <li><a (click)="reloadTag('高效能')">高效能</a></li>
+                <li><a (click)="reloadTag('高畫質')">高畫質</a></li>
+                <li><a (click)="reloadTag('高記憶體')">高記憶體</a></li>
+                <li><a (click)="reloadTag('高續航力')">高續航力</a></li>  <!--後端應新增tag:高續航力-->
+                <li><a (click)="reloadTag('輕薄易攜')">輕薄易攜</a></li>
+                <li><a (click)="reloadTag('文書筆電')">文書筆電</a></li>
+                <li class="last-child"><a (click)="reloadTag('電競筆電')">電競筆電</a></li>
               </ul>
             </li>
-            <li><a (click)="[currentPage = 3];setCurrentPage(3);">最新推出</a></li>
+            <li><a (click)="[currentPage = 3];setCurrentPage(3);reloadTag('最新推出')">最新推出</a></li>
           </ul>
         </nav>
       </div>

@@ -56,8 +56,8 @@ export class ProductsListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.searchKey = this.activatedrouter.snapshot.paramMap.get('id');
-    this.productsService.refresh(this.activatedrouter.snapshot.paramMap.get('id'),
+    this.searchKey = this.activatedrouter.snapshot.paramMap.get('search');
+    this.productsService.refresh(this.activatedrouter.snapshot.paramMap.get('search'),
      this.activatedrouter.snapshot.paramMap.get('price'),
      this.activatedrouter.snapshot.paramMap.get('brand'),
      this.activatedrouter.snapshot.paramMap.get('os'),
