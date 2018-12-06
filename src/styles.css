@@ -3320,11 +3320,12 @@ overflow: hidden;
   width: 23%;
 }
 .size_cart > a {
-  color: #232323;
+  color: #fff;
   font-size: 13px;
   text-transform: uppercase;
 }
 .size_cart > a:hover {
+  color: #232323;
   text-decoration:none;
 }
 .size_cart:hover {
@@ -3339,7 +3340,7 @@ overflow: hidden;
 padding: 5px 20px;
 text-align: center;
 width: 32%;
-background: #fff;
+background: #ff6766;
 }
 .size_heart {
   background: none repeat scroll 0 0 #fff;
