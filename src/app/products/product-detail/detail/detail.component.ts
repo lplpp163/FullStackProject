@@ -22,7 +22,6 @@ export class DetailComponent implements OnInit {
   ngOnInit() {
     this.productsService.getProduct(this.id).subscribe((data: Product) => {
       this.product = data;
-      console.log(this.product);
     });
   }
 
