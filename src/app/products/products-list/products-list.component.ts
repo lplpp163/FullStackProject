@@ -62,7 +62,7 @@ export class ProductsListComponent implements OnInit {
     this.searchKey = this.activatedrouter.snapshot.paramMap.get('id');
     this.priceSort = this.activatedrouter.snapshot.paramMap.get('price');
     this.branch = this.activatedrouter.snapshot.paramMap.get('branch');
-    this.os = this.activatedrouter.snapshot.page.get('os');
+    this.os = this.activatedrouter.snapshot.paramMap.get('os');
     this.productsService.refresh(this.searchKey, this.priceSort, this.branch, this.os);
   }
 
