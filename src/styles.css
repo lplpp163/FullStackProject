@@ -2788,14 +2788,14 @@ text-decoration:none;
 margin-top: 30px;
 position: relative;
 }
-.pagi_line::after {
+/* .pagi_line::after {
   border-top: 2px solid #ff6766;
 content: "";
 left: 38.5%;
 position: absolute;
 top: -2px;
 width: 30px;
-}
+} */
 .cat-2 .pagi_line::after {
   border-top: 2px solid #ff6766;
   content: "";

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { Product } from 'src/app/models/product';
 import {environment} from 'src/environments/environment';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { HeaderComponent } from 'src/app/core/header/header.component';
 
@@ -87,5 +87,27 @@ export class ProductsListComponent implements OnInit {
 
   reload() {
     this.ngOnInit();
+  }
+
+  reloadBranch(branchnum) {
+    this.branch = branchnum;
+    this.searchKey = '';
+    this.priceSort = '';
+    this.router.navigate(['/products', {branch: branchnum}]);
+    this.productsService.refresh(this.searchKey, this.priceSort, this.branch, this.os);
+  }
+
+  reloadPrice(sortMethod) {
+    this.priceSort = sortMethod;
+    this.searchKey = '';
+    this.productsService.refresh(this.searchKey, this.priceSort, this.branch, this.os);
+  }
+
+  reloadOS(osnum) {
+    this.os = osnum;
+    this.searchKey = '';
+    this.priceSort = '';
+    this.branch = '';
+    this.productsService.refresh(this.searchKey, this.priceSort, this.branch, this.os);
   }
 }
