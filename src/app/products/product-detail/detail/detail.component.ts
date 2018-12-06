@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { ProductsService } from 'src/app/services/products.service';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-detail',
@@ -13,6 +14,7 @@ export class DetailComponent implements OnInit {
   product: Product;
   osNames = ['Windows', 'MacOS', 'Linux'];
   brands = ['Apple', 'MSI', 'ASUS', 'Acer', 'Lenovo', 'Hp'];
+  backend = `${environment.backend}`;
   id = this.route.snapshot.paramMap.get('id');
   constructor(private productsService: ProductsService, private route: ActivatedRoute) { }
 
