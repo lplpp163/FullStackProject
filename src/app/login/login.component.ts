@@ -182,6 +182,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('user_name', data.user.name);
         localStorage.setItem('user_email', data.user.email);
         localStorage.setItem('user_level', data.user.level);
+        localStorage.setItem('discount', ((9 - Number(data.user.level)) / 8).toString());
         console.log(data.user);
         this.router.navigate(['/']);
       } else {
