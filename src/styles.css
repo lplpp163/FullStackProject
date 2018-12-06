@@ -2576,6 +2576,7 @@ margin-bottom: -5px;
   border-top-color: #fff;
 }
 #home-accordion .panel-title {
+  cursor: pointer;
   color: #232323;
   font-size: 14px;
   margin-bottom: 0;
