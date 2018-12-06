@@ -68,6 +68,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
+    this.showAD = false;
     this.authService.logout().subscribe((data: any) => {
       if (data.message) {
         // alert(data.message);
