@@ -59,9 +59,9 @@
                 <!-- 標題 -->
                 <div class="product_detail_heading">
                   <div class="detail_heading_left">
-                    <h3>商品名稱</h3>
-                    <div class="old_price_gray"><p> (原價) </p></div>
-                    <div class="new_price_gray"><del> (新價錢) </del></div>
+                    <h3>{{product.name}}</h3>
+                    <div class="old_price_gray"><p> {{product.price | currency}} </p></div>
+                    <div class="new_price_gray"><del> {{product.price | currency}} </del></div>
                   </div>
                   <div class="detail_heading_right">
 
@@ -89,13 +89,13 @@
                     <!-- 內容 -->
                     <div id="collapseOneP" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneP">
                       <div class="panel-body product_ac_body">
-                        <p>(特色敘述)</p>
+                        <p>{{product.description}}</p>
                         <!-- 可選用的條列 -->
-                        <ul id="product_accord_nav">
+                        <!-- <ul id="product_accord_nav">
                           <li><a href="">Tristique senectus et netus aspernatur aut.</a></li>
                           <li><a href="">Labore doloam aliquam quaerat voluptatem.</a></li>
                           <li><a href="">Nisi ut aliquid ex ea commodi consequatue.</a></li>
-                        </ul>
+                        </ul> -->
                       </div>
                     </div>
                   </div>
@@ -112,18 +112,17 @@
                     <!-- 內容 -->
                     <div id="collapseTwoP" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwoP">
                       <div class="panel-body product_ac_body">
-                          <p>(筆電名稱)</p>
+                          <p>{{product.name}}</p>
                           <!-- 配置條列 -->
                           <ul id="product_accord_nav">
-                              <li><a href="">CPU</a></li>
-                              <li><a href="">GPU</a></li>
-                              <li><a href="">RAM</a></li>
-                              <li><a href="">儲存空間</a></li>
-                              <li><a href="">作業系統</a></li>
-                              <li><a href="">尺寸</a></li>
-                              <li><a href="">重量</a></li>
-                              <li><a href="">推出日期</a></li>
-                              <li><a href="">公司品牌</a></li>
+                              <li><a>CPU: {{product.cpu}}</a></li>
+                              <li><a>GPU: {{product.gpu}}</a></li>
+                              <li><a>RAM: {{product.ram}}</a></li>
+                              <li><a>儲存空間: {{product.storage}}</a></li>
+                              <li><a>作業系統: {{osNames[product.os_id]}}</a></li>
+                              <li><a>尺寸: {{product.size}}</a></li>
+                              <li><a>推出日期: {{product.created_at}}</a></li>
+                              <li><a>公司品牌: {{brands[product.category_id]}}</a></li>
                           </ul>
                         </div>
                     </div>
