@@ -130,13 +130,10 @@
                   <!-- 摺疊頁03-敘述 -->
                   <div class="panel panel-default product_default">
                     <div class="single-color">
-                        <div class="color_heading" style="width: 22%; margin-left: 30px"><h5>購入數量:</h5></div>
+                        <div class="color_heading"><h5>現在就購入! </h5></div>
                         <div class="color_detail">
-                            <div class="size_down">
-                              <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity[113]" max="10" min="1" step="1">
-                            </div>
                             <div class="size_cart">
-                              <a href="">加入購物車</a>
+                              <a (click)='add(product.id)'>加入購物車</a>
                             </div>
                             <!-- <div class="size_heart">
                               <a href=""><img src="assets/images/Product-Details-heart.png" alt="" /></a>

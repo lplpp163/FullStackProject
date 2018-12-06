@@ -3320,6 +3320,7 @@ overflow: hidden;
   width: 23%;
 }
 .size_cart > a {
+  cursor: pointer;
   color: #fff;
   font-size: 13px;
   text-transform: uppercase;
