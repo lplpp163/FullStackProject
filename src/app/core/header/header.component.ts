@@ -95,6 +95,7 @@ export class HeaderComponent implements OnInit {
     if (this.keyword.trim()) {
       this.productService.refresh(this.keyword, null, null, null, null);
       this.router.navigate(['/products', {search: this.keyword}]);
+      this.keyword = '';
     }
   }
 

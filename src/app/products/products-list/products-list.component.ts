@@ -75,6 +75,7 @@ export class ProductsListComponent implements OnInit {
   }
 
   isSearch() {
+    this.searchKey = this.activatedrouter.snapshot.paramMap.get('search');
     if (this.searchKey !== null && this.searchKey !== '') {
       return true;
     }
