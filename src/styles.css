@@ -1402,6 +1402,7 @@ width: 47%;
 }
 .fresh_blog_img > img {
   width: 100%;
+  height: 270px;
 }
 .fresh_blog_text span {
  color: #262626;
@@ -1415,7 +1416,7 @@ overflow: hidden;
 padding-bottom: 20px;
 }
 .fresh_blog_text h2 {
-  font-size: 45px;
+  font-size: 20px;
   text-align: left;
   font-weight: 300;
   color: #ff6766;

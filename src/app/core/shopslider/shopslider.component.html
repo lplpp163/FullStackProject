@@ -16,16 +16,16 @@
                 <!-- 商品01 -->
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="fresh_blog_text">
-                    <h2>{{pickedOne?.name}}</h2>
+                    <h2>{{getRandPdt(0)?.name}}</h2>
                     <div class="months">
                       <div class="month_right">
-                        <p>推出日期: {{pickedOne?.created_at}}</p>
+                        <p>推出日期: {{getRandPdt(0)?.created_at}}</p>
                         <!-- <span><i class="far fa-comment-dots"></i>n 則留言</span> -->
                       </div>
                       <div class="fresh_blog_bottom_text">
-                        <h4>#Tags: {{pickedOne?.tags}}</h4>
+                        <h4>#Tags: {{getRandPdt(0)?.tags}}</h4>
                         <div class="view_post">
-                          <a class=""  [routerLink]="['/Products', pickedOne?.id]">讓我看看
+                          <a class=""  [routerLink]="['/Products', getRandPdt(0)?.id]">讓我看看
                           <i class="fas fa-angle-double-right"></i>
                           </a>
                         </div>
@@ -33,22 +33,22 @@
                     </div>
                   </div>
                   <div class="fresh_blog_img">
-                    <img src="{{backend}}/{{pickedOne?.img}}" alt="" />
+                    <img src="{{backend}}/{{getRandPdt(0)?.img}}" alt="" />
                   </div>
                 </div>
                 <!-- 商品02 -->
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="fresh_blog_text">
-                      <h2>{{pickedTwo?.name}}</h2>
+                      <h2>{{getRandPdt(1)?.name}}</h2>
                       <div class="months">
                         <div class="month_right">
-                          <p>推出日期: {{pickedTwo?.created_at}}</p>
+                          <p>推出日期: {{getRandPdt(1)?.created_at}}</p>
                           <!-- <span><i class="far fa-comment-dots"></i>n 則留言</span> -->
                         </div>
                         <div class="fresh_blog_bottom_text">
-                          <h4>#Tags: {{pickedTwo?.tags}}</h4>
+                          <h4>#Tags: {{getRandPdt(1)?.tags}}</h4>
                           <div class="view_post">
-                            <a class="" [routerLink]="['/Products', pickedTwo?.id]">讓我看看
+                            <a class="" [routerLink]="['/Products', getRandPdt(1)?.id]">讓我看看
                             <i class="fas fa-angle-double-right"></i>
                             </a>
                           </div>
@@ -56,7 +56,7 @@
                       </div>
                     </div>
                     <div class="fresh_blog_img">
-                      <img src="{{backend}}/{{pickedTwo?.img}}" alt="" />
+                      <img src="{{backend}}/{{getRandPdt(1)?.img}}" alt="" />
                     </div>
                 </div>
               </div>
@@ -67,16 +67,16 @@
                     <!-- 商品01 -->
                     <div class="col-md-6 col-sm-6 col-xs-12">
                       <div class="fresh_blog_text">
-                        <h2>{{pickedThree?.name}}</h2>
+                        <h2>{{getRandPdt(2)?.name}}</h2>
                         <div class="months">
                           <div class="month_right">
-                            <p>推出日期: {{pickedThree?.created_at}}</p>
+                            <p>推出日期: {{getRandPdt(2)?.created_at}}</p>
                             <!-- <span><i class="far fa-comment-dots"></i>n 則留言</span> -->
                           </div>
                           <div class="fresh_blog_bottom_text">
-                            <h4>#Tags: {{pickedThree?.tags}}</h4>
+                            <h4>#Tags: {{getRandPdt(2)?.tags}}</h4>
                             <div class="view_post">
-                              <a class="" [routerLink]="['/Products', pickedThree?.id]">讓我看看
+                              <a class="" [routerLink]="['/Products', getRandPdt(2)?.id]">讓我看看
                               <i class="fas fa-angle-double-right"></i>
                               </a>
                             </div>
@@ -84,22 +84,22 @@
                         </div>
                       </div>
                       <div class="fresh_blog_img">
-                        <img src="{{backend}}/{{pickedThree?.img}}" alt="" />
+                        <img src="{{backend}}/{{getRandPdt(2)?.img}}" alt="" />
                       </div>
                     </div>
                     <!-- 商品02 -->
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="fresh_blog_text">
-                          <h2>{{pickedFour?.name}}</h2>
+                          <h2>{{getRandPdt(3)?.name}}</h2>
                           <div class="months">
                             <div class="month_right">
-                              <p>推出日期: {{pickedFour?.created_at}}</p>
+                              <p>推出日期: {{getRandPdt(3)?.created_at}}</p>
                               <!-- <span><i class="far fa-comment-dots"></i>n 則留言</span> -->
                             </div>
                             <div class="fresh_blog_bottom_text">
-                              <h4>#Tags: {{pickedFour?.tags}}</h4>
+                              <h4>#Tags: {{getRandPdt(3)?.tags}}</h4>
                               <div class="view_post">
-                                <a class="" [routerLink]="['/Products', pickedFour?.id]">讓我看看
+                                <a class="" [routerLink]="['/Products', getRandPdt(3)?.id]">讓我看看
                                 <i class="fas fa-angle-double-right"></i>
                                 </a>
                               </div>
@@ -107,7 +107,7 @@
                           </div>
                         </div>
                         <div class="fresh_blog_img">
-                          <img src="{{backend}}/{{pickedFour?.img}}" alt="" />
+                          <img src="{{backend}}/{{getRandPdt(3)?.img}}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -122,7 +122,6 @@
           <i class='fa fa-angle-right'></i>
           </a>
         </div>
-        <div>{{getgetget}}</div>
 
 
         </div>

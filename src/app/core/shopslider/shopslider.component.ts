@@ -43,7 +43,7 @@ export class ShopsliderComponent implements OnInit {
     });
   }
 
-  // only 0~4
+  // only 0~3
   getRandPdt(num) {
     return this.pdts[this.pickindex[num]];
   }

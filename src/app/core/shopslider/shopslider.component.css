@@ -1,0 +1,7 @@
+.multi_line {
+  border-bottom: 2px solid #ff6766;
+  border-top: 1px solid #ff6766;
+  height: 5px;
+  margin: 10 auto 20px;
+  width: 40px;
+}
