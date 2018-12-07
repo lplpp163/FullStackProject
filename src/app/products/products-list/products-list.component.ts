@@ -71,7 +71,8 @@ export class ProductsListComponent implements OnInit {
      this.activatedrouter.snapshot.paramMap.get('price'),
      this.activatedrouter.snapshot.paramMap.get('brand'),
      this.activatedrouter.snapshot.paramMap.get('os'),
-     this.activatedrouter.snapshot.paramMap.get('tag')
+     this.activatedrouter.snapshot.paramMap.get('tag'),
+     this.activatedrouter.snapshot.paramMap.get('szie'),
      );
   }
 
@@ -99,24 +100,30 @@ export class ProductsListComponent implements OnInit {
 
   reloadTag(tag) {
     this.router.navigate(['/products', {tag: tag}]);
-    this.productsService.refresh(null, null, null, null, tag);
+    this.productsService.refresh(null, null, null, null, tag, null);
     localStorage.setItem('currentPage', '1');
   }
 
   reloadBrand(brandnum) {
     this.router.navigate(['/products', {brand: brandnum}]);
-    this.productsService.refresh(null, null, brandnum, null, null);
+    this.productsService.refresh(null, null, brandnum, null, null, null);
     localStorage.setItem('currentPage', '1');
   }
 
   reloadPrice(sortMethod) {
     this.router.navigate(['/products', {price: sortMethod}]);
-    this.productsService.refresh(null, sortMethod, null, null, null);
+    this.productsService.refresh(null, sortMethod, null, null, null, null);
+    localStorage.setItem('currentPage', '1');
+  }
+
+  reloadSize(size) {
+    this.router.navigate(['/products', {size: size}]);
+    this.productsService.refresh(null, null, null, null, null, size);
     localStorage.setItem('currentPage', '1');
   }
 
   reloadOS(osnum) {
-    this.productsService.refresh(null, null, null, osnum, null);
+    this.productsService.refresh(null, null, null, osnum, null, null);
     localStorage.setItem('currentPage', '1');
   }
 }

@@ -27,6 +27,7 @@
                   <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('高效能')">高效能</a></li>
                   <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('高畫質')">高畫質</a></li>
                   <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('高記憶體')">高記憶體</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('高續航力')">高續航力</a></li>
                   <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('輕薄易攜')">輕薄易攜</a></li>
                   <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('電競筆電')">電競筆電</a></li>
                   <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('文書筆電')">文書筆電</a></li>
@@ -70,12 +71,11 @@
               <div id="collapseFour" [ngClass]="filterCollapes[2] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingFour">
                 <div class="panel-body">
                 <ul id="cat_size">
-                  <li><a href="">小</a></li>
-                  <li><a href="">13吋</a></li>
-                  <li><a href="">14吋</a></li>
-                  <li><a href="">15吋</a></li>
-                  <li><a href="">17吋</a></li>
-                  <li><a href="">大</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadSize(1)">小</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadSize(2)">13吋</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadSize(3)">14吋</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadSize(4)">15吋</a></li>
+                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadSize(5)">17吋</a></li>
                 </ul>
                 </div>
               </div>

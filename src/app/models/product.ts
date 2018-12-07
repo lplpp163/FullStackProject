@@ -2,7 +2,7 @@ export interface Product {
   id: number;
   name: string;
   price: number;
-  size: string;
+  size: number;
   cpu: string;
   gpu: string;
   ram: string;

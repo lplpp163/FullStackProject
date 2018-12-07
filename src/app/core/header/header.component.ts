@@ -93,29 +93,34 @@ export class HeaderComponent implements OnInit {
 
   searchClick() {
     if (this.keyword.trim()) {
-      this.productService.refresh(this.keyword, null, null, null, null);
+      this.productService.refresh(this.keyword, null, null, null, null, null);
       this.router.navigate(['/products', {search: this.keyword}]);
       this.keyword = '';
     }
   }
 
   reload() {
-    this.productService.refresh(null, null, null, null, null);
+    this.productService.refresh(null, null, null, null, null, null);
   }
 
   reloadBrand(brand) {
-    this.productService.refresh(null, null, brand, null, null);
+    this.productService.refresh(null, null, brand, null, null, null);
     this.router.navigate(['/products', {brand: brand}]);
   }
 
   reloadOS(os) {
-    this.productService.refresh(null, null, null, os, null);
+    this.productService.refresh(null, null, null, os, null, null);
     this.router.navigate(['/products', {os: os}]);
   }
 
   reloadTag(tag) {
-    this.productService.refresh(null, null, null, null, tag);
+    this.productService.refresh(null, null, null, null, tag, null);
     this.router.navigate(['/products', {tag: tag}]);
+  }
+
+  reloadSize(size) {
+    this.productService.refresh(null, null, null, null, null, size);
+    this.router.navigate(['/products', {size: size}]);
   }
 
   remove(id) {

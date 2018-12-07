@@ -25,7 +25,7 @@ export class ProductsService {
     return this.httpClient.get(`${environment.api}/products/name/${name}`);
   }
 
-  // 依類別篩
+  // 依類別篩 -->OK
   getProductsByTag(tag) {
     return this.httpClient.get(`${environment.api}/products/tag/${tag}`);
   }
@@ -53,7 +53,7 @@ export class ProductsService {
     return this.httpClient.get(`${environment.api}/products/OS/${OS}`);
   }
 
-  refresh (searchKey, priceSort, branch, os, tag) {
+  refresh (searchKey, priceSort, branch, os, tag, size) {
     if (searchKey) {
       this.getProductsByName(searchKey).subscribe((data: Product[]) => {
         this.products = data;
@@ -74,6 +74,11 @@ export class ProductsService {
         this.getProductsByTag(tag).subscribe((data: Product []) => {
           this.products = data;
         });
+    } else if (size) {
+      console.log(size);
+      this.getProductsBySize(size).subscribe((data: Product []) => {
+        this.products = data;
+      });
     } else {
       this.getProducts().subscribe((data: Product[]) => {
         this.products = data;
