@@ -52,7 +52,17 @@ export class ProductsListComponent implements OnInit {
     window.scroll(0, 0);
   }
   showPage(num) {
-    return (this.pdtLength >= ((this.currentPage + num) * 12));
+    return (this.pdtLength > ((this.currentPage + num) * 12));
+  }
+  showfilter(num) {
+    if (this.filterCollapes[num]) {
+      this.filterCollapes[num] = !this.filterCollapes[num];
+    } else {
+      for (let i = 0; i < 5; i++) {
+      this.filterCollapes[i] = false;
+      }
+      this.filterCollapes[num] = true;
+    }
   }
 
   ngOnInit() {

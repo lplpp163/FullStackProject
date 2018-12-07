@@ -13,7 +13,7 @@
               <!-- 標籤 -->
               <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
-                <a (click)="[filterCollapes[0]=!filterCollapes[0]]" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="true" aria-controls="collapseOne">
+                <a (click)="showfilter(0)" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="true" aria-controls="collapseOne">
                   依類別篩選
                   <span class="floatright"><i [ngClass]="filterCollapes[0]?'fa fa-minus':'fa fa-plus'"></i></span>
                 </a>
@@ -39,7 +39,7 @@
               <!-- 標籤 -->
               <div class="panel-heading" role="tab" id="headingTwo">
                 <h4 class="panel-title">
-                <a (click)="[filterCollapes[1]=!filterCollapes[1]]" class="collapsed" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="false" aria-controls="collapseTwo">
+                <a (click)="showfilter(1)" class="collapsed" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="false" aria-controls="collapseTwo">
                   依價錢篩選
                   <span class="floatright"><i [ngClass]="filterCollapes[1]?'fa fa-minus':'fa fa-plus'"></i></span>
                 </a>
@@ -60,7 +60,7 @@
               <!-- 標籤 -->
               <div class="panel-heading" role="tab" id="headingFour">
                 <h4 class="panel-title">
-                <a (click)="[filterCollapes[2]=!filterCollapes[2]]" class="collapsed" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="false" aria-controls="collapseFour">
+                <a (click)="showfilter(2)" class="collapsed" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="false" aria-controls="collapseFour">
                   依尺寸篩選
                   <span class="floatright"><i [ngClass]="filterCollapes[2]?'fa fa-minus':'fa fa-plus'"></i></span>
                 </a>
@@ -85,7 +85,7 @@
               <!-- 標籤 -->
               <div class="panel-heading" role="tab" id="headingFive">
                 <h4 class="panel-title">
-                <a (click)="[filterCollapes[3]=!filterCollapes[3]]" class="collapsed" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="false" aria-controls="collapseFive">
+                <a (click)="showfilter(3)" class="collapsed" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="false" aria-controls="collapseFive">
                   依品牌篩選
                   <span class="floatright"><i [ngClass]="filterCollapes[3]?'fa fa-minus':'fa fa-plus'"></i></span>
                 </a>
@@ -110,7 +110,7 @@
               <!-- 標籤 -->
               <div class="panel-heading" role="tab" id="headingFive">
                 <h4 class="panel-title">
-                <a (click)="[filterCollapes[4]=!filterCollapes[4]]" class="collapsed" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="false" aria-controls="collapseFive">
+                <a (click)="showfilter(4)" class="collapsed" data-toggle="collapse" data-parent="#home-accordion" aria-expanded="false" aria-controls="collapseFive">
                   依作業系統篩選
                   <span class="floatright"><i [ngClass]="filterCollapes[4]?'fa fa-minus':'fa fa-plus'"></i></span>
                 </a>
