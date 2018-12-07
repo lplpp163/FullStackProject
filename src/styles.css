@@ -3099,7 +3099,7 @@ width: 100%;
   z-index: 2;
 }
 .single_p_image > img {
-  margin-left: 130px;
+  margin-left: 0px;
 }
 .detail_heading_left h3 {
   color: #232323;
@@ -3109,7 +3109,7 @@ width: 100%;
 }
 .new_price_gray p {
   color: #ff6766;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
 }
 .new_price_gray {
@@ -3322,11 +3322,12 @@ overflow: hidden;
 }
 .size_cart > a {
   cursor: pointer;
-  color: #232323;
+  color: #F7F8F9;
   font-size: 13px;
   text-transform: uppercase;
 }
 .size_cart > a:hover {
+  color: #232323;
   text-decoration:none;
 }
 .size_cart:hover {
@@ -3341,7 +3342,7 @@ overflow: hidden;
 padding: 5px 20px;
 text-align: center;
 width: 32%;
-background: #fff;
+background: #ff6766;
 }
 .size_heart {
   background: none repeat scroll 0 0 #fff;
