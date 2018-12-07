@@ -101,12 +101,11 @@
               <h5>各種尺寸</h5>
               <div class="cat_menu_line"></div>
               <ul class="cat_nav">
-                <li><a href="">輕小型</a></li>
-                <li><a href="">寬大型</a></li>
-                <li><a href="">14吋</a></li>
-                <li><a href="">15吋</a></li>
-                <li><a href="">16吋</a></li>
-                <li><a href="">17吋</a></li>
+                <li><a (click)="reloadSize(1)">輕小型</a></li>
+                <li><a (click)="reloadSize(2)">13吋</a></li>
+                <li><a (click)="reloadSize(3)">14吋</a></li>
+                <li><a (click)="reloadSize(4)">15吋</a></li>
+                <li><a (click)="reloadSize(5)">17吋</a></li>
               </ul>
             </div>
             <div class="cat_img">
@@ -205,6 +204,6 @@
 
   <!--ADvertisement-->
   <div *ngIf="showAD" style="z-index: 10; position: fixed; bottom: 5%; background-color:white; margin-left: auto; margin-right: auto; left: 0; right: 0; width: 600px; height: 110px;">
-    <img src="{{backend}}/storage/images/ADV.jpg" alt="" />
+    <img src="assets/images/ADV.jpg" alt="" />
     <i (click)="showAD=false" class="far fa-window-close" style="position: absolute; font-size: 25px; color: black; top: 2px ;right: 2px; cursor: pointer;"></i>
   </div>
