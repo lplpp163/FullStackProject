@@ -27,7 +27,7 @@
               <p><a [routerLink]="['/products/',item.product.id]" routerLinkActive="active" >{{item.product.name}}</a></p>
             </div>
             <div class="cart_price">
-              <p> ${{item.product.price}}</p>
+              <p> ${{item.product.price * myDiscount}}</p>
             </div>
             <div class="cart_quantity">
               <ul>
@@ -37,7 +37,7 @@
               </ul>
             </div>
             <div class="cart_total">
-              <p> $ {{ item.product.price * item.quantity}}<i (click)="remove(item.id)" class="fa fa-close"></i></p>
+              <p> $ {{ item.product.price * myDiscount * item.quantity}}<i (click)="remove(item.id)" class="fa fa-close"></i></p>
             </div>
           </div>
 

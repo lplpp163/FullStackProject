@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { CartItem } from '../models/cart-item';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,14 @@ export class CartService {
   items: CartItem[];
   total = 0;
   ship = 0;
-  _headers = { headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`) };
+  _headers = { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } };
 
   constructor(private httpClient: HttpClient) { }
 
   getCartItems() {
-    return this.httpClient.get(`${environment.api}/cart`, this._headers);
+    if (localStorage.getItem('token')) {
+      return this.httpClient.get(`${environment.api}/cart`, this._headers);
+    }
   }
 
   add(p_id) {
@@ -36,13 +39,15 @@ export class CartService {
   }
 
   refresh() {
-    this.getCartItems().subscribe((data: CartItem[]) => {
-      this.items = data;
-      this.total = 0;
-      for (const item of data) {
-        this.total = this.total + (item.product.price * item.quantity) * Number(localStorage.getItem('discount'));
-      }
-    });
+    if (localStorage.getItem('token')) {
+      this.getCartItems().subscribe((data: CartItem[]) => {
+        this.items = data;
+        this.total = 0;
+        for (const item of data) {
+          this.total = this.total + (item.product.price * item.quantity) * Number(localStorage.getItem('discount'));
+        }
+      });
+    }
   }
 
 }

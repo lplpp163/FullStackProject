@@ -35,175 +35,175 @@
 
 <!--中間白色的網站標題-->
 <div class="header">
-    <div class="container">
-      <div class="row">
+  <div class="container">
+    <div class="row">
 
-        <div class="col-md-3 col-sm-3 col-xs-12">
-          <div class="header_left floatleft" style="margin: 28px; margin-bottom:12px">
-            <div *ngIf="userToken" style="font-size: 18px">
-                Welcome,
-                <label style="font-weight: bold;">{{userName}}</label>
-                <br>
-                <div [ngClass]='userPrintLevel()' *ngFor="let heart of hearts; let i = index" style="display: inline; ">
-                  <label [ngClass]="{'fas': (heart_bool), 'far': (!heart_bool)}" class="fa-heart" style="font-size: 18px;color: rgb(255, 78, 107); margin: 3px;"> </label>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <div class="header_left floatleft" style="margin: 28px; margin-bottom:12px">
+          <div *ngIf="userToken" style="font-size: 18px">
+              Welcome,
+              <label style="font-weight: bold;">{{userName}}</label>
+              <br>
+              <div [ngClass]='userPrintLevel()' *ngFor="let heart of hearts; let i = index" style="display: inline; ">
+                <label [ngClass]="{'fas': (heart_bool), 'far': (!heart_bool)}" class="fa-heart" style="font-size: 18px;color: rgb(255, 78, 107); margin: 3px;"> </label>
 
-                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-5 col-xs-12">
+        <div class="header_center">
+          <div><!--img src="assets/images/logo.png" alt="Site Logo" /-->Laptop 4 ALL</div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <div class="header_left floatright">
+          <a class="fa fa-search" (click)="searchClick()"></a>
+          <input type="text" placeholder="search" [(ngModel)]="keyword" (keyup.enter)="searchClick()">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--下方的選項清單-->
+<section class="nav_area">
+  <div class="container"  style="font-family:Microsoft JhengHei;">
+    <!-- 筆電倉庫 -->
+    <div class="nav_left floatleft">
+      <a [routerLink]="['/products']" (click)="[currentPage = 1]">筆電倉庫<i class="fa fa-bars"></i></a>
+      <div class="cat_mega_menu">
+          <div class="cat_left">
+            <h5>各大品牌</h5>
+            <div class="cat_menu_line"></div>
+            <ul class="cat_nav">
+              <li><a (click)="reloadBrand(1)">Apple Mac</a></li>
+              <li><a (click)="reloadBrand(2)">MSI 微星</a></li>
+              <li><a (click)="reloadBrand(3)">ASUS 華碩</a></li>
+              <li><a (click)="reloadBrand(4)">Acer 宏碁</a></li>
+              <li><a (click)="reloadBrand(5)">Lenovo 聯想</a></li>
+              <li><a (click)="reloadBrand(6)">Hp 惠普</a></li>
+            </ul>
+          </div>
+          <div class="cat_middle">
+            <h5>各類作業系統</h5>
+            <div class="cat_menu_line"></div>
+            <ul class="cat_nav">
+              <li><a (click)="reloadOS(1)">Windows</a></li>
+              <li><a (click)="reloadOS(2)">Mac OS</a></li>
+              <li><a (click)="reloadOS(3)">Linux</a></li>
+            </ul>
+          </div>
+          <div class="cat_middle_right">
+            <h5>各種尺寸</h5>
+            <div class="cat_menu_line"></div>
+            <ul class="cat_nav">
+              <li><a (click)="reloadSize(1)">輕小型</a></li>
+              <li><a (click)="reloadSize(2)">13吋</a></li>
+              <li><a (click)="reloadSize(3)">14吋</a></li>
+              <li><a (click)="reloadSize(4)">15吋</a></li>
+              <li><a (click)="reloadSize(5)">17吋</a></li>
+            </ul>
+          </div>
+          <div class="cat_img">
+            <img src="assets/images/Laptop4ALL.jpg" alt="" />
+          </div>
+      </div>
+    </div>
+    <!-- 全部頁面 -->
+    <div class="nav_center">
+      <nav class="mainmenu">
+        <ul id="nav">
+          <li><a [routerLink]="['/home']" (click)="[currentPage = 0];setCurrentPage(1);">首頁</a>
+          </li>
+          <li><a [routerLink]="['/products']" routerLinkActive="active" (click)="[currentPage = 1]; reload(); setCurrentPage(1);">所有筆電列表</a>
+          </li>
+          <li><a (click)="[currentPage = 2];setCurrentPage(2);">快速找筆電</a>
+            <ul id="sub-menu">
+              <li><a (click)="reloadTag('高效能')">高效能</a></li>
+              <li><a (click)="reloadTag('高畫質')">高畫質</a></li>
+              <li><a (click)="reloadTag('高記憶體')">高記憶體</a></li>
+              <li><a (click)="reloadTag('高續航力')">高續航力</a></li>  <!--後端應新增tag:高續航力-->
+              <li><a (click)="reloadTag('輕薄易攜')">輕薄易攜</a></li>
+              <li><a (click)="reloadTag('文書筆電')">文書筆電</a></li>
+              <li class="last-child"><a (click)="reloadTag('電競筆電')">電競筆電</a></li>
+            </ul>
+          </li>
+          <li><a (click)="[currentPage = 3];setCurrentPage(3);reloadTag('最新推出')">最新推出</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav_right floatright" style="position: relative">
+      <div *ngIf="!isLogin">
+          <!-- <img src="assets/images/bag.png" alt="Bag" /> -->
+          <a [routerLink]="['/login']" routerLinkActive="active" ><i class="fas fa-sign-in-alt" style="font-size: 18px"></i>&nbsp;&nbsp;登入/註冊</a>
+      </div>
+      <div *ngIf="isLogin">
+        <a [routerLink]="['/cart']" routerLinkActive="active" ><img src="assets/images/bag.png" alt="Bag" />我的購物車</a>
+        <!-- cart item -->
+        <div class="cart_menu">
+
+          <div *ngFor="let item of items" class="cart_items">
+            <div class="c_item_img floatleft">
+              <a [routerLink]="['/products', item.product.id]"><img class="c_item_img" src="{{backend}}/{{item.product.img}}" alt="" /></a>
+            </div>
+            <div class="c_item_totals floatleft">
+              <div class="c_item_totals_detail floatleft">
+                <a [routerLink]="['/products', item.product.id]" routerLinkActive="active"><h5>{{item.product.name}}</h5></a>
+                <span>$ {{item.product.price * myDiscount}} x {{item.quantity}}</span>
+              </div>
+              <div class="close_icon_cart floatleft">
+                <a (click)="remove(item.id)"><img src="assets/images/close.png"/></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cart_totals">
+            <div class="c_totals_left floatleft">
+              <p>Free shipping</p>
+            </div>
+            <div class="c_totals_right floatleft">
+              <p>結帳金額   ${{total + ship}}</p>
+            </div>
+          </div>
+
+          <div class="cart_view_bottom">
+            <div class="c_totals_left floatleft">
+              <a [routerLink]="['/cart']" routerLinkActive="active" >查看所有</a>
+            </div>
+            <div class="c_totals_right floatleft">
+              <a [routerLink]="['/checkout']" routerLinkActive="active" >結帳</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-sm-5 col-xs-12">
-          <div class="header_center">
-            <div><!--img src="assets/images/logo.png" alt="Site Logo" /-->Laptop 4 ALL</div>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-3 col-xs-12">
-          <div class="header_left floatright">
-            <a class="fa fa-search" (click)="searchClick()"></a>
-            <input type="text" placeholder="search" [(ngModel)]="keyword" (keyup.enter)="searchClick()">
-          </div>
-        </div>
-
+      </div>
+      <!-- margin-left: auto; margin-right: auto; left: 0; right: 0; -->
+      <div (click)="logout()" *ngIf="isLogin" style="position: absolute;left: 200px; width: 150px; margin-top: auto; margin-bottom: auto; top:33%; bottom:0%; cursor: pointer;">
+          <a (click)="logout()" style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei; padding-left: 25px;"><i (click)="logout()" class="fas fa-sign-out-alt" style="font-size: 18px"></i>&nbsp;&nbsp;登出</a>
       </div>
     </div>
   </div>
-
-  <!--下方的選項清單-->
-  <section class="nav_area">
-    <div class="container"  style="font-family:Microsoft JhengHei;">
-      <!-- 筆電倉庫 -->
-      <div class="nav_left floatleft">
-        <a [routerLink]="['/products']" (click)="[currentPage = 1]">筆電倉庫<i class="fa fa-bars"></i></a>
-        <div class="cat_mega_menu">
-            <div class="cat_left">
-              <h5>各大品牌</h5>
-              <div class="cat_menu_line"></div>
-              <ul class="cat_nav">
-                <li><a (click)="reloadBrand(1)">Apple Mac</a></li>
-                <li><a (click)="reloadBrand(2)">MSI 微星</a></li>
-                <li><a (click)="reloadBrand(3)">ASUS 華碩</a></li>
-                <li><a (click)="reloadBrand(4)">Acer 宏碁</a></li>
-                <li><a (click)="reloadBrand(5)">Lenovo 聯想</a></li>
-                <li><a (click)="reloadBrand(6)">Hp 惠普</a></li>
-              </ul>
-            </div>
-            <div class="cat_middle">
-              <h5>各類作業系統</h5>
-              <div class="cat_menu_line"></div>
-              <ul class="cat_nav">
-                <li><a (click)="reloadOS(1)">Windows</a></li>
-                <li><a (click)="reloadOS(2)">Mac OS</a></li>
-                <li><a (click)="reloadOS(3)">Linux</a></li>
-              </ul>
-            </div>
-            <div class="cat_middle_right">
-              <h5>各種尺寸</h5>
-              <div class="cat_menu_line"></div>
-              <ul class="cat_nav">
-                <li><a (click)="reloadSize(1)">輕小型</a></li>
-                <li><a (click)="reloadSize(2)">13吋</a></li>
-                <li><a (click)="reloadSize(3)">14吋</a></li>
-                <li><a (click)="reloadSize(4)">15吋</a></li>
-                <li><a (click)="reloadSize(5)">17吋</a></li>
-              </ul>
-            </div>
-            <div class="cat_img">
-              <img src="assets/images/Laptop4ALL.jpg" alt="" />
-            </div>
-        </div>
-      </div>
-      <!-- 全部頁面 -->
-      <div class="nav_center">
-        <nav class="mainmenu">
-          <ul id="nav">
-            <li><a [routerLink]="['/home']" (click)="[currentPage = 0];setCurrentPage(1);">首頁</a>
-            </li>
-            <li><a [routerLink]="['/products']" routerLinkActive="active" (click)="[currentPage = 1]; reload(); setCurrentPage(1);">所有筆電列表</a>
-            </li>
-            <li><a (click)="[currentPage = 2];setCurrentPage(2);">快速找筆電</a>
-              <ul id="sub-menu">
-                <li><a (click)="reloadTag('高效能')">高效能</a></li>
-                <li><a (click)="reloadTag('高畫質')">高畫質</a></li>
-                <li><a (click)="reloadTag('高記憶體')">高記憶體</a></li>
-                <li><a (click)="reloadTag('高續航力')">高續航力</a></li>  <!--後端應新增tag:高續航力-->
-                <li><a (click)="reloadTag('輕薄易攜')">輕薄易攜</a></li>
-                <li><a (click)="reloadTag('文書筆電')">文書筆電</a></li>
-                <li class="last-child"><a (click)="reloadTag('電競筆電')">電競筆電</a></li>
-              </ul>
-            </li>
-            <li><a (click)="[currentPage = 3];setCurrentPage(3);reloadTag('最新推出')">最新推出</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="nav_right floatright" style="position: relative">
-        <div *ngIf="!isLogin">
-            <!-- <img src="assets/images/bag.png" alt="Bag" /> -->
-            <a [routerLink]="['/login']" routerLinkActive="active" ><i class="fas fa-sign-in-alt" style="font-size: 18px"></i>&nbsp;&nbsp;登入/註冊</a>
-        </div>
-        <div *ngIf="isLogin">
-          <a [routerLink]="['/cart']" routerLinkActive="active" ><img src="assets/images/bag.png" alt="Bag" />我的購物車</a>
-          <!-- cart item -->
-          <div class="cart_menu">
-
-            <div *ngFor="let item of items" class="cart_items">
-              <div class="c_item_img floatleft">
-                <a [routerLink]="['/products', item.product.id]"><img class="c_item_img" src="{{backend}}/{{item.product.img}}" alt="" /></a>
-              </div>
-              <div class="c_item_totals floatleft">
-                <div class="c_item_totals_detail floatleft">
-                  <a [routerLink]="['/products', item.product.id]" routerLinkActive="active"><h5>{{item.product.name}}</h5></a>
-                  <span>$ {{item.product.price}} x {{item.quantity}}</span>
-                </div>
-                <div class="close_icon_cart floatleft">
-                  <a (click)="remove(item.id)"><img src="assets/images/close.png"/></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="cart_totals">
-              <div class="c_totals_left floatleft">
-                <p>Free shipping</p>
-              </div>
-              <div class="c_totals_right floatleft">
-                <p>結帳金額   ${{total + ship}}</p>
-              </div>
-            </div>
-
-            <div class="cart_view_bottom">
-              <div class="c_totals_left floatleft">
-                <a [routerLink]="['/cart']" routerLinkActive="active" >查看所有</a>
-              </div>
-              <div class="c_totals_right floatleft">
-                <a [routerLink]="['/checkout']" routerLinkActive="active" >結帳</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <!-- margin-left: auto; margin-right: auto; left: 0; right: 0; -->
-        <div (click)="logout()" *ngIf="isLogin" style="position: absolute;left: 200px; width: 150px; margin-top: auto; margin-bottom: auto; top:33%; bottom:0%; cursor: pointer;">
-            <a (click)="logout()" style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei; padding-left: 25px;"><i (click)="logout()" class="fas fa-sign-out-alt" style="font-size: 18px"></i>&nbsp;&nbsp;登出</a>
-        </div>
-      </div>
+<!-- <a [routerLink]="['/login']" routerLinkActive="active"  style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登入/註冊</a> -->
+<!--Login/Logout需要的功能-->
+  <div *ngIf="false">
+    <div style="position: absolute;top: 128px;left: 89%;">
+        <i class="fas fa-sign-in-alt" style="font-size: 18px"></i>&nbsp;&nbsp;
     </div>
-  <!-- <a [routerLink]="['/login']" routerLinkActive="active"  style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登入/註冊</a> -->
-  <!--Login/Logout需要的功能-->
-    <div *ngIf="false">
-      <div style="position: absolute;top: 128px;left: 89%;">
-          <i class="fas fa-sign-in-alt" style="font-size: 18px"></i>&nbsp;&nbsp;
-      </div>
-      <!-- <a [routerLink]="['/login']" routerLinkActive="active" ><i class="fas fa-sign-in-alt" style="font-size: 18px"></i>&nbsp;&nbsp;登入/註冊</a> -->
-      <div style="position: absolute;top: 128px;left: 90.6%; padding: 3px">
-        <a (click)="logout()" style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登出</a>
-      </div>
+    <!-- <a [routerLink]="['/login']" routerLinkActive="active" ><i class="fas fa-sign-in-alt" style="font-size: 18px"></i>&nbsp;&nbsp;登入/註冊</a> -->
+    <div style="position: absolute;top: 128px;left: 90.6%; padding: 3px">
+      <a (click)="logout()" style="color: #fff; font-size: 14px; font-weight: 700; font-family: Microsoft JhengHei;">登出</a>
     </div>
-    <!-- <div class="nav_right floatright"> -->
-
-  </section>
-
-  <!--ADvertisement-->
-  <div *ngIf="showAD" style="z-index: 10; position: fixed; bottom: 5%; background-color:white; margin-left: auto; margin-right: auto; left: 0; right: 0; width: 600px; height: 110px;">
-    <a href="http://lmgtfy.com/?q=Am+i+an+idiot%3F"><img src="assets/images/ADV.jpg" alt="" /></a>
-    <i (click)="showAD=false" class="far fa-window-close" style="position: absolute; font-size: 25px; color: black; top: 2px ;right: 2px; cursor: pointer;"></i>
   </div>
+  <!-- <div class="nav_right floatright"> -->
+
+</section>
+
+<!--ADvertisement-->
+<div *ngIf="showAD" style="z-index: 10; position: fixed; bottom: 5%; background-color:white; margin-left: auto; margin-right: auto; left: 0; right: 0; width: 600px; height: 110px;">
+  <a href="http://lmgtfy.com/?q=Am+i+an+idiot%3F"><img src="assets/images/ADV.jpg" alt="" /></a>
+  <i (click)="showAD=false" class="far fa-window-close" style="position: absolute; font-size: 25px; color: black; top: 2px ;right: 2px; cursor: pointer;"></i>
+</div>

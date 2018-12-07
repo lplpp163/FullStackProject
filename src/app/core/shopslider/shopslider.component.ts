@@ -26,7 +26,7 @@ export class ShopsliderComponent implements OnInit {
     this.productsService.getProducts().subscribe((data: Product[]) => {
       this.getPdtsSuccess = true;
       this.pdts = data;
-      this.pdtLength = data.length;
+      this.pdtLength = (data.length ? data.length : 0);
       // Generate 4 random numbers between the length of products
       while (true) {
         this.randnum = Math.floor(Math.random() * this.pdtLength);
@@ -36,20 +36,14 @@ export class ShopsliderComponent implements OnInit {
           }
         }
       }
-      // console.log(this.getRandPdt(0));
-      // console.log(this.getRandPdt(1));
-      // console.log(this.getRandPdt(2));
-      // console.log(this.getRandPdt(3));
     });
   }
 
   // only 0~3
-  getRandPdt(num) {
-    return this.pdts[this.pickindex[num]];
-  }
-
-  goTop() {
-    window.scroll(0, 0);
+  getRandPdt(num: number) {
+    if (this.pdts) {
+      return this.pdts[this.pickindex[num]];
+    }
   }
 
   ngOnInit() {  }

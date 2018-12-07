@@ -32,6 +32,10 @@ export class HeaderComponent implements OnInit {
     return this.cartService.ship;
   }
 
+  get myDiscount() {
+    return Number(localStorage.getItem('discount'));
+  }
+
   // user info
   get userToken() {
     return localStorage.getItem('token');
@@ -137,7 +141,8 @@ export class HeaderComponent implements OnInit {
   }
 
   ADClicked() {
-    window.location.href = "https://www.google.com.tw/search?q=how+to+download+graphic+card&oq=how+to&aqs=chrome.0.69i59j69i60l3j69i65l2.12046j0j7&sourceid=chrome&ie=UTF-8";
+    // tslint:disable-next-line:max-line-length
+    window.location.href = 'https://www.google.com.tw/search?q=how+to+download+graphic+card&oq=how+to&aqs=chrome.0.69i59j69i60l3j69i65l2.12046j0j7&sourceid=chrome&ie=UTF-8';
   }
 
 }
