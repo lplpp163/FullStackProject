@@ -48,10 +48,6 @@ export class ShopsliderComponent implements OnInit {
     return this.pdts[this.pickindex[num]];
   }
 
-  goTop() {
-    window.scroll(0, 0);
-  }
-
   ngOnInit() {  }
 
   goRight() {

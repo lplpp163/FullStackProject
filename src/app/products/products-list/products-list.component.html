@@ -23,14 +23,14 @@
               <div id="collapseOne" [ngClass]="filterCollapes[0] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
                 <ul id="c_tab1">
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('最新推出')">最新推出</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('高效能')">高效能</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('高畫質')">高畫質</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('高記憶體')">高記憶體</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('高續航力')">高續航力</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('輕薄易攜')">輕薄易攜</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('電競筆電')">電競筆電</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadTag('文書筆電')">文書筆電</a></li>
+                  <li><a [routerLink]="['/products', {tag: '最新推出'}]" routerLinkActive="router-link-active" (click)="reloadTag('最新推出')">最新推出</a></li>
+                  <li><a [routerLink]="['/products', {tag: '高效能'}]" routerLinkActive="router-link-active" (click)="reloadTag('高效能')">高效能</a></li>
+                  <li><a [routerLink]="['/products', {tag: '高畫質'}]" routerLinkActive="router-link-active" (click)="reloadTag('高畫質')">高畫質</a></li>
+                  <li><a [routerLink]="['/products', {tag: '高記憶體'}]" routerLinkActive="router-link-active" (click)="reloadTag('高記憶體')">高記憶體</a></li>
+                  <li><a [routerLink]="['/products', {tag: '高續航力'}]" routerLinkActive="router-link-active" (click)="reloadTag('高續航力')">高續航力</a></li>
+                  <li><a [routerLink]="['/products', {tag: '輕薄易攜'}]" routerLinkActive="router-link-active" (click)="reloadTag('輕薄易攜')">輕薄易攜</a></li>
+                  <li><a [routerLink]="['/products', {tag: '文書筆電'}]" routerLinkActive="router-link-active" (click)="reloadTag('文書筆電')">文書筆電</a></li>
+                  <li><a [routerLink]="['/products', {tag: '電競筆電'}]" routerLinkActive="router-link-active" (click)="reloadTag('電競筆電')">電競筆電</a></li>
                 </ul>
                 </div>
               </div>
@@ -71,11 +71,11 @@
               <div id="collapseFour" [ngClass]="filterCollapes[2] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingFour">
                 <div class="panel-body">
                 <ul id="cat_size">
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadSize(1)">小</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadSize(2)">13吋</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadSize(3)">14吋</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadSize(4)">15吋</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadSize(5)">17吋</a></li>
+                  <li><a [routerLink]="['/products', {size: 1}]" routerLinkActive="router-link-active" (click)="reloadSize(1)">小</a></li>
+                  <li><a [routerLink]="['/products', {size: 2}]" routerLinkActive="router-link-active" (click)="reloadSize(2)">13吋</a></li>
+                  <li><a [routerLink]="['/products', {size: 3}]" routerLinkActive="router-link-active" (click)="reloadSize(3)">14吋</a></li>
+                  <li><a [routerLink]="['/products', {size: 4}]" routerLinkActive="router-link-active" (click)="reloadSize(4)">15吋</a></li>
+                  <li><a [routerLink]="['/products', {size: 5}]" routerLinkActive="router-link-active" (click)="reloadSize(5)">17吋</a></li>
                 </ul>
                 </div>
               </div>
@@ -95,12 +95,12 @@
               <div id="collapseFive" [ngClass]="filterCollapes[3] ? 'panel-collapse collapse in':'panel-collapse collapse'" role="tabpanel" aria-labelledby="headingFive">
                 <div class="panel-body">
                 <ul id="c_tab2">
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBrand(1)">Apple Mac</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBrand(2)">MSI 微星</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBrand(3)">ASUS 華碩</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBrand(4)">Acer 宏碁</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBrand(5)">Lenovo 聯想</a></li>
-                  <li><a [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="reloadBrand(6)">Hp 惠普</a></li>
+                  <li><a [routerLink]="['/products', {brand: 1}]" routerLinkActive="router-link-active" (click)="reloadBrand(1)">Apple Mac</a></li>
+                  <li><a [routerLink]="['/products', {brand: 2}]" routerLinkActive="router-link-active" (click)="reloadBrand(2)">MSI 微星</a></li>
+                  <li><a [routerLink]="['/products', {brand: 3}]" routerLinkActive="router-link-active" (click)="reloadBrand(3)">ASUS 華碩</a></li>
+                  <li><a [routerLink]="['/products', {brand: 4}]" routerLinkActive="router-link-active" (click)="reloadBrand(4)">Acer 宏碁</a></li>
+                  <li><a [routerLink]="['/products', {brand: 5}]" routerLinkActive="router-link-active" (click)="reloadBrand(5)">Lenovo 聯想</a></li>
+                  <li><a [routerLink]="['/products', {brand: 6}]" routerLinkActive="router-link-active" (click)="reloadBrand(6)">Hp 惠普</a></li>
                 </ul>
                 </div>
               </div>

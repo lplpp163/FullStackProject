@@ -102,25 +102,21 @@ export class ProductsListComponent implements OnInit {
   }
 
   reloadTag(tag) {
-    this.router.navigate(['/products', {tag: tag}]);
     this.productsService.refresh(null, null, null, null, tag, null);
     localStorage.setItem('currentPage', '1');
   }
 
   reloadBrand(brandnum) {
-    this.router.navigate(['/products', {brand: brandnum}]);
     this.productsService.refresh(null, null, brandnum, null, null, null);
     localStorage.setItem('currentPage', '1');
   }
 
   reloadPrice(sortMethod) {
-    this.router.navigate(['/products', {price: sortMethod}]);
     this.productsService.refresh(null, sortMethod, null, null, null, null);
     localStorage.setItem('currentPage', '1');
   }
 
   reloadSize(size) {
-    this.router.navigate(['/products', {size: size}]);
     this.productsService.refresh(null, null, null, null, null, size);
     localStorage.setItem('currentPage', '1');
   }
