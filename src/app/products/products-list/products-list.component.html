@@ -149,11 +149,11 @@
                   </div>
                   <div class="item-new">
                     <p>Wow</p>
-                    <span>{{-(1-(9-userLevel)/8)*100}}%</span>
+                    <span>{{myDiscount*100}}%</span>
                   </div>
                   <div class="item-sub">
                     <a [routerLink]="[product?.id]"><h5>{{ product?.name }}</h5></a>
-                    <p>$ {{ product?.price * (1-(9-userLevel)/8) }} <span><del>$ {{ product?.price }}</del></span></p>
+                    <p>$ {{ product?.price * myDiscount }} <span><del>$ {{ product?.price }}</del></span></p>
                   </div>
                 </div>
               </div>

@@ -26,13 +26,6 @@
               <div *ngFor="let review of reviews" class="single_review_comment">
                 <div class="single_review_text">
                   <h4>{{review.title}}</h4>
-                  <ul id="single_review_star">
-                    <li><a href="" class="fa fa-star"></a></li>
-                    <li><a href="" class="fa fa-star"></a></li>
-                    <li><a href="" class="fa fa-star"></a></li>
-                    <li><a href="" class="fa fa-star"></a></li>
-                    <li><a href="" class="fa fa-star"></a></li>
-                  </ul>
                   <p>{{review.description}}</p>
                   <div class="review_italic">
                     <p><span>{{review.user_name}},</span> {{review.created_at}}</p>

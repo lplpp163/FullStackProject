@@ -55,12 +55,12 @@
               </div>
             </div>
             <!-- 右邊資訊 -->
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-12" style="padding: 35px">
               <!-- 標題 -->
               <div class="product_detail_heading">
                 <div class="detail_heading_left">
                   <h3>{{product?.name}}</h3>
-                  <div class="new_price_gray"><p> {{ product?.price * (1-(9-userLevel)/8) | currency}} </p></div>
+                  <div class="new_price_gray"><p> {{ product?.price * myDiscount | currency}} </p></div>
                   <div class="old_price_gray"><del> {{product?.price | currency}} </del></div>
                 </div>
                 <div class="detail_heading_right">
@@ -81,7 +81,7 @@
                   <!-- 標籤 -->
                   <div class="panel-heading product_accordion_heading" role="tab" id="headingOneP">
                     <h4 class="panel-title product_accordion_head">
-                    <a data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseOneP" aria-expanded="true" aria-controls="collapseOneP">
+                    <a data-toggle="collapse" data-parent="#home-accordion-single" aria-expanded="true" aria-controls="collapseOneP">
                       {{product?.description}}
                     </a>
                     </h4>
@@ -104,7 +104,7 @@
                   <!-- 標籤 -->
                   <div class="panel-heading product_accordion_heading" role="tab" id="headingTwoP">
                     <h4 class="panel-title product_accordion_head">
-                      <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseTwoP" aria-expanded="false" aria-controls="collapseTwoP">
+                      <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion-single" aria-expanded="false" aria-controls="collapseTwoP">
                         筆電配置
                       </a>
                     </h4>
@@ -130,7 +130,7 @@
                 <!-- 摺疊頁03-敘述 -->
                 <div class="panel panel-default product_default">
                   <div class="single-color">
-                    <div class="color_heading"><h5>現在就購入! </h5></div>
+                    <div class="color_heading"><h5>&nbsp;現在就購入! </h5></div>
                     <div class="color_detail">
                         <div class="size_cart">
                           <a (click)="add(product?.id)">加入購物車</a>

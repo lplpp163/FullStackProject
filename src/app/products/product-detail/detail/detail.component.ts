@@ -28,6 +28,10 @@ export class DetailComponent implements OnInit {
     return (Number(localStorage.getItem('user_level')));
   }
 
+  get myDiscount() {
+    return Number(localStorage.getItem('discount'));
+  }
+
   add(id) {
     this.cartService.add(id).subscribe((data: any) => {
       if (data.success) {

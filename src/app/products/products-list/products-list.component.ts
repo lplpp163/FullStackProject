@@ -39,6 +39,9 @@ export class ProductsListComponent implements OnInit {
     return this.productsService.products;
   }
 
+  get myDiscount() {
+    return Number(localStorage.getItem('discount'));
+  }
   //  0~5
   get userLevel() {
     return (Number(localStorage.getItem('user_level')));
