@@ -94,24 +94,29 @@ export class ProductsListComponent implements OnInit {
 
   reload() {
     this.ngOnInit();
+    localStorage.setItem('currentPage', '1');
   }
 
   reloadTag(tag) {
     this.router.navigate(['/products', {tag: tag}]);
     this.productsService.refresh(null, null, null, null, tag);
+    localStorage.setItem('currentPage', '1');
   }
 
   reloadBrand(brandnum) {
     this.router.navigate(['/products', {brand: brandnum}]);
     this.productsService.refresh(null, null, brandnum, null, null);
+    localStorage.setItem('currentPage', '1');
   }
 
   reloadPrice(sortMethod) {
     this.router.navigate(['/products', {price: sortMethod}]);
     this.productsService.refresh(null, sortMethod, null, null, null);
+    localStorage.setItem('currentPage', '1');
   }
 
   reloadOS(osnum) {
     this.productsService.refresh(null, null, null, osnum, null);
+    localStorage.setItem('currentPage', '1');
   }
 }
