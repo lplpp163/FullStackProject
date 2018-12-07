@@ -147,13 +147,14 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="item-new">
+
+                  <div *ngIf="myDisscount < 1" class="item-new">
                     <p>Wow</p>
                     <span>{{myDiscount*100}}%</span>
                   </div>
                   <div class="item-sub">
                     <a [routerLink]="[product?.id]"><h5>{{ product?.name }}</h5></a>
-                    <p>$ {{ product?.price * myDiscount }} <span><del>$ {{ product?.price }}</del></span></p>
+                    <p>$ {{ product?.price * myDiscount }} <span><del *ngIf="myDisscount < 1">$ {{ product?.price }}</del></span></p>
                   </div>
                 </div>
               </div>

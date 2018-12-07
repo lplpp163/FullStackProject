@@ -36,6 +36,7 @@ export class DetailComponent implements OnInit {
     this.cartService.add(id).subscribe((data: any) => {
       if (data.success) {
         this.cartService.refresh();
+        alert('已加入購物車!');
       }
     });
   }

@@ -61,7 +61,7 @@
                 <div class="detail_heading_left">
                   <h3>{{product?.name}}</h3>
                   <div class="new_price_gray"><p> {{ product?.price * myDiscount | currency}} </p></div>
-                  <div *ngIf="myDiscount !== 1" class="old_price_gray"><del> {{product?.price | currency}} </del></div>
+                  <div *ngIf="myDiscount < 1" class="old_price_gray"><del> {{product?.price | currency}} </del></div>
                 </div>
                 <div class="detail_heading_right">
 
