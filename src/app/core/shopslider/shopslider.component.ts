@@ -15,25 +15,40 @@ export class ShopsliderComponent implements OnInit {
   freshslide = 0;
   maxSlide = 1;
   listLen = 0;
-  pickindex: number[];
 
-  pickedOne: Product;
-  pickedTwo: Product;
-  pickedThree: Product;
-  pickedFour: Product;
+  pickindex: number[] = [];
+  getPdtsSuccess = false;
+  pdtLength = 0;
+  pdts: Product[];
+  randnum;
+
   constructor(private productsService: ProductsService) {
+    this.productsService.getProducts().subscribe((data: Product[]) => {
+      this.getPdtsSuccess = true;
+      this.pdts = data;
+      this.pdtLength = data.length;
+      // Generate 4 random numbers between the length of products
+      while (true) {
+        this.randnum = Math.floor(Math.random() * this.pdtLength);
+        if (!this.pickindex.includes(this.randnum)) {
+          if (this.pickindex.push(this.randnum) === 4) {
+            break;
+          }
+        }
+      }
+      // console.log(this.getRandPdt(0));
+      // console.log(this.getRandPdt(1));
+      // console.log(this.getRandPdt(2));
+      // console.log(this.getRandPdt(3));
+    });
   }
 
-  ngOnInit() {
-    // this.listLen = this.productsService.products.length ? this.productsService.products.length : 0;
-    // console.log(this.productsService.products.length);
-    //  this.pickindex = [
-    //    Math.floor(Math.random() * this.listLen),
-    //    Math.floor(Math.random() * this.listLen),
-    //    Math.floor(Math.random() * this.listLen),
-    //    Math.floor(Math.random() * this.listLen),
-    // ];
+  // only 0~4
+  getRandPdt(num) {
+    return this.pdts[this.pickindex[num]];
   }
+
+  ngOnInit() {  }
 
   goRight() {
     this.freshslide += 1;
