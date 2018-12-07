@@ -72,7 +72,7 @@ export class ProductsListComponent implements OnInit {
      this.activatedrouter.snapshot.paramMap.get('brand'),
      this.activatedrouter.snapshot.paramMap.get('os'),
      this.activatedrouter.snapshot.paramMap.get('tag'),
-     this.activatedrouter.snapshot.paramMap.get('szie'),
+     this.activatedrouter.snapshot.paramMap.get('size'),
      );
   }
 
