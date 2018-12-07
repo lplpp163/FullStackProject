@@ -150,6 +150,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     console.log('[oninit]');
     console.log(this.Logining);
+    this.MakeLove(3);
   }
 
   register() {
