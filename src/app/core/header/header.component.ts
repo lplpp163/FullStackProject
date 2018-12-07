@@ -67,6 +67,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (!localStorage.getItem('discount')) {
+      localStorage.setItem('discount', '1');
+    }
     this.cartService.refresh();
     this.currentPage = (localStorage.getItem('cpi') != null) ? localStorage.getItem('cpi') : 0  ;
   }
@@ -86,7 +89,7 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('user_name');
     localStorage.removeItem('user_email');
     localStorage.removeItem('user_level');
-    localStorage.removeItem('discount');
+    localStorage.setItem('discount', '1');
 
     this.router.navigate(['/login']);
   }
@@ -134,7 +137,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ADClicked() {
-
+    window.location.href = "https://www.google.com.tw/search?q=how+to+download+graphic+card&oq=how+to&aqs=chrome.0.69i59j69i60l3j69i65l2.12046j0j7&sourceid=chrome&ie=UTF-8";
   }
 
 }
